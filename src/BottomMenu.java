@@ -49,6 +49,7 @@ public class BottomMenu extends JPanel implements Runnable{
             songTag.getYear();
             songTag.getComment();
             songTag.getGenre();
+            songTag.getTitle();
             song.getFilename();
             System.out.println(songTag.getTitle());
         }
