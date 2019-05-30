@@ -26,6 +26,7 @@ public class BottomMenu extends JPanel implements Runnable{
         this.setBorder(border);
         this.add(cover);
 
+
     }
     public void setMusic(String filePath)
     {
@@ -41,8 +42,15 @@ public class BottomMenu extends JPanel implements Runnable{
              player = new Player(music);
             Thread t1 =new Thread(this);
             t1.start();
-            ID3v2 id3v2Tag = song.getId3v2Tag();
-            System.out.println(id3v2Tag.getTitle());
+            ID3v2 songTag = song.getId3v2Tag();
+            here
+            songTag.getAlbumArtist();
+            songTag.getAlbum();
+            songTag.getYear();
+            songTag.getComment();
+            songTag.getGenre();
+            song.getFilename();
+            System.out.println(songTag.getTitle());
         }
         catch (Exception e)
         {
