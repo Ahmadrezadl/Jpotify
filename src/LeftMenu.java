@@ -31,7 +31,6 @@ public class LeftMenu extends JPanel {
         this.add(importMusic);
 
 
-
     }
 }                                                     
                                                       

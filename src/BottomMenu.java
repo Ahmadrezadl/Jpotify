@@ -1,3 +1,4 @@
+import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 import mpatric.mp3agic.ID3v2;
 import mpatric.mp3agic.Mp3File;
@@ -11,7 +12,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-public class BottomMenu extends JPanel {
+public class BottomMenu extends JPanel implements Runnable{
     JLabel cover;
     Player player;
     FileInputStream music;
@@ -37,14 +38,24 @@ public class BottomMenu extends JPanel {
         }
         try {
             Mp3File song = new Mp3File(filePath);
-            Player player = new Player(music);
-            player.play();
+             player = new Player(music);
+            Thread t1 =new Thread(this);
+            t1.start();
             ID3v2 id3v2Tag = song.getId3v2Tag();
             System.out.println(id3v2Tag.getTitle());
         }
         catch (Exception e)
         {
             System.out.println(e);
+        }
+    }
+
+    @Override
+    public void run() {
+        try {
+            player.play();
+        } catch (JavaLayerException e) {
+            e.printStackTrace();
         }
     }
 }

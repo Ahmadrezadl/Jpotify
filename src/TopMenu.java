@@ -8,13 +8,9 @@ import java.awt.event.ActionListener;
 public class TopMenu extends JPanel {
     MainFrame mainFrame;
     public TopMenu(MainFrame mainFrame){
-
         super();
-
         this.mainFrame = mainFrame;
         setBackground(Color.BLACK);
-//        CloseMenu closeMenu = new CloseMenu(mainFrame);
-
         setLayout(new BorderLayout());
         ExitButton exitButton = new ExitButton();
         this.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -22,10 +18,7 @@ public class TopMenu extends JPanel {
         add(exitButton);
         MinimizeButton minimizeButton = new MinimizeButton(mainFrame);
         add(minimizeButton);
-//        Border  whiteLine = BorderFactory.createLineBorder(new Color(0 , 30 , 135));
-//        setBorder(whiteLine);
         this.setVisible(true);
-
     }
 
 }
