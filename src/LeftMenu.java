@@ -8,16 +8,16 @@ public class LeftMenu extends JPanel {
 
     private final ImportMusicButton importMusic;
     private JLabel label;
-
-    public LeftMenu() {
+    private BottomMenu bottomMenu;
+    public LeftMenu(BottomMenu bottomMenu) {
         super();
         setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
-        importMusic = new ImportMusicButton();
+        importMusic = new ImportMusicButton(bottomMenu);
         this.setBackground(new Color(176 , 0 , 9));
         label = new JLabel();
         try {
-            Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\PlayLists.png"));
-            label.setIcon(new ImageIcon(exitButtonIcon));
+            Image playListsIcon = ImageIO.read(getClass().getResource("icons\\PlayLists.png"));
+            label.setIcon(new ImageIcon(playListsIcon));
         }
         catch (Exception e)
         {

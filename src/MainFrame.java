@@ -18,7 +18,9 @@ public class MainFrame extends JFrame{
         setLayout(new BorderLayout());
         TopMenu topMenu = new TopMenu(this);
         add(topMenu , BorderLayout.NORTH);
-        LeftMenu leftMenu = new LeftMenu();
+        BottomMenu bottomMenu = new BottomMenu();
+        add(bottomMenu , BorderLayout.SOUTH);
+        LeftMenu leftMenu = new LeftMenu(bottomMenu);
         add(leftMenu , BorderLayout.WEST);
         this.getContentPane().setBackground(new Color(176 , 0 , 9));
         this.setVisible(true);
