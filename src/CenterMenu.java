@@ -12,5 +12,6 @@ public class CenterMenu extends JPanel {
         this.setBorder(border);
         add(bottomMenu , BorderLayout.SOUTH);
 
+
     }
 }

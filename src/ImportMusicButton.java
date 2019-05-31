@@ -11,8 +11,10 @@ import java.io.FileInputStream;
 
 public class ImportMusicButton extends JButton implements ActionListener {
     BottomMenu bottomMenu;
-    public ImportMusicButton(BottomMenu bottomMenu){
+    LeftMenu leftMenu;
+    public ImportMusicButton(BottomMenu bottomMenu , LeftMenu leftMenu){
         setBorder(null);
+        this.leftMenu = leftMenu;
         this.bottomMenu = bottomMenu;
         try {
             Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\addMusicButton.png"));
@@ -35,7 +37,8 @@ public class ImportMusicButton extends JButton implements ActionListener {
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Mp3 File", "mp3");
             chooser.setFileFilter(filter);
             int returnVal = chooser.showOpenDialog(null);
-
+            SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath(),chooser.getSelectedFile().getName(),leftMenu,bottomMenu);
+            leftMenu.pane.add(songButton);
             bottomMenu.setMusic(chooser.getSelectedFile().getAbsolutePath());
 
 //            Player player = new Player(file);

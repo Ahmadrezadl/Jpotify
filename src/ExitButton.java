@@ -16,7 +16,6 @@ public class ExitButton extends JButton implements ActionListener {
             System.out.println("ERROR");
         }
         this.addActionListener(this);
-        this.setBorder(null);
         this.setBackground(Color.BLACK);
         this.setToolTipText("Exit Program");
     }
