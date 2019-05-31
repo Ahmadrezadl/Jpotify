@@ -239,4 +239,7 @@ public class AdvancedPlayer
 		listener.playbackFinished(createEvent(PlaybackEvent.STOPPED));
 		close();
 	}
+
+	public void setPlayBackListener() {
+	}
 }
