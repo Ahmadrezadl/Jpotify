@@ -60,6 +60,14 @@ public class BottomMenu extends JPanel implements Runnable{
             System.out.println(e);
         }
         try {
+            player.close();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        try {
+
 
             Mp3File song = new Mp3File(filePath);
             player = new AdvancedPlayer(music);
