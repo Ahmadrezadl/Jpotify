@@ -6,19 +6,15 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class LeftMenu extends JPanel {
-
-
-    private final ImportMusicButton importMusic;
     private JLabel label;
     private BottomMenu bottomMenu;
-    public JScrollPane pane;
     public JTree playLists;
     public JPanel panePanel;
     public LeftMenu(BottomMenu bottomMenu) {
         super();
+        System.out.println("Left Menu Start Adding...");
         this.bottomMenu = bottomMenu;
         setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
-        importMusic = new ImportMusicButton(bottomMenu , this);
         this.setBackground(new Color(176 , 0 , 9));
         label = new JLabel();
         try {
@@ -33,15 +29,9 @@ public class LeftMenu extends JPanel {
         this.setBorder(border);
         label.setFont(new Font(null, Font.PLAIN, 50));
         label.setBackground(Color.BLACK);
-        pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        pane.getViewport().setBackground(new Color(176 , 0 , 9));
         panePanel = new JPanel();
-
-        this.add(importMusic);
         this.add(label);
-        this.add(pane);
-
-
+        System.out.println("Left Menu Added!");
     }
 }                                                     
                                                       

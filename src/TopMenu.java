@@ -9,6 +9,7 @@ public class TopMenu extends JPanel {
     MainFrame mainFrame;
     public TopMenu(MainFrame mainFrame){
         super();
+        System.out.println("Top Menu Start Adding...");
         this.mainFrame = mainFrame;
         setBackground(Color.BLACK);
         setLayout(new BorderLayout());
@@ -19,6 +20,7 @@ public class TopMenu extends JPanel {
         MinimizeButton minimizeButton = new MinimizeButton(mainFrame);
         add(minimizeButton);
         this.setVisible(true);
+        System.out.println("Top Menu added!");
     }
 
 }

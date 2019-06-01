@@ -8,6 +8,7 @@ public class MinimizeButton extends JButton implements ActionListener {
     MainFrame mainFrame;
 
     public MinimizeButton(MainFrame mainFrame) {
+        System.out.println("Minimize Button Start Adding...");
         this.mainFrame = mainFrame;
         this.setToolTipText("Minimize Window");
         try {
@@ -20,6 +21,7 @@ public class MinimizeButton extends JButton implements ActionListener {
         }
         this.addActionListener(this);
         this.setBorder(null);
+        System.out.println("Minimize Button added!");
     }
 
     @Override

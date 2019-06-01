@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class ExitButton extends JButton implements ActionListener {
     public ExitButton() {
+        System.out.println("Exit Button Start Adding!");
         setBorder(null);
         try {
             Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\exitButton.png"));
@@ -18,9 +19,11 @@ public class ExitButton extends JButton implements ActionListener {
         this.addActionListener(this);
         this.setBackground(Color.BLACK);
         this.setToolTipText("Exit Program");
+        System.out.println("Exit Button Added!");
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+            System.out.println("Exiting Program...");
             System.exit(1);
 
     }
