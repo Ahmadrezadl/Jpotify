@@ -1,3 +1,5 @@
+import com.sun.xml.internal.messaging.saaj.soap.JpegDataContentHandler;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -10,6 +12,8 @@ public class LeftMenu extends JPanel {
     private JLabel label;
     private BottomMenu bottomMenu;
     public JScrollPane pane;
+    public JTree playLists;
+    public JPanel panePanel;
     public LeftMenu(BottomMenu bottomMenu) {
         super();
         this.bottomMenu = bottomMenu;
@@ -30,8 +34,9 @@ public class LeftMenu extends JPanel {
         label.setFont(new Font(null, Font.PLAIN, 50));
         label.setBackground(Color.BLACK);
         pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-       pane.setBackground(Color.BLACK);
-       pane.getViewport().setBackground(new Color(176 , 0 , 9));
+        pane.getViewport().setBackground(new Color(176 , 0 , 9));
+        panePanel = new JPanel();
+
         this.add(importMusic);
         this.add(label);
         this.add(pane);
