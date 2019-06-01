@@ -22,6 +22,7 @@ public class BottomMenu extends JPanel implements Runnable{
      JLabel comment;
      JLabel title;
      JLabel fileName;
+    Thread t1;
     public BottomMenu() {
         super();
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -59,9 +60,10 @@ public class BottomMenu extends JPanel implements Runnable{
             System.out.println(e);
         }
         try {
+
             Mp3File song = new Mp3File(filePath);
             player = new AdvancedPlayer(music);
-            Thread t1 =new Thread(this);
+            t1 =new Thread(this);
             t1.start();
             ID3v2 songTag = song.getId3v2Tag();
             byte[] imageData = songTag.getAlbumImage();
@@ -89,7 +91,6 @@ public class BottomMenu extends JPanel implements Runnable{
     public void run() {
         try {
             player.play();
-
         } catch (JavaLayerException e) {
             e.printStackTrace();
         }

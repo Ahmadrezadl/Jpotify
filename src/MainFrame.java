@@ -12,7 +12,7 @@ public class MainFrame extends JFrame{
         super(title);
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1650,1080);
+        this.setSize(100,100);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUndecorated(true);
         setLayout(new BorderLayout());

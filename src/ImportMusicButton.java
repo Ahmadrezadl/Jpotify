@@ -38,12 +38,8 @@ public class ImportMusicButton extends JButton implements ActionListener {
             chooser.setFileFilter(filter);
             int returnVal = chooser.showOpenDialog(null);
             SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath(),chooser.getSelectedFile().getName(),leftMenu,bottomMenu);
-            leftMenu.pane.add(songButton);
+            leftMenu.pane.add(songButton,1);
             bottomMenu.setMusic(chooser.getSelectedFile().getAbsolutePath());
-
-//            Player player = new Player(file);
-//            player.play();
-
         }
         catch (Exception t)
         {

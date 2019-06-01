@@ -25,7 +25,7 @@ public class LeftMenu extends JPanel {
         {
             System.out.println("ERROR");
         }
-        Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
+        Border border = BorderFactory.createLineBorder(new Color(176 , 0 , 9), 10);
         this.setBorder(border);
         label.setFont(new Font(null, Font.PLAIN, 50));
         label.setBackground(Color.BLACK);

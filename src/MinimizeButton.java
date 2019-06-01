@@ -20,7 +20,6 @@ public class MinimizeButton extends JButton implements ActionListener {
         }
         this.addActionListener(this);
         this.setBorder(null);
-
     }
 
     @Override
