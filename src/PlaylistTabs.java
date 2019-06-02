@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class PlaylistTabs extends JTabbedPane {
@@ -7,11 +8,11 @@ public class PlaylistTabs extends JTabbedPane {
     public PlaylistTabs(BottomMenu bottomMenu, LeftMenu leftMenu)
     {
         super();
-
+        ImageIcon tab1Icon = new ImageIcon("icons\\musicLogo.png");
         System.out.println("PlayList Tabs Adding...");
-//        pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         PlaylistPanel allSongs = new PlaylistPanel();
-        this.add("All Songs",allSongs);
+        this.addTab("All Songs",tab1Icon,allSongs,"test");
+//        this.setMnemonicAt(0, KeyEvent.VK_1);
         ImportMusicButton addMusic = new ImportMusicButton(bottomMenu,leftMenu,allSongs);
         allSongs.addSong(addMusic);
         PlaylistPanel favorites = new PlaylistPanel();

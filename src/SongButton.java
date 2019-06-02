@@ -73,8 +73,6 @@ public class SongButton extends JButton implements ActionListener {
             }
         }
         System.out.println("Song Button Created!");
-
-
     }
 
     @Override

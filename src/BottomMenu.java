@@ -1,6 +1,5 @@
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
-import javazoom.jl.player.*;
 import mpatric.mp3agic.ID3v2;
 import mpatric.mp3agic.Mp3File;
 
@@ -119,6 +118,11 @@ public class BottomMenu extends JPanel implements Runnable{
             System.out.println(e);
         }
         System.out.println("Music Descriptions Loaded!");
+        PauseButton pauseButton = new PauseButton(t1);
+        this.add(pauseButton);
+
+
+
     }
 
     @Override
