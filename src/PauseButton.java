@@ -30,7 +30,7 @@ public class PauseButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(isPlaying == true) {
+        if(isPlaying) {
             t1.suspend();
             isPlaying = false;
         }
