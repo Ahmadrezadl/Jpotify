@@ -39,7 +39,6 @@ public class MainFrame extends JFrame{
         TopMenu topMenu = new TopMenu(this);
         add(topMenu , BorderLayout.NORTH);
         BottomMenu bottomMenu = new BottomMenu();
-//        add(bottomMenu , BorderLayout.SOUTH);
         LeftMenu leftMenu = new LeftMenu(bottomMenu);
         add(leftMenu , BorderLayout.WEST);
         CenterMenu centerMenu = new CenterMenu(bottomMenu , leftMenu);

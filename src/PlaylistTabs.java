@@ -7,15 +7,16 @@ public class PlaylistTabs extends JTabbedPane {
     public PlaylistTabs(BottomMenu bottomMenu, LeftMenu leftMenu)
     {
         super();
+
         System.out.println("PlayList Tabs Adding...");
 //        pane = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        JPanel allSongs = new JPanel();
+        PlaylistPanel allSongs = new PlaylistPanel();
         this.add("All Songs",allSongs);
         ImportMusicButton addMusic = new ImportMusicButton(bottomMenu,leftMenu,allSongs);
-        allSongs.add(addMusic);
-        JPanel favorites = new JPanel();
+        allSongs.addSong(addMusic);
+        PlaylistPanel favorites = new PlaylistPanel();
         this.add("Favorites" , favorites);
-        favorites.add(new ImportMusicButton(bottomMenu,leftMenu,favorites));
+        favorites.addSong(new ImportMusicButton(bottomMenu,leftMenu,favorites));
         System.out.println("PlayList Tabs Added");
     }
 }

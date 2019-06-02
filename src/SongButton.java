@@ -24,8 +24,10 @@ public class SongButton extends JButton implements ActionListener {
     FileInputStream music;
 
     public SongButton(String link , String name , LeftMenu leftMenu, BottomMenu bottomMenu/* , Playlist playlist*/) {
-        super(name);
-        System.out.println("Song Button Start Adding...");
+        super();
+        this.setToolTipText(name);
+        this.setBorder(null);
+        System.out.println("Song Button Start Creating...");
         this.link = link;
         this.name = name;
         this.leftMenu = leftMenu;
@@ -70,7 +72,7 @@ public class SongButton extends JButton implements ActionListener {
                 this.setIcon(new ImageIcon(coverImage));
             }
         }
-        System.out.println("Song Button Added!");
+        System.out.println("Song Button Created!");
 
 
     }

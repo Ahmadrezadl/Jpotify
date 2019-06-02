@@ -12,14 +12,14 @@ import java.io.FileInputStream;
 public class ImportMusicButton extends JButton implements ActionListener {
     BottomMenu bottomMenu;
     LeftMenu leftMenu;
-    JPanel jPanel;
+    PlaylistPanel playlistPanel;
     JFileChooser chooser;
     FileNameExtensionFilter filter;
-    public ImportMusicButton(BottomMenu bottomMenu , LeftMenu leftMenu , JPanel jPanel){
+    public ImportMusicButton(BottomMenu bottomMenu , LeftMenu leftMenu , PlaylistPanel playlistPanel){
         System.out.println("Import Music Button Creating...");
         setBorder(null);
         this.leftMenu = leftMenu;
-        this.jPanel = jPanel;
+        this.playlistPanel = playlistPanel;
         this.bottomMenu = bottomMenu;
         try {
             Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\addMusicButton.png"));
@@ -43,7 +43,7 @@ public class ImportMusicButton extends JButton implements ActionListener {
         System.out.println("Opening file...");
         int returnVal = chooser.showOpenDialog(null);
         SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath(),chooser.getSelectedFile().getName(),leftMenu,bottomMenu);
-        jPanel.add(songButton);
+        playlistPanel.addSong(songButton);
         try {
             bottomMenu.setMusic(chooser.getSelectedFile().getAbsolutePath());
         }
