@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1e432fb-4e94-4df4-8ac8-37c88443da57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PauseButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/musicLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/pauseButton.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BottomMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BottomMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlaylistTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlaylistTabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backgroundImage.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PauseButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="274">
+              <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,7 +185,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-324" />
+    <option name="x" value="-325" />
     <option name="y" value="285" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
@@ -214,7 +207,7 @@
             <path>
               <item name="Jpotify" type="b2602c69:ProjectViewProjectNode" />
               <item name="Jpotify" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Jpotify" type="b2602c69:ProjectViewProjectNode" />
@@ -235,7 +228,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559476259973" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559477324674" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JLayer1.0.1/jl1.0.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -406,12 +399,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559467385245</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Pause Button Added!">
+      <created>1559476648603</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559476648603</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -422,11 +421,11 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49932885" weight="0.329429" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.51073825" side_tool="true" visible="true" weight="0.24304539" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5013423" side_tool="true" visible="true" weight="0.329429" />
       <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4885906" weight="0.329429" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49932885" weight="0.329429" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.48926175" visible="true" weight="0.24304539" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.48926175" weight="0.24304539" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49932885" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -456,7 +455,8 @@
     <MESSAGE value="Loading Added!" />
     <MESSAGE value="Tabs Optimized" />
     <MESSAGE value="Tab Layout Fixed!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tab Layout Fixed!" />
+    <MESSAGE value="Pause Button Added!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pause Button Added!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,9 +565,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/backgroundImage.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/backgroundImage.jpg" />
     <entry file="file://$PROJECT_DIR$/src/mpatric/mp3agic/Mp3File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
@@ -757,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PauseButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="274">
+          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
