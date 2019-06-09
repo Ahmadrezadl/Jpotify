@@ -2,8 +2,15 @@
   <library name="jl1.0.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../JLayer1.0.1/jl1.0.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../commons-net-3.6" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../commons-net-3.6/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../commons-net-3.6" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../commons-net-3.6" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../commons-net-3.6" recursive="false" type="SOURCES" />
   </library>
 </component>

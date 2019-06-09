@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
+import org.apache.commons.net.*;
+import java.util.Comparator;
+
 
 public class ImportMusicButton extends JButton implements ActionListener {
     BottomMenu bottomMenu;
@@ -15,9 +18,11 @@ public class ImportMusicButton extends JButton implements ActionListener {
     PlaylistPanel playlistPanel;
     JFileChooser chooser;
     FileNameExtensionFilter filter;
-    public ImportMusicButton(BottomMenu bottomMenu , LeftMenu leftMenu , PlaylistPanel playlistPanel){
+    PlaylistPanel allSongsPanel;
+    public ImportMusicButton(BottomMenu bottomMenu , LeftMenu leftMenu , PlaylistPanel playlistPanel, PlaylistPanel allSongsPanel){
         System.out.println("Import Music Button Creating...");
         setBorder(null);
+        this.allSongsPanel = allSongsPanel;
         this.leftMenu = leftMenu;
         this.playlistPanel = playlistPanel;
         this.bottomMenu = bottomMenu;
@@ -35,22 +40,37 @@ public class ImportMusicButton extends JButton implements ActionListener {
         chooser = new JFileChooser();
         filter = new FileNameExtensionFilter("Mp3 File", "mp3");
         chooser.setFileFilter(filter);
+
         System.out.println("Import Music Button Added!");
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Opening file...");
+
         int returnVal = chooser.showOpenDialog(null);
-        SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath(),chooser.getSelectedFile().getName(),leftMenu,bottomMenu);
-        playlistPanel.addSong(songButton);
-        try {
-            bottomMenu.setMusic(chooser.getSelectedFile().getAbsolutePath());
-        }
-        catch (Exception t)
+        if (chooser.getSelectedFile().getName().charAt( chooser.getSelectedFile().getName().length()-1 ) == '3')
         {
-            System.out.println(t);
+            if(returnVal == 0) {
+                SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , leftMenu , bottomMenu);
+                allSongsPanel.addSong(songButton);
+                playlistPanel.addSong(new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , leftMenu , bottomMenu));
+
+                bottomMenu.pauseButton.setIcon(new ImageIcon(bottomMenu.pauseButton.pauseButtonIcon));
+                try {
+                    bottomMenu.setMusic(chooser.getSelectedFile().getAbsolutePath());
+                } catch (Exception t) {
+                    System.out.println(t);
+                }
+                System.out.println("File Opened!");
+            }
         }
-        System.out.println("File Opened!");
+        else
+        {
+            JOptionPane.showMessageDialog(null,
+                    "Cannot Open " + chooser.getSelectedFile().getName(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE,null);
+        }
     }
 }

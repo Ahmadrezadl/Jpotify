@@ -5,22 +5,32 @@ import java.util.ArrayList;
 public class PlaylistPanel extends JPanel {
     ArrayList<SongButton> songs;
     int i;
+//    ImportMusicButton importMusicButton;
 
     public PlaylistPanel()
     {
         super();
+//        this.importMusicButton = importMusicButton;
+        songs = new ArrayList<>();
         System.out.println("Playlist Panel Start adding...");
         i = 0;
-//        GridBagLayout layout = new GridBagLayout();
         FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
         this.setLayout(layout);
         System.out.println("Playlist Panel Added!");
     }
     public void addSong(SongButton songButton)
     {
-//        songs.add(songButton);
-//        i++;
-        this.add(songButton);
+        boolean duplicate = false;
+            for (SongButton btn : songs) {
+                if (btn.getLink().equals(songButton.getLink())) {
+                    duplicate = true;
+                    break;
+                }
+            }
+        if (!duplicate) {
+            songs.add(songButton);
+            this.add(songButton);
+        }
     }
     public void addSong(ImportMusicButton importMusicButton)
     {

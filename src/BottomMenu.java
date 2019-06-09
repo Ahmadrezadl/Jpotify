@@ -15,8 +15,7 @@ public class BottomMenu extends JPanel implements Runnable{
     AdvancedPlayer player;
     boolean isPlaying;
    FileInputStream music;
-     JLabel comment;
-     JLabel title;
+     PauseButton pauseButton;
      JLabel fileName;
     Thread t1;
     public BottomMenu() {
@@ -34,7 +33,9 @@ public class BottomMenu extends JPanel implements Runnable{
         {
             System.out.println(e);
         }
-
+        pauseButton = new PauseButton(t1);
+        this.add(pauseButton);
+        System.out.println("New Pause Button Added");
 
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
@@ -59,6 +60,12 @@ public class BottomMenu extends JPanel implements Runnable{
         }
         System.out.println("File Created!");
         try {
+            if(!pauseButton.isPlaying)
+            {
+                t1.resume();
+                System.out.println("Music Resumed");
+                isPlaying = true;
+            }
             player.close();
         }
         catch (Exception e)
@@ -118,8 +125,8 @@ public class BottomMenu extends JPanel implements Runnable{
             System.out.println(e);
         }
         System.out.println("Music Descriptions Loaded!");
-        PauseButton pauseButton = new PauseButton(t1);
-        this.add(pauseButton);
+        pauseButton.setT1(t1);
+
 
 
 

@@ -25,6 +25,7 @@ public class SongButton extends JButton implements ActionListener {
 
     public SongButton(String link , String name , LeftMenu leftMenu, BottomMenu bottomMenu/* , Playlist playlist*/) {
         super();
+        System.out.println("Music Resumed");
         this.setToolTipText(name);
         this.setBorder(null);
         System.out.println("Song Button Start Creating...");
@@ -72,9 +73,22 @@ public class SongButton extends JButton implements ActionListener {
                 this.setIcon(new ImageIcon(coverImage));
             }
         }
+        else
+        {
+            Image coverImage = null;
+            try {
+                coverImage = ImageIO.read(getClass().getResource("icons\\musicCover.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            this.setIcon(new ImageIcon(coverImage));
+        }
         System.out.println("Song Button Created!");
     }
-
+    public String getLink()
+    {
+        return link;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         bottomMenu.setMusic(link);

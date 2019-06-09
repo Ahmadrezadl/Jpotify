@@ -21,6 +21,8 @@ public class MinimizeButton extends JButton implements ActionListener {
         }
         this.addActionListener(this);
         this.setBorder(null);
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
         System.out.println("Minimize Button added!");
     }
 
