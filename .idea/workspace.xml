@@ -2,17 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1e432fb-4e94-4df4-8ac8-37c88443da57" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/icons/playButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jl1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jl1_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BottomMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BottomMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/Converter$PrintWriterProgressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/Converter$PrintWriterProgressListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/Converter$ProgressListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/Converter$ProgressListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/Converter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/Converter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/RiffFile$RiffChunkHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/RiffFile$RiffChunkHeader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/RiffFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/RiffFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile$WaveFileSample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile$WaveFileSample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile$WaveFormat_Chunk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile$WaveFormat_Chunk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile$WaveFormat_ChunkData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile$WaveFormat_ChunkData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFileObuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/WaveFileObuffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/jlc$jlcArgs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/jlc$jlcArgs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/jlc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/converter/jlc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/BitReserve.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/BitReserve.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Bitstream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Bitstream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/BitstreamErrors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/BitstreamErrors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/BitstreamException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/BitstreamException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Crc16.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Crc16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Decoder$Params.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Decoder$Params.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Decoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Decoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/DecoderErrors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/DecoderErrors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/DecoderException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/DecoderException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Equalizer$EQFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Equalizer$EQFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Equalizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Equalizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/FrameDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/FrameDecoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Header.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Header.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/InputStreamSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/InputStreamSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerError.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerErrors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerErrors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerHook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerHook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/JavaLayerUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$Subband.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$Subband.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1IntensityStereo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1IntensityStereo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1Stereo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder$SubbandLayer1Stereo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIDecoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2IntensityStereo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2IntensityStereo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2Stereo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder$SubbandLayer2Stereo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIDecoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$III_side_info_t.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$III_side_info_t.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$SBI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$SBI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$Sftable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$Sftable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$gr_info_s.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$gr_info_s.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$temporaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$temporaire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$temporaire2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder$temporaire2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/LayerIIIDecoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Obuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Obuffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/OutputChannels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/OutputChannels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/SampleBuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/SampleBuffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Source.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/Source.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/SynthesisFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/SynthesisFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/huffcodetab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/decoder/huffcodetab.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/AudioDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/AudioDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/AudioDeviceBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/AudioDeviceBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/AudioDeviceFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/AudioDeviceFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/FactoryRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/FactoryRegistry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/JavaSoundAudioDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/JavaSoundAudioDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/JavaSoundAudioDeviceFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/JavaSoundAudioDeviceFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/NullAudioDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/NullAudioDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/PlayerApplet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/PlayerApplet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/AdvancedPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/AdvancedPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/PlaybackEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/PlaybackEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/PlaybackListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/PlaybackListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/jlap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/jlap$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/jlap$InfoListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/jlap$InfoListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/jlap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/advanced/jlap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/jlp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jpotify/javazoom/jl/player/jlp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ImportMusicButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImportMusicButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MinimizeButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinimizeButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PauseButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PauseButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlaylistPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlaylistPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlaylistTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlaylistTabs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TopMenu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,12 +92,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlaylistPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="255">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1005#1006#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,12 +104,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SongButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3030#3031#0" expanded="true" />
-                <element signature="e#3134#3135#0" expanded="true" />
+                <element signature="e#3004#3005#0" expanded="true" />
+                <element signature="e#3031#3032#0" expanded="true" />
+                <element signature="e#3094#3095#0" expanded="true" />
+                <element signature="e#3135#3136#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,11 +122,11 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlaylistTabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="527">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TopMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="578">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,19 +162,16 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ImportMusicButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -116,11 +179,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LeftMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -128,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-211">
-              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,24 +252,25 @@
         <option value="$PROJECT_DIR$/src/ExitButton.java" />
         <option value="$PROJECT_DIR$/src/ImagePanel.java" />
         <option value="$PROJECT_DIR$/src/LeftMenu.java" />
-        <option value="$PROJECT_DIR$/src/TopMenu.java" />
         <option value="$PROJECT_DIR$/src/PuaseButton.java" />
         <option value="$PROJECT_DIR$/src/MinimizeButton.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/BottomMenu.java" />
         <option value="$PROJECT_DIR$/src/PauseButton.java" />
-        <option value="$PROJECT_DIR$/src/PlaylistTabs.java" />
         <option value="$PROJECT_DIR$/src/PlaylistPanel.java" />
         <option value="$PROJECT_DIR$/src/ImportMusicButton.java" />
         <option value="$PROJECT_DIR$/src/SongButton.java" />
+        <option value="$PROJECT_DIR$/src/TopMenu.java" />
+        <option value="$PROJECT_DIR$/src/PlaylistTabs.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="979" />
-    <option name="height" value="1040" />
+    <option name="x" value="1047" />
+    <option name="y" value="232" />
+    <option name="width" value="908" />
+    <option name="height" value="634" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -217,6 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,7 +302,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,15 +529,15 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18724832" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18993288" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.329429" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49798658" weight="0.329429" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5228188" side_tool="true" visible="true" weight="0.24304539" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4785235" weight="0.329429" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49798658" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.52214766" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.47785234" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49932885" weight="0.329429" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4771812" weight="0.24304539" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4771812" weight="0.24220963" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49932885" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -490,6 +551,34 @@
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.18993288" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.329429" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49798658" weight="0.329429" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.52214766" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.47785234" weight="0.3286119" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49932885" weight="0.329429" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4771812" visible="true" weight="0.24220963" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49932885" weight="0.39970717" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Minimize and Close Button Completed!" />
@@ -696,20 +785,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/Server.java" />
+    <entry file="file://$PROJECT_DIR$/src/src/Client.java" />
     <entry file="file://$PROJECT_DIR$/src/BottomMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -744,69 +821,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-211">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="204">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PlaylistPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlaylistTabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeftMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImportMusicButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -815,12 +850,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SongButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3030#3031#0" expanded="true" />
-            <element signature="e#3134#3135#0" expanded="true" />
+            <element signature="e#3004#3005#0" expanded="true" />
+            <element signature="e#3031#3032#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3135#3136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeftMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TopMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlaylistTabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -831,10 +895,17 @@
     <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImportMusicButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

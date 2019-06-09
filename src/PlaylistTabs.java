@@ -2,6 +2,13 @@ import javax.swing.*;
 
 import java.util.ArrayList;
 
+/**
+ * this class represents different tabs for different playLists.
+ * playLists such as favorites , all songs &... .
+ * @author ahmadrezadl
+ *
+ */
+
 public class PlaylistTabs extends JTabbedPane {
     ArrayList <JPanel> panels;
     public PlaylistTabs(BottomMenu bottomMenu, LeftMenu leftMenu)

@@ -5,6 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * this class ris made for the top menu.
+ * top menu contains MinimizeButton , ExitButton and ... .
+ * @author ElhamRazi
+ * @version 1.1
+ * @since 1.0
+ */
+
 public class TopMenu extends JPanel {
     MainFrame mainFrame;
     public TopMenu(MainFrame mainFrame){
