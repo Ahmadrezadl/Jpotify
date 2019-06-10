@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 
 public class PlaylistTabs extends JTabbedPane {
-    ArrayList <JPanel> panels;
+    AddPlayListButton addPlayListButton;
     public PlaylistTabs(BottomMenu bottomMenu, LeftMenu leftMenu)
     {
         super();
@@ -24,6 +24,9 @@ public class PlaylistTabs extends JTabbedPane {
         PlaylistPanel favorites = new PlaylistPanel();
         this.add("Favorites" , favorites);
         favorites.addSong(new ImportMusicButton(bottomMenu,leftMenu,favorites,allSongs));
+
+        addPlayListButton = new AddPlayListButton(this,bottomMenu,leftMenu,allSongs);
+        leftMenu.add(addPlayListButton);
 
         System.out.println("PlayList Tabs Added");
 

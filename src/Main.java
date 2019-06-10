@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Main{
     public static void main(String[]args)
-    { F
+    {
         System.out.println("Program Started!");
         try{
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
