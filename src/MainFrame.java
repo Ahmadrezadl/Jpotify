@@ -9,8 +9,9 @@ import java.io.IOException;
 
 public class MainFrame extends JFrame{
     Image img;
-    public MainFrame(String title) throws HeadlessException {
-        super(title);
+    public MainFrame(AppObjects appObjects)  {
+        super("Jpotify");
+        appObjects.setMainFrame(this);
         JFrame loadingFrame = new JFrame("Loading...");
         JLabel Logo = new JLabel();
         Image jpotifyLogo = null;
@@ -36,12 +37,12 @@ public class MainFrame extends JFrame{
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUndecorated(true);
         setLayout(new BorderLayout());
-        TopMenu topMenu = new TopMenu(this);
+        TopMenu topMenu = new TopMenu(appObjects);
         add(topMenu , BorderLayout.NORTH);
-        BottomMenu bottomMenu = new BottomMenu();
-        LeftMenu leftMenu = new LeftMenu(bottomMenu);
+        BottomMenu bottomMenu = new BottomMenu(appObjects);
+        LeftMenu leftMenu = new LeftMenu(appObjects);
         add(leftMenu , BorderLayout.WEST);
-        CenterMenu centerMenu = new CenterMenu(bottomMenu , leftMenu);
+        CenterMenu centerMenu = new CenterMenu(appObjects);
         add(centerMenu , BorderLayout.CENTER);
         this.getContentPane().setBackground(new Color(176 , 0 , 9));
         this.setVisible(true);

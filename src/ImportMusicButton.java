@@ -19,20 +19,22 @@ public class ImportMusicButton extends JButton implements ActionListener {
     JFileChooser chooser;
     FileNameExtensionFilter filter;
     PlaylistPanel allSongsPanel;
-    public ImportMusicButton(BottomMenu bottomMenu , LeftMenu leftMenu , PlaylistPanel playlistPanel, PlaylistPanel allSongsPanel){
+    AppObjects appObjects;
+    public ImportMusicButton(AppObjects appObjects, PlaylistPanel playlistPanel){
         System.out.println("Import Music Button Creating...");
         setBorder(null);
-        this.allSongsPanel = allSongsPanel;
-        this.leftMenu = leftMenu;
+        this.appObjects = appObjects;
+        this.allSongsPanel = appObjects.getAllSongsPanel();
+        this.leftMenu = appObjects.getLeftMenu();
         this.playlistPanel = playlistPanel;
-        this.bottomMenu = bottomMenu;
+        this.bottomMenu = appObjects.getBottomMenu();
         try {
             Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\addMusicButton.png"));
             this.setIcon(new ImageIcon(exitButtonIcon));
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println("File Missing...");
         }
         this.addActionListener(this);
         this.setBorder(null);
@@ -52,9 +54,9 @@ public class ImportMusicButton extends JButton implements ActionListener {
         if (chooser.getSelectedFile().getName().charAt( chooser.getSelectedFile().getName().length()-1 ) == '3')
         {
             if(returnVal == 0) {
-                SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , leftMenu , bottomMenu);
+                SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , appObjects);
                 allSongsPanel.addSong(songButton);
-                playlistPanel.addSong(new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , leftMenu , bottomMenu));
+                playlistPanel.addSong(new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , appObjects));
 
                 bottomMenu.pauseButton.setIcon(new ImageIcon(bottomMenu.pauseButton.pauseButtonIcon));
                 try {

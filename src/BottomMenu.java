@@ -14,12 +14,13 @@ public class BottomMenu extends JPanel implements Runnable{
     JLabel cover;
     AdvancedPlayer player;
     boolean isPlaying;
-   FileInputStream music;
-     PauseButton pauseButton;
-     JLabel fileName;
+    FileInputStream music;
+    PauseButton pauseButton;
+    JLabel fileName;
     Thread t1;
-    public BottomMenu() {
+    public BottomMenu(AppObjects appObjects) {
         super();
+        appObjects.setBottomMenu(this);
         System.out.println("Bottom Menu Start Creating...");
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);

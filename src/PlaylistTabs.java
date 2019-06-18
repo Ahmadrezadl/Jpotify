@@ -11,22 +11,24 @@ import java.util.ArrayList;
 
 public class PlaylistTabs extends JTabbedPane {
     AddPlayListButton addPlayListButton;
-    public PlaylistTabs(BottomMenu bottomMenu, LeftMenu leftMenu)
+    public PlaylistTabs(AppObjects appObjects)
     {
         super();
+        appObjects.setPlaylistTabs(this);
         ImageIcon tab1Icon = new ImageIcon("icons\\musicLogo.png");
         System.out.println("PlayList Tabs Adding...");
 
         PlaylistPanel allSongs = new PlaylistPanel();
+        appObjects.setAllSongsPanel(allSongs);
         this.addTab("All Songs",allSongs);
-        allSongs.addSong(new ImportMusicButton(bottomMenu,leftMenu,allSongs,allSongs));
-
+        allSongs.addSong(new ImportMusicButton(appObjects,appObjects.getAllSongsPanel()));
         PlaylistPanel favorites = new PlaylistPanel();
         this.add("Favorites" , favorites);
-        favorites.addSong(new ImportMusicButton(bottomMenu,leftMenu,favorites,allSongs));
+        favorites.addSong(new ImportMusicButton(appObjects,favorites));
 
-        addPlayListButton = new AddPlayListButton(this,bottomMenu,leftMenu,allSongs);
-        leftMenu.add(addPlayListButton);
+        addPlayListButton = new AddPlayListButton(appObjects);
+
+        appObjects.getLeftMenu().add(addPlayListButton);
 
         System.out.println("PlayList Tabs Added");
 

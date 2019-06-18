@@ -10,9 +10,10 @@ public class LeftMenu extends JPanel {
     private BottomMenu bottomMenu;
     AddPlayListButton addPlayListButton;
     public JPanel panePanel;
-    public LeftMenu(BottomMenu bottomMenu) {
+    public LeftMenu(AppObjects appObjects) {
         super();
         System.out.println("Left Menu Start Adding...");
+        appObjects.setLeftMenu(this);
         this.bottomMenu = bottomMenu;
         setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         this.setBackground(new Color(176 , 0 , 9));

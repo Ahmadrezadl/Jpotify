@@ -14,6 +14,7 @@ public class Main{
                     "Error 01",
                     JOptionPane.WARNING_MESSAGE);
         }
-        MainFrame mainFrame = new MainFrame("Jpotify");
+        AppObjects appObjects = new AppObjects();
+        MainFrame mainFrame = new MainFrame(appObjects);
     }
 }
