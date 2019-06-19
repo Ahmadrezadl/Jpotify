@@ -93,7 +93,7 @@ public class SongButton extends JButton implements ActionListener {
             public void mouseClicked(MouseEvent me) {
                 if(me.getButton() == MouseEvent.BUTTON3) {
                     int dialogButton = JOptionPane.YES_NO_OPTION;
-                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song?","Warning",dialogButton);
+                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
                     if(dialogResult == JOptionPane.YES_OPTION){
                         songButton.setVisible(false);
                     }

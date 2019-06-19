@@ -97,7 +97,7 @@ public class AdvancedPlayer
 			AudioDevice out = audio;
 			if (out != null)
 			{
-//				System.out.println(audio.getPosition());
+				System.out.println(audio.getPosition());
 				out.flush();
 //				System.out.println(audio.getPosition());
 				synchronized (this)
