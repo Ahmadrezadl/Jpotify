@@ -40,6 +40,8 @@ public class MainFrame extends JFrame{
         TopMenu topMenu = new TopMenu(appObjects);
         add(topMenu , BorderLayout.NORTH);
         BottomMenu bottomMenu = new BottomMenu(appObjects);
+        add(bottomMenu , BorderLayout.SOUTH);
+//        add(bottomMenu,BorderLayout.SOUTH);
         LeftMenu leftMenu = new LeftMenu(appObjects);
         add(leftMenu , BorderLayout.WEST);
         CenterMenu centerMenu = new CenterMenu(appObjects);

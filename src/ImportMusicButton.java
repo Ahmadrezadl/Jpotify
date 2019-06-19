@@ -7,6 +7,8 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.FileInputStream;
 //import org.apache.commons.net.*;
 import java.util.Comparator;
@@ -42,12 +44,32 @@ public class ImportMusicButton extends JButton implements ActionListener {
         chooser = new JFileChooser();
         filter = new FileNameExtensionFilter("Mp3 File", "mp3");
         chooser.setFileFilter(filter);
+        ImportMusicButton importMusicButton = this;
+        this.addMouseListener(new MouseListener() {
+            public void mousePressed(MouseEvent me) { }
+            public void mouseReleased(MouseEvent me) { }
+            public void mouseEntered(MouseEvent me) { }
+            public void mouseExited(MouseEvent me) { }
+            public void mouseClicked(MouseEvent me) {
+                if(me.getButton() == MouseEvent.BUTTON3) {
+                    int dialogButton = JOptionPane.YES_NO_OPTION;
+                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this PlayList?","Warning",dialogButton);
+                    if(dialogResult == JOptionPane.YES_OPTION){
 
+                        int index = appObjects.getPlaylistTabs().getSelectedIndex();
+
+                        appObjects.getPlaylistTabs().removeTabWithTitle(index);
+                    }
+
+                }
+            }
+        });
         System.out.println("Import Music Button Added!");
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         System.out.println("Opening file...");
 
         int returnVal = chooser.showOpenDialog(null);

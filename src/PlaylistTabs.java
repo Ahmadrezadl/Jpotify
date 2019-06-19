@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 public class PlaylistTabs extends JTabbedPane {
     AddPlayListButton addPlayListButton;
+
     public PlaylistTabs(AppObjects appObjects)
     {
         super();
         appObjects.setPlaylistTabs(this);
         ImageIcon tab1Icon = new ImageIcon("icons\\musicLogo.png");
         System.out.println("PlayList Tabs Adding...");
-
         PlaylistPanel allSongs = new PlaylistPanel();
         appObjects.setAllSongsPanel(allSongs);
         this.addTab("All Songs",allSongs);
@@ -31,6 +31,17 @@ public class PlaylistTabs extends JTabbedPane {
         appObjects.getLeftMenu().add(addPlayListButton);
 
         System.out.println("PlayList Tabs Added");
+
+    }
+    public void removeTabWithTitle(int i) {
+        String tabTitle = this.getTitleAt(i);
+        if(!(tabTitle.equals("All Songs") || tabTitle.equals("Favorites")))
+        this.remove(i);
+        else
+            JOptionPane.showMessageDialog(null,
+                    "Sorry You Can't Remove " + tabTitle + " Playlist!",
+                    "Error 02",
+                    JOptionPane.WARNING_MESSAGE);
 
     }
 }

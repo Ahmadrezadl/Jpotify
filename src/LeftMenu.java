@@ -14,10 +14,11 @@ public class LeftMenu extends JPanel {
         super();
         System.out.println("Left Menu Start Adding...");
         appObjects.setLeftMenu(this);
-        this.bottomMenu = bottomMenu;
+//        this.bottomMenu = bottomMenu;
+        Border border = BorderFactory.createLineBorder(Color.BLACK , 5);
+        this.setBorder(border);
         setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         this.setBackground(new Color(176 , 0 , 9));
-        Border border = BorderFactory.createLineBorder(new Color(176 , 0 , 9), 10);
         this.setBorder(border);
 
         panePanel = new JPanel();
