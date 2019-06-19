@@ -20,6 +20,7 @@ public class LeftMenu extends JPanel {
         setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         this.setBackground(new Color(176 , 0 , 9));
         this.setBorder(border);
+        //hgftyhjhyui
 
         panePanel = new JPanel();
         System.out.println("Left Menu Added!");
