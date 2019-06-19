@@ -33,7 +33,7 @@ public class MainFrame extends JFrame{
         System.out.println ("Main Frame Start Adding...");
         this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(100,100);
+//        this.setSize(100,100);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUndecorated(true);
         setLayout(new BorderLayout());

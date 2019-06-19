@@ -15,7 +15,7 @@ import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.awt.event.*;
 
 public class SongButton extends JButton implements ActionListener {
     String link;
@@ -84,6 +84,18 @@ public class SongButton extends JButton implements ActionListener {
             }
             this.setIcon(new ImageIcon(coverImage));
         }
+        SongButton songButton = this;
+        this.addMouseListener(new MouseListener() {
+            public void mousePressed(MouseEvent me) { }
+            public void mouseReleased(MouseEvent me) { }
+            public void mouseEntered(MouseEvent me) { }
+            public void mouseExited(MouseEvent me) { }
+            public void mouseClicked(MouseEvent me) {
+                if(me.getButton() == MouseEvent.BUTTON3) {
+                    songButton.setVisible(false);
+                }
+            }
+        });
         System.out.println("Song Button Created!");
     }
     public String getLink()

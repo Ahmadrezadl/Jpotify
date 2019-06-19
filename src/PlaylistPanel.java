@@ -21,15 +21,21 @@ public class PlaylistPanel extends JPanel {
     public void addSong(SongButton songButton)
     {
         boolean duplicate = false;
+        SongButton duplicatedButton = null;
             for (SongButton btn : songs) {
                 if (btn.getLink().equals(songButton.getLink())) {
                     duplicate = true;
+                    duplicatedButton = btn;
                     break;
                 }
             }
         if (!duplicate) {
             songs.add(songButton);
             this.add(songButton);
+        }
+        else
+        {
+            duplicatedButton.setVisible(true);
         }
     }
     public void addSong(ImportMusicButton importMusicButton)
