@@ -5,6 +5,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
+/**
+ * It keeps the components of the left panel of
+ */
+
 public class LeftMenu extends JPanel {
     private JLabel label;
     private BottomMenu bottomMenu;

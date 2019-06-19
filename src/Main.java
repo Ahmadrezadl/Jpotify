@@ -1,5 +1,9 @@
 import javax.swing.*;
-
+/**
+ * make frame & change the LookAndFeel
+ * @author G-squad menhaye Maryam
+ * @version 1.2
+ */
 public class Main{
     public static void main(String[]args)
     {

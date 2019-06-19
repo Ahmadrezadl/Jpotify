@@ -7,6 +7,20 @@ import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ * It builds:
+ * LoadingFrame
+ * mainFrame.
+ * It adds panels such as:
+ * LeftMenu > Which Keeps Buttons for Playlists and more
+ * BottomMenu > Which keeps cover of song and details.
+ * CenterMenu > Which keeps playlistTabs.
+ * etc...
+ * @author G-squad menhaye Maryam
+ * @version 1.2
+ *
+ */
+
 public class MainFrame extends JFrame{
     Image img;
     public MainFrame(AppObjects appObjects)  {
