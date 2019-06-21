@@ -22,7 +22,7 @@ public class TopMenu extends JPanel {
         this.mainFrame = appObjects.getMainFrame();
         setBackground(new Color(0x000000));
         setLayout(new BorderLayout());
-        ExitButton exitButton = new ExitButton();
+        ExitButton exitButton = new ExitButton(appObjects);
         this.setLayout(new FlowLayout(FlowLayout.RIGHT));
         this.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         add(exitButton);

@@ -4,8 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * It builds:
@@ -23,6 +26,7 @@ import java.io.IOException;
 
 public class MainFrame extends JFrame{
     Image img;
+    Scanner sc;
     public MainFrame(AppObjects appObjects)  {
         super("Jpotify");
         appObjects.setMainFrame(this);
@@ -61,8 +65,33 @@ public class MainFrame extends JFrame{
         CenterMenu centerMenu = new CenterMenu(appObjects);
         add(centerMenu , BorderLayout.CENTER);
         this.getContentPane().setBackground(new Color(176 , 0 , 9));
+        //Loading songs:_____________________________________________________________
+        File file = new File("musics.txt");
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        while(sc.hasNext())
+        {
+            String pl = sc.nextLine();
+            System.out.println(pl);
+            String sn = sc.nextLine();
+            System.out.println(sn);
+            for (PlaylistPanel p : appObjects.getPlaylists())
+            {
+                File music = new File(sn);
+                if(p.name.equals(pl))
+                {
+                    p.addSong(new SongButton(music.getAbsolutePath() ,music.getName() , appObjects , p));
+                }
+            }
+        }
+        //_____________________________________________________________________________
         this.setVisible(true);
         loadingFrame.setVisible(false);
+
+
         System.out.println("Main Frame Added!");
     }
     public void paintComponent(Graphics g)

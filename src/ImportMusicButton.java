@@ -65,6 +65,7 @@ public class ImportMusicButton extends JButton implements ActionListener {
                         int index = appObjects.getPlaylistTabs().getSelectedIndex();
 
                         appObjects.getPlaylistTabs().removeTabWithTitle(index);
+                        appObjects.getPlaylists().remove(playlistPanel);
                     }
 
                 }

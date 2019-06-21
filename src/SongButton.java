@@ -36,6 +36,10 @@ public class SongButton extends JButton implements ActionListener {
         this.name = name;
         this.leftMenu = appObjects.getLeftMenu();
         this.bottomMenu = appObjects.getBottomMenu();
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
+        this.setOpaque(false);
 //        this.playlist = playlist;
         this.addActionListener(this);
         try {
@@ -98,6 +102,7 @@ public class SongButton extends JButton implements ActionListener {
                     int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
                     if(dialogResult == JOptionPane.YES_OPTION){
                         songButton.setVisible(false);
+                        playlistPanel.songs.remove(songButton);
                     }
 
                 }

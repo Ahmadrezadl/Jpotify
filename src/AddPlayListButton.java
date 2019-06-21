@@ -39,7 +39,7 @@ public class AddPlayListButton extends JButton  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String name= JOptionPane.showInputDialog("Enter Name of PlayList: ");
         if(!(name.equals("") || name.equals(" "))) {
-            PlaylistPanel newPanel = new PlaylistPanel();
+            PlaylistPanel newPanel = new PlaylistPanel(appObjects,name);
             playlistTabs.add(name , newPanel);
             newPanel.addSong(new ImportMusicButton(appObjects , newPanel));
         }

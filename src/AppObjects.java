@@ -2,6 +2,7 @@ import javazoom.jl.player.Player;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * It holds all the components we've made so far such as buttons , playlist tabs and... .
@@ -22,6 +23,21 @@ public class AppObjects {
     private VolumeBar volumeBar;
     private JLabel percent;
     private AdvancedPlayer player;
+    private ArrayList<PlaylistPanel> playLists = new ArrayList<>();
+
+
+
+    public void addPlayList(PlaylistPanel p)
+    {
+        playLists.add(p);
+    }
+    public ArrayList<PlaylistPanel> getPlaylists() {
+        return playLists;
+    }
+
+    public void setPlaylists(ArrayList<PlaylistPanel> playlists) {
+        this.playLists = playlists;
+    }
 
     public void setPlayer(AdvancedPlayer player) {
         this.player = player;

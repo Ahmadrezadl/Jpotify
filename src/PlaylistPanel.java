@@ -5,18 +5,21 @@ import java.util.ArrayList;
 public class PlaylistPanel extends JPanel {
     ArrayList<SongButton> songs;
     int i;
-//    ImportMusicButton importMusicButton;
-
-    public PlaylistPanel()
+    AppObjects appObjects;
+    public String name;
+    public PlaylistPanel(AppObjects appObjects,String name)
     {
         super();
+        this.name = name;
+        this.appObjects = appObjects;
+
             this.setBackground(new Color(0x17091c));
-//        this.importMusicButton = importMusicButton;
         songs = new ArrayList<>();
         System.out.println("Playlist Panel Start adding...");
         i = 0;
         FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
         this.setLayout(layout);
+        appObjects.addPlayList(this);
         System.out.println("Playlist Panel Added!");
     }
     public void addSong(SongButton songButton)
@@ -36,6 +39,7 @@ public class PlaylistPanel extends JPanel {
         }
         else
         {
+            songs.add(songButton);
             duplicatedButton.setVisible(true);
         }
     }
