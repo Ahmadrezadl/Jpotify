@@ -23,14 +23,16 @@ public class SongButton extends JButton implements ActionListener {
     LeftMenu leftMenu;
     BottomMenu bottomMenu;
     FileInputStream music;
+    PlaylistPanel playlistPanel;
 
-    public SongButton(String link , String name ,AppObjects appObjects) {
+    public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
         System.out.println("Music Resumed");
         this.setToolTipText(name);
         this.setBorder(null);
         System.out.println("Song Button Start Creating...");
         this.link = link;
+        this.playlistPanel = playlistPanel;
         this.name = name;
         this.leftMenu = appObjects.getLeftMenu();
         this.bottomMenu = appObjects.getBottomMenu();
@@ -109,6 +111,7 @@ public class SongButton extends JButton implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+
         bottomMenu.setMusic(link);
     }
 }

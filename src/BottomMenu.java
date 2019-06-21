@@ -1,3 +1,4 @@
+import javafx.scene.media.MediaPlayer;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 import mpatric.mp3agic.ID3v2;
@@ -18,13 +19,24 @@ public class BottomMenu extends JPanel implements Runnable{
     PauseButton pauseButton;
     JLabel fileName;
     Thread t1;
+    MediaPlayer mediaPlayer;
     public BottomMenu(AppObjects appObjects) {
         super();
         appObjects.setBottomMenu(this);
+        VolumeBar volumeBar = new VolumeBar();
         System.out.println("Bottom Menu Start Creating...");
-        this.setLayout(new FlowLayout(FlowLayout.LEFT));
-        this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        this.setLayout(new GridLayout(1,3));
+        JPanel panelCenter = new JPanel();
+        JPanel panelLeft = new JPanel();
         this.setBackground(new Color(0 , 0 , 0));
+        panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
+        panelCenter.setLayout(new GridBagLayout());
+        panelLeft.setBackground(new Color(0 , 0 , 0));
+        panelLeft.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        panelCenter.setBackground(new Color(0 , 0 , 0));
+        this.add(panelLeft);
+        this.add(panelCenter);
+
         cover = new JLabel();
         try {
             Image coverImage = ImageIO.read(getClass().getResource("icons\\musicCover.png"));
@@ -35,8 +47,13 @@ public class BottomMenu extends JPanel implements Runnable{
             System.out.println(e);
         }
         pauseButton = new PauseButton(t1);
-        this.add(pauseButton);
+        panelCenter.add(pauseButton);
         System.out.println("New Pause Button Added");
+        JPanel panelRight = new JPanel();
+        panelRight.setLayout(new BorderLayout());
+        this.add(panelRight);
+        panelRight.setBackground(Color.BLACK);
+        panelRight.add(volumeBar,BorderLayout.EAST);
 
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
@@ -44,8 +61,8 @@ public class BottomMenu extends JPanel implements Runnable{
         fileName = new JLabel("<html>Title: <br> Artist: <br>Album:  <br>Year: <br>Genre: <br>File Name:</html>");
         fileName.setFont(new Font("Serif", Font.PLAIN, 20));
         fileName.setForeground(Color.WHITE);
-        this.add(cover);
-        this.add(fileName);
+        panelLeft.add(cover);panelLeft.add(fileName);
+
         System.out.println("Bottom Menu Added!");
 
     }
@@ -105,8 +122,7 @@ public class BottomMenu extends JPanel implements Runnable{
                         "<br>Artist:  " + songTag.getAlbumArtist() +
                         "<br>Album: " + songTag.getAlbum() +
                         "<br>Year: " + songTag.getYear() +
-                        "<br>Genre: " + songTag.getGenreDescription() +
-                        "<br>File Directory: " + song.getFilename() + "</html>");
+                        "<br>Genre: " + songTag.getGenreDescription() + "</html>");
 
             }
             else{
