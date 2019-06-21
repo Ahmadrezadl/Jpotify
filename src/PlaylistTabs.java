@@ -25,7 +25,10 @@ public class PlaylistTabs extends JTabbedPane {
         PlaylistPanel favorites = new PlaylistPanel();
         this.add("Favorites" , favorites);
         favorites.addSong(new ImportMusicButton(appObjects,favorites));
-
+        PlaylistPanel radio = new PlaylistPanel();
+        this.add("Radio" , radio);
+        RadioChannel iloveradio = new RadioChannel(0,appObjects);
+        radio.add(iloveradio);
         addPlayListButton = new AddPlayListButton(appObjects);
 
         appObjects.getLeftMenu().add(addPlayListButton);

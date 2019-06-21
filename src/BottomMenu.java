@@ -77,6 +77,41 @@ public class BottomMenu extends JPanel implements Runnable{
         System.out.println("Bottom Menu Added!");
 
     }
+    public void setMusic(BufferedInputStream in)
+    {
+        try {
+            if(!pauseButton.isPlaying)
+            {
+                t1.resume();
+                System.out.println("Music Resumed");
+                isPlaying = true;
+            }
+            player.close();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        try {
+            player = new AdvancedPlayer(in);
+        } catch (JavaLayerException e) {
+            e.printStackTrace();
+        }
+        appObjects.setPlayer(player);
+        t1 =new Thread(this);
+        t1.start();
+        fileName.setText("<html>Title: " + "I Love Radio" +
+                "<br>Online Stream" +
+                "<br>Language: English<br><br><br> "  + "</html>");
+        Image coverImage = null;
+        try {
+            coverImage = ImageIO.read(getClass().getResource("icons\\iloveradio.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        cover.setIcon(new ImageIcon(coverImage));
+        pauseButton.setT1(t1);
+    }
     public void setMusic(String filePath)
     {
         System.out.println("Loading Music Descriptions...");
