@@ -19,11 +19,18 @@ public class BottomMenu extends JPanel implements Runnable{
     PauseButton pauseButton;
     JLabel fileName;
     Thread t1;
-    MediaPlayer mediaPlayer;
+    VolumeBar volumeBar;
+    JLabel percent;
+    AppObjects appObjects;
     public BottomMenu(AppObjects appObjects) {
         super();
+        this.appObjects = appObjects;
         appObjects.setBottomMenu(this);
-        VolumeBar volumeBar = new VolumeBar();
+        VolumeBar volumeBar = new VolumeBar(appObjects);
+        appObjects.setVolumeBar(volumeBar);
+        percent = new JLabel(volumeBar.getValue() + "%");
+        appObjects.setPercent(percent);
+        percent.setForeground(Color.WHITE);
         System.out.println("Bottom Menu Start Creating...");
         this.setLayout(new GridLayout(1,3));
         JPanel panelCenter = new JPanel();
@@ -53,7 +60,11 @@ public class BottomMenu extends JPanel implements Runnable{
         panelRight.setLayout(new BorderLayout());
         this.add(panelRight);
         panelRight.setBackground(Color.BLACK);
-        panelRight.add(volumeBar,BorderLayout.EAST);
+        JPanel volumePanel = new JPanel();
+        panelRight.add(volumePanel,BorderLayout.EAST);
+        volumePanel.setBackground(Color.BLACK);
+        volumePanel.setLayout(new FlowLayout());
+        volumePanel.add(percent);volumePanel.add(volumeBar);
 
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
@@ -94,6 +105,7 @@ public class BottomMenu extends JPanel implements Runnable{
         try {
             Mp3File song = new Mp3File(filePath);
             player = new AdvancedPlayer(music);
+            appObjects.setPlayer(player);
             t1 =new Thread(this);
             t1.start();
             if(song.hasId3v1Tag()) {
@@ -132,8 +144,7 @@ public class BottomMenu extends JPanel implements Runnable{
                         "<br>Artist:  " + "Unknown Artist" +
                         "<br>Album: " + "Single" +
                         "<br>Year: " + "xxxx" +
-                        "<br>Genre: " + "Music" +
-                        "<br>File Directory: " + song.getFilename() + "</html>");
+                        "<br>Genre: " + "Music" + "</html>");
             }
             System.out.println("All Dv3v2 Setup");
         }

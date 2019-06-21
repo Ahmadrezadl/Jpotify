@@ -1,3 +1,8 @@
+import javazoom.jl.player.Player;
+import javazoom.jl.player.advanced.AdvancedPlayer;
+
+import javax.swing.*;
+
 /**
  * It holds all the components we've made so far such as buttons , playlist tabs and... .
  * @author G-squad menhaye Maryam
@@ -14,6 +19,33 @@ public class AppObjects {
     private PlaylistTabs playlistTabs;
     private TopMenu topMenu;
     private PlaylistPanel allSongsPanel;
+    private VolumeBar volumeBar;
+    private JLabel percent;
+    private AdvancedPlayer player;
+
+    public void setPlayer(AdvancedPlayer player) {
+        this.player = player;
+    }
+
+    public AdvancedPlayer getPlayer() {
+        return player;
+    }
+
+    public void setVolumeBar(VolumeBar volumeBar) {
+        this.volumeBar = volumeBar;
+    }
+
+    public void setPercent(JLabel percent) {
+        this.percent = percent;
+    }
+
+    public VolumeBar getVolumeBar() {
+        return volumeBar;
+    }
+
+    public JLabel getPercent() {
+        return percent;
+    }
 
     public PlaylistPanel getAllSongsPanel() {
         return allSongsPanel;
