@@ -18,6 +18,10 @@ public class AddPlayListButton extends JButton  implements ActionListener {
         this.bottomMenu = appObjects.getBottomMenu();
         this.leftMenu = appObjects.getLeftMenu();
         this.allSongs = appObjects.getAllSongsPanel();
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
+        this.setOpaque(false);
         setBorder(null);
         this.playlistTabs = appObjects.getPlaylistTabs();
         try {
@@ -34,9 +38,11 @@ public class AddPlayListButton extends JButton  implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String name= JOptionPane.showInputDialog("Enter Name of PlayList: ");
-        PlaylistPanel newPanel = new PlaylistPanel();
-        playlistTabs.add(name , newPanel);
-        newPanel.addSong(new ImportMusicButton(appObjects,newPanel));
+        if(!(name.equals("") || name.equals(" "))) {
+            PlaylistPanel newPanel = new PlaylistPanel();
+            playlistTabs.add(name , newPanel);
+            newPanel.addSong(new ImportMusicButton(appObjects , newPanel));
+        }
 
     }
 }

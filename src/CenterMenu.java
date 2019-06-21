@@ -8,11 +8,12 @@ public class CenterMenu extends JPanel {
         System.out.println("Center Menu Start Adding...");
         appObjects.setCenterMenu(this);
         setLayout(new BorderLayout());
-        this.setBackground(new Color(176 , 0 , 9));
+        this.setBackground(new Color(0x000000));
         Border border = BorderFactory.createLineBorder(Color.BLACK , 5);
         this.setBorder(border);
 
         PlaylistTabs coversMenu = new PlaylistTabs(appObjects);
+
         add(coversMenu , BorderLayout.CENTER);
         System.out.println("Center Menu Added!");
     }

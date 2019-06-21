@@ -1,5 +1,6 @@
 import javax.swing.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +16,8 @@ public class PlaylistTabs extends JTabbedPane {
     public PlaylistTabs(AppObjects appObjects)
     {
         super();
+        setForeground(new Color(0x17091c));
+        this.setBackground(new Color(0x17091c));
         appObjects.setPlaylistTabs(this);
         ImageIcon tab1Icon = new ImageIcon("icons\\musicLogo.png");
         System.out.println("PlayList Tabs Adding...");
@@ -47,4 +50,5 @@ public class PlaylistTabs extends JTabbedPane {
                     JOptionPane.WARNING_MESSAGE);
 
     }
+
 }

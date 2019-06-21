@@ -17,6 +17,7 @@ public class PauseButton extends JButton implements ActionListener , Runnable{
         super();
         this.setBorder(null);
         this.setBackground(Color.BLACK);
+        this.setFocusable(false);
         isPlaying = true;
         this.t1 = t1;
         try {

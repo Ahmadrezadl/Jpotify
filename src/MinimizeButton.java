@@ -10,6 +10,10 @@ public class MinimizeButton extends JButton implements ActionListener {
     public MinimizeButton(MainFrame mainFrame) {
         System.out.println("Minimize Button Start Adding...");
         this.mainFrame = mainFrame;
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
+        this.setOpaque(false);
         this.setToolTipText("Minimize Window");
         try {
             Image minimizeButton = ImageIO.read(getClass().getResource("icons\\minimizeButton.png"));

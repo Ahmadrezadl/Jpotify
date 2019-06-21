@@ -8,6 +8,10 @@ public class ExitButton extends JButton implements ActionListener {
     public ExitButton() {
         System.out.println("Exit Button Start Adding!");
         setBorder(null);
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
+        this.setOpaque(false);
         try {
             Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\exitButton.png"));
             this.setIcon(new ImageIcon(exitButtonIcon));

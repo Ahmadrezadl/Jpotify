@@ -10,6 +10,7 @@ public class PlaylistPanel extends JPanel {
     public PlaylistPanel()
     {
         super();
+            this.setBackground(new Color(0x17091c));
 //        this.importMusicButton = importMusicButton;
         songs = new ArrayList<>();
         System.out.println("Playlist Panel Start adding...");

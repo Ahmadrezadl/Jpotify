@@ -31,6 +31,10 @@ public class ImportMusicButton extends JButton implements ActionListener {
         this.leftMenu = appObjects.getLeftMenu();
         this.playlistPanel = playlistPanel;
         this.bottomMenu = appObjects.getBottomMenu();
+        this.setBorderPainted(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
+        this.setOpaque(false);
         try {
             Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\addMusicButton.png"));
             this.setIcon(new ImageIcon(exitButtonIcon));

@@ -22,6 +22,7 @@ public class BottomMenu extends JPanel implements Runnable{
     VolumeBar volumeBar;
     JLabel percent;
     AppObjects appObjects;
+    Color purple = new Color(0x000000);
     public BottomMenu(AppObjects appObjects) {
         super();
         this.appObjects = appObjects;
@@ -35,12 +36,12 @@ public class BottomMenu extends JPanel implements Runnable{
         this.setLayout(new GridLayout(1,3));
         JPanel panelCenter = new JPanel();
         JPanel panelLeft = new JPanel();
-        this.setBackground(new Color(0 , 0 , 0));
+        this.setBackground(purple);
         panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
         panelCenter.setLayout(new GridBagLayout());
-        panelLeft.setBackground(new Color(0 , 0 , 0));
+        panelLeft.setBackground(purple);
         panelLeft.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        panelCenter.setBackground(new Color(0 , 0 , 0));
+        panelCenter.setBackground(purple);
         this.add(panelLeft);
         this.add(panelCenter);
 
@@ -59,13 +60,12 @@ public class BottomMenu extends JPanel implements Runnable{
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BorderLayout());
         this.add(panelRight);
-        panelRight.setBackground(Color.BLACK);
+        panelRight.setBackground(purple);
         JPanel volumePanel = new JPanel();
         panelRight.add(volumePanel,BorderLayout.EAST);
-        volumePanel.setBackground(Color.BLACK);
+        volumePanel.setBackground(purple);
         volumePanel.setLayout(new FlowLayout());
         volumePanel.add(percent);volumePanel.add(volumeBar);
-
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
         this.setBorder(border);
@@ -153,6 +153,7 @@ public class BottomMenu extends JPanel implements Runnable{
                     Image newimg = image.getScaledInstance(166 , 168 , java.awt.Image.SCALE_SMOOTH);
                     cov = new ImageIcon(newimg);
                     cover.setIcon(cov);
+
                 }
                 else
                 {

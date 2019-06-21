@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * this class is made for the top menu.
  * top menu contains MinimizeButton , ExitButton and ... .
- * @author ElhamRazi
+ * @author G-Squad Menhaye Maryam
  * @version 1.1
  * @since 1.0
  */
@@ -20,7 +20,7 @@ public class TopMenu extends JPanel {
         appObjects.setTopMenu(this);
         System.out.println("Top Menu Start Adding...");
         this.mainFrame = appObjects.getMainFrame();
-        setBackground(Color.BLACK);
+        setBackground(new Color(0x000000));
         setLayout(new BorderLayout());
         ExitButton exitButton = new ExitButton();
         this.setLayout(new FlowLayout(FlowLayout.RIGHT));
