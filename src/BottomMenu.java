@@ -154,9 +154,8 @@ public class BottomMenu extends JPanel implements Runnable{
         }
         System.out.println("Music Descriptions Loaded!");
         pauseButton.setT1(t1);
-
-
-
+    }
+    public void playNext(){
 
     }
 
@@ -165,6 +164,8 @@ public class BottomMenu extends JPanel implements Runnable{
         try {
             System.out.println("Playing Music...");
             player.play();
+
+
             System.out.println("Music ended!");
         } catch (JavaLayerException e) {
             e.printStackTrace();

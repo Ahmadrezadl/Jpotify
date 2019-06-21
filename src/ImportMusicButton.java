@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 import java.io.FileInputStream;
 //import org.apache.commons.net.*;
 import java.util.Comparator;
@@ -42,6 +43,7 @@ public class ImportMusicButton extends JButton implements ActionListener {
         this.setBorder(null);
         this.setBackground(Color.BLACK);
         chooser = new JFileChooser();
+        chooser.setMultiSelectionEnabled(true);
         filter = new FileNameExtensionFilter("Mp3 File", "mp3");
         chooser.setFileFilter(filter);
         ImportMusicButton importMusicButton = this;
@@ -73,28 +75,28 @@ public class ImportMusicButton extends JButton implements ActionListener {
         System.out.println("Opening file...");
 
         int returnVal = chooser.showOpenDialog(null);
-        if (chooser.getSelectedFile().getName().charAt( chooser.getSelectedFile().getName().length()-1 ) == '3')
-        {
-            if(returnVal == 0) {
-                SongButton songButton = new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , appObjects,allSongsPanel);
-                allSongsPanel.addSong(songButton);
-                playlistPanel.addSong(new SongButton(chooser.getSelectedFile().getAbsolutePath() , chooser.getSelectedFile().getName() , appObjects,playlistPanel));
+        File[] files = chooser.getSelectedFiles();
+        for(File file : files) {
+            if (file.getName().charAt(file.getName().length() - 1) == '3') {
+                if (returnVal == 0) {
+                    SongButton songButton = new SongButton(file.getAbsolutePath() , file.getName() , appObjects , allSongsPanel);
+                    allSongsPanel.addSong(songButton);
+                    playlistPanel.addSong(new SongButton(file.getAbsolutePath() , file.getName() , appObjects , playlistPanel));
 
-                bottomMenu.pauseButton.setIcon(new ImageIcon(bottomMenu.pauseButton.pauseButtonIcon));
-                try {
-                    bottomMenu.setMusic(chooser.getSelectedFile().getAbsolutePath());
-                } catch (Exception t) {
-                    System.out.println(t);
+                    bottomMenu.pauseButton.setIcon(new ImageIcon(bottomMenu.pauseButton.pauseButtonIcon));
+                    try {
+                        bottomMenu.setMusic(file.getAbsolutePath());
+                    } catch (Exception t) {
+                        System.out.println(t);
+                    }
+                    System.out.println("File Opened!");
                 }
-                System.out.println("File Opened!");
+            } else {
+                JOptionPane.showMessageDialog(null ,
+                        "Cannot Open " + chooser.getSelectedFile().getName() ,
+                        "Error" ,
+                        JOptionPane.ERROR_MESSAGE , null);
             }
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,
-                    "Cannot Open " + chooser.getSelectedFile().getName(),
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE,null);
         }
     }
 }
