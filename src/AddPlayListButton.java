@@ -39,9 +39,27 @@ public class AddPlayListButton extends JButton  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String name= JOptionPane.showInputDialog("Enter Name of PlayList: ");
         if(!(name.equals("") || name.equals(" "))) {
-            PlaylistPanel newPanel = new PlaylistPanel(appObjects,name);
-            playlistTabs.add(name , newPanel);
-            newPanel.addSong(new ImportMusicButton(appObjects , newPanel));
+            boolean duplicate = false;
+            for(PlaylistPanel p : appObjects.getPlaylists())
+            {
+                if(p.name.equals(name))
+                {
+                    duplicate = true;
+                    break;
+                }
+            }
+            if(duplicate)
+            {
+                JOptionPane.showMessageDialog(null,
+                        "Please Choose Another Name For Your PlayList",
+                        "Name is Duplicate",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+            else {
+                PlaylistPanel newPanel = new PlaylistPanel(appObjects , name);
+                playlistTabs.add(name , newPanel);
+                newPanel.addSong(new ImportMusicButton(appObjects , newPanel));
+            }
         }
 
     }

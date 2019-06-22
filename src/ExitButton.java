@@ -55,6 +55,12 @@ public class ExitButton extends JButton implements ActionListener {
         } catch (IOException x) {
             // exception handling
         }
+        try(BufferedWriter o = new BufferedWriter(new FileWriter("username.txt"))) {
+            o.write(appObjects.getUserName().getText());
+
+        } catch (IOException x) {
+            // exception handling
+        }
             System.exit(1);
 
     }

@@ -24,8 +24,23 @@ public class AppObjects {
     private JLabel percent;
     private AdvancedPlayer player;
     private ArrayList<PlaylistPanel> playLists = new ArrayList<>();
+    private JButton userName;
 
+    public JButton getUserName() {
+        return userName;
+    }
 
+    public void setUserName(JButton userName) {
+        this.userName = userName;
+    }
+
+    public ArrayList<PlaylistPanel> getPlayLists() {
+        return playLists;
+    }
+
+    public void setPlayLists(ArrayList<PlaylistPanel> playLists) {
+        this.playLists = playLists;
+    }
 
     public void addPlayList(PlaylistPanel p)
     {
