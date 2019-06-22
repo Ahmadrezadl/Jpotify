@@ -1,3 +1,4 @@
+import com.sun.corba.se.impl.oa.poa.AOMEntry;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import javax.imageio.ImageIO;
@@ -13,7 +14,8 @@ public class PauseButton extends JButton implements ActionListener , Runnable{
     boolean isPlaying;
     Image playButtonIcon;
     Image pauseButtonIcon;
-    public PauseButton(Thread t1){
+    AppObjects appObjects;
+    public PauseButton(Thread t1, AppObjects appObjects){
         super();
         this.setBorder(null);
         this.setBackground(Color.BLACK);
@@ -37,13 +39,12 @@ public class PauseButton extends JButton implements ActionListener , Runnable{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(isPlaying) {
-            t1.suspend();
             isPlaying = false;
             this.setIcon(new ImageIcon(playButtonIcon));
             System.out.println("Music Paused");
         }
         else {
-            t1.resume();
+
             System.out.println("Music Resumed");
             this.setIcon(new ImageIcon(pauseButtonIcon));
             isPlaying = true;

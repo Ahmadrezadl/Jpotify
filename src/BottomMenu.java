@@ -64,7 +64,7 @@ public class BottomMenu extends JPanel implements Runnable{
         {
             System.out.println(e);
         }
-        pauseButton = new PauseButton(t1);
+        pauseButton = new PauseButton(t1,appObjects);
         playPanel.add(pauseButton);
         System.out.println("New Pause Button Added");
         JPanel panelRight = new JPanel();
@@ -202,6 +202,7 @@ public class BottomMenu extends JPanel implements Runnable{
         }
         System.out.println("Music Descriptions Loaded!");
         pauseButton.setT1(t1);
+
     }
     public void playNext(){
 
@@ -210,9 +211,15 @@ public class BottomMenu extends JPanel implements Runnable{
     @Override
     public void run() {
         try {
+            pauseButton.isPlaying = true;
             System.out.println("Playing Music...");
-            player.play();
+            while(player.play(1))
+            {
+                while(!pauseButton.isPlaying)
+                {
 
+                }
+            }
 
             System.out.println("Music ended!");
         } catch (JavaLayerException e) {
