@@ -25,6 +25,15 @@ public class AppObjects {
     private AdvancedPlayer player;
     private ArrayList<PlaylistPanel> playLists = new ArrayList<>();
     private JButton userName;
+    private ProgressBar progressBar;
+
+    public ProgressBar getProgressBar() {
+        return progressBar;
+    }
+
+    public void setProgressBar(ProgressBar progressBar) {
+        this.progressBar = progressBar;
+    }
 
     public JButton getUserName() {
         return userName;

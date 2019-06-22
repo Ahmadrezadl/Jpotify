@@ -91,7 +91,7 @@ public class AdvancedPlayer
 			ret = decodeFrame();
 		}
 
-//		if (!ret)
+		if (!ret)
 		{
 			// last frame, ensure all data flushed to the audio device.
 			AudioDevice out = audio;

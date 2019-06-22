@@ -7,11 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jl1.0.1" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../JTattoo-1.6.11.jar!/" />
+          <root url="jar://$MODULE_DIR$/../jl1.0.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -34,14 +34,24 @@ public class BottomMenu extends JPanel implements Runnable{
         percent.setForeground(Color.WHITE);
         System.out.println("Bottom Menu Start Creating...");
         this.setLayout(new GridLayout(1,3));
-        JPanel panelCenter = new JPanel();
+        JPanel playPanel = new JPanel();
         JPanel panelLeft = new JPanel();
         this.setBackground(purple);
+        JPanel panelCenter = new JPanel();
+        panelCenter.setLayout(new BorderLayout());
         panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
-        panelCenter.setLayout(new GridBagLayout());
+        playPanel.setLayout(new GridBagLayout());
+        playPanel.setBackground(Color.BLACK);
+        JPanel sliderPanel = new JPanel();
+        panelCenter.add(sliderPanel,BorderLayout.SOUTH);
+        panelCenter.add(playPanel,BorderLayout.CENTER);
         panelLeft.setBackground(purple);
+        panelCenter.setBackground(Color.BLACK);
         panelLeft.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-        panelCenter.setBackground(purple);
+        playPanel.setBackground(Color.BLACK);
+        ProgressBar progressBar = new ProgressBar(  appObjects);
+        sliderPanel.add(progressBar);
+        sliderPanel.setBackground(Color.BLACK);
         this.add(panelLeft);
         this.add(panelCenter);
 
@@ -55,7 +65,7 @@ public class BottomMenu extends JPanel implements Runnable{
             System.out.println(e);
         }
         pauseButton = new PauseButton(t1);
-        panelCenter.add(pauseButton);
+        playPanel.add(pauseButton);
         System.out.println("New Pause Button Added");
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BorderLayout());
@@ -111,6 +121,8 @@ public class BottomMenu extends JPanel implements Runnable{
         }
         cover.setIcon(new ImageIcon(coverImage));
         pauseButton.setT1(t1);
+        appObjects.getProgressBar().setVisible(false);
+
     }
     public void setMusic(String filePath)
     {
