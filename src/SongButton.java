@@ -117,6 +117,6 @@ public class SongButton extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        bottomMenu.setMusic(link);
+        bottomMenu.setMusic(link,0);
     }
 }

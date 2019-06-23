@@ -189,7 +189,11 @@ public class Player
 			position = out.getPosition();	
 		}
 		return position;
-	}		
+	}
+	public int getSecond()
+	{
+		return getPosition()/1000;
+	}
 	
 	/**
 	 * Decodes a single frame.

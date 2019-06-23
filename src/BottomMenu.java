@@ -22,6 +22,9 @@ public class BottomMenu extends JPanel implements Runnable{
     VolumeBar volumeBar;
     JLabel percent;
     AppObjects appObjects;
+    Mp3File song;
+    String filePath;
+    int p;
     Color purple = new Color(0x000000);
     public BottomMenu(AppObjects appObjects) {
         super();
@@ -92,7 +95,6 @@ public class BottomMenu extends JPanel implements Runnable{
         try {
             if(!pauseButton.isPlaying)
             {
-                t1.resume();
                 System.out.println("Music Resumed");
                 isPlaying = true;
             }
@@ -124,8 +126,10 @@ public class BottomMenu extends JPanel implements Runnable{
         appObjects.getProgressBar().setVisible(false);
 
     }
-    public void setMusic(String filePath)
+    public void setMusic(String filePath,int p)
     {
+        this.p = p;
+        this.filePath = filePath;
         System.out.println("Loading Music Descriptions...");
         try {
              music = new FileInputStream(filePath);
@@ -138,11 +142,13 @@ public class BottomMenu extends JPanel implements Runnable{
         try {
             if(!pauseButton.isPlaying)
             {
-                t1.resume();
                 System.out.println("Music Resumed");
                 isPlaying = true;
+                pauseButton.isPlaying = true;
             }
             player.close();
+//            t1.interrupt();
+
         }
         catch (Exception e)
         {
@@ -150,7 +156,8 @@ public class BottomMenu extends JPanel implements Runnable{
         }
         System.out.println("Last File Closed!");
         try {
-            Mp3File song = new Mp3File(filePath);
+            song = new Mp3File(filePath);
+            appObjects.setPlayingMusic(filePath);
             player = new AdvancedPlayer(music);
             appObjects.setPlayer(player);
             t1 =new Thread(this);
@@ -204,20 +211,28 @@ public class BottomMenu extends JPanel implements Runnable{
         pauseButton.setT1(t1);
 
     }
-    public void playNext(){
 
-    }
 
     @Override
     public void run() {
         try {
+            double start = p;
             pauseButton.isPlaying = true;
             System.out.println("Playing Music...");
+            double positionPercent;
+            System.out.println(start);
+            player.play(1);
+            for(int i = 0;i<p;i++) {
+                player.skipFrame();
+            }
             while(player.play(1))
             {
+                System.out.println(player.getSecond()+start/100);
+                positionPercent = (((((double)player.getPosition())/1000)/song.getLengthInSeconds())*100);
+                appObjects.getProgressBar().setValue((int)positionPercent);
                 while(!pauseButton.isPlaying)
                 {
-
+                    System.out.println("Test");
                 }
             }
 

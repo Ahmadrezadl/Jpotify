@@ -26,6 +26,15 @@ public class AppObjects {
     private ArrayList<PlaylistPanel> playLists = new ArrayList<>();
     private JButton userName;
     private ProgressBar progressBar;
+    private String playingMusic;
+
+    public String getPlayingMusic() {
+        return playingMusic;
+    }
+
+    public void setPlayingMusic(String playingMusic) {
+        this.playingMusic = playingMusic;
+    }
 
     public ProgressBar getProgressBar() {
         return progressBar;

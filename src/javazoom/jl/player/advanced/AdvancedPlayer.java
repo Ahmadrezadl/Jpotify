@@ -66,6 +66,17 @@ public class AdvancedPlayer
 		else audio = FactoryRegistry.systemRegistry().createAudioDevice();
 		audio.open(decoder = new Decoder());
 	}
+	public int getPosition()
+	{
+		int position = lastPosition;
+
+		AudioDevice out = audio;
+		if (out!=null)
+		{
+			position = out.getPosition();
+		}
+		return position;
+	}
 
 	public void play() throws JavaLayerException
 	{
@@ -112,7 +123,10 @@ public class AdvancedPlayer
 		}
 		return ret;
 	}
-
+	public double getSecond()
+	{
+		return (double)getPosition()/1000;
+	}
 	/**
 	 * Cloases this player. Any audio currently playing is stopped
 	 * immediately.
@@ -177,7 +191,7 @@ public class AdvancedPlayer
 	 * skips over a single frame
 	 * @return false	if there are no more frames to decode, true otherwise.
 	 */
-	protected boolean skipFrame() throws JavaLayerException
+	public boolean skipFrame() throws JavaLayerException
 	{
 		Header h = bitstream.readFrame();
 		if (h == null) return false;
