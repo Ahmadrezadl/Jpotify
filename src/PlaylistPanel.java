@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import javax.swing.JPopupMenu;
+import javax.swing.JMenuItem;
 
 public class PlaylistPanel extends JPanel {
     ArrayList<SongButton> songs;
@@ -54,6 +56,12 @@ public class PlaylistPanel extends JPanel {
     }
     public void addSong(ImportMusicButton importMusicButton)
     {
-        this.add(importMusicButton);
+        SettingsFrame settingsFrame =  new SettingsFrame(appObjects);
+        this.add(settingsFrame);
+        settingsFrame.add(importMusicButton);
+        RenamePlayListButton renamePlayListButton = new RenamePlayListButton(appObjects,importMusicButton);
+        settingsFrame.add(renamePlayListButton);
+        DeletePlayListButton deletePlayListButton = new DeletePlayListButton(appObjects,importMusicButton);
+        settingsFrame.add(deletePlayListButton);
     }
 }

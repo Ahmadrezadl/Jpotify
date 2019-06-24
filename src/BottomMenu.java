@@ -265,12 +265,18 @@ public class BottomMenu extends JPanel implements Runnable{
             }
             while(player.play(1))
             {
-//                System.out.println(player.getSecond()+start/100);
-                positionPercent = (((((double)player.getPosition())/1000)/song.getLengthInSeconds())*100);
-                appObjects.getProgressBar().setValue((int)positionPercent);
+                try{
+                if(appObjects.getProgressBar().isVisible()) {
+                    positionPercent = (((((double) player.getPosition()) / 1000) / song.getLengthInSeconds()) * 100);
+                    appObjects.getProgressBar().setValue((int) positionPercent);
+                }
                 while(!pauseButton.isPlaying)
                 {
                     int i = 0;
+                }}
+                catch (NullPointerException e)
+                {
+
                 }
             }
 

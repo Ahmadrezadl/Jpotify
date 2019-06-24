@@ -51,29 +51,27 @@ public class ImportMusicButton extends JButton implements ActionListener {
         filter = new FileNameExtensionFilter("Mp3 File", "mp3");
         chooser.setFileFilter(filter);
         ImportMusicButton importMusicButton = this;
-        this.addMouseListener(new MouseListener() {
-            public void mousePressed(MouseEvent me) { }
-            public void mouseReleased(MouseEvent me) { }
-            public void mouseEntered(MouseEvent me) { }
-            public void mouseExited(MouseEvent me) { }
-            public void mouseClicked(MouseEvent me) {
-                if(me.getButton() == MouseEvent.BUTTON3) {
-                    int dialogButton = JOptionPane.YES_NO_OPTION;
-                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this PlayList?","Warning",dialogButton);
-                    if(dialogResult == JOptionPane.YES_OPTION){
 
-                        int index = appObjects.getPlaylistTabs().getSelectedIndex();
-
-                        appObjects.getPlaylistTabs().removeTabWithTitle(index);
-                        appObjects.getPlaylists().remove(playlistPanel);
-                    }
-
-                }
-            }
-        });
         System.out.println("Import Music Button Added!");
     }
 
+    public void removePlayList(){
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this PlayList?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+
+            int index = appObjects.getPlaylistTabs().getSelectedIndex();
+
+            appObjects.getPlaylistTabs().removeTabWithTitle(index,playlistPanel);
+
+        }
+    }
+
+    public void renamePlayList(String name)
+    {
+        int index = appObjects.getPlaylistTabs().getSelectedIndex();
+        appObjects.getPlaylistTabs().renameTab(index,name);
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 

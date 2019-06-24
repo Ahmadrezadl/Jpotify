@@ -16,9 +16,11 @@ import java.util.Scanner;
 public class PlaylistTabs extends JTabbedPane {
     AddPlayListButton addPlayListButton;
     Scanner sc;
+    AppObjects appObjects;
     public PlaylistTabs(AppObjects appObjects)
     {
         super();
+        this.appObjects = appObjects;
         File file = new File("playLists.txt");
         try {
              sc = new Scanner(file);
@@ -59,16 +61,23 @@ public class PlaylistTabs extends JTabbedPane {
         System.out.println("PlayList Tabs Added");
 
     }
-    public void removeTabWithTitle(int i) {
+    public void removeTabWithTitle(int i,PlaylistPanel playlistPanel) {
         String tabTitle = this.getTitleAt(i);
-        if(!(tabTitle.equals("All Songs") || tabTitle.equals("Favorites")))
-        this.remove(i);
+        if(!(tabTitle.equals("All Songs") || tabTitle.equals("Favorites"))) {
+            this.remove(i);
+            appObjects.getPlaylists().remove(playlistPanel);
+        }
         else
+
             JOptionPane.showMessageDialog(null,
                     "Sorry You Can't Remove " + tabTitle + " Playlist!",
                     "Error 02",
                     JOptionPane.WARNING_MESSAGE);
 
+    }
+    public void renameTab(int i,String name)
+    {
+        this.setTitleAt(i,name);
     }
 
 }
