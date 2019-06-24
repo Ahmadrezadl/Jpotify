@@ -22,6 +22,12 @@ public class PlaylistPanel extends JPanel {
         appObjects.addPlayList(this);
         System.out.println("Playlist Panel Added!");
     }
+    public SongButton[] getSongs()
+    {
+        SongButton[] temp = new SongButton[songs.size()];
+        temp = songs.toArray(temp);
+        return temp;
+    }
     public void addSong(SongButton songButton)
     {
         boolean duplicate = false;
@@ -34,11 +40,14 @@ public class PlaylistPanel extends JPanel {
                 }
             }
         if (!duplicate) {
+            songs.remove(songButton);
+
             songs.add(songButton);
             this.add(songButton);
         }
         else
         {
+            songs.remove(songButton);
             songs.add(songButton);
             duplicatedButton.setVisible(true);
         }

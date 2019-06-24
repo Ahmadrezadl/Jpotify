@@ -28,6 +28,16 @@ public class AppObjects {
     private ProgressBar progressBar;
     private String playingMusic;
 
+    public SongButton getLastPlayed() {
+        return lastPlayed;
+    }
+
+    public void setLastPlayed(SongButton lastPlayed) {
+        this.lastPlayed = lastPlayed;
+    }
+
+    private SongButton lastPlayed;
+
     public String getPlayingMusic() {
         return playingMusic;
     }

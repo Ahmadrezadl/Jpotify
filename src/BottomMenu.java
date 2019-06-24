@@ -25,9 +25,11 @@ public class BottomMenu extends JPanel implements Runnable{
     Mp3File song;
     String filePath;
     int p;
+    boolean shuffle;
     Color purple = new Color(0x000000);
     public BottomMenu(AppObjects appObjects) {
         super();
+        shuffle = false;
         this.appObjects = appObjects;
         appObjects.setBottomMenu(this);
         VolumeBar volumeBar = new VolumeBar(appObjects);
@@ -69,6 +71,9 @@ public class BottomMenu extends JPanel implements Runnable{
         }
         pauseButton = new PauseButton(t1,appObjects);
         playPanel.add(pauseButton);
+        NextButton nextButton = new NextButton(appObjects);
+        playPanel.add(nextButton);
+
         System.out.println("New Pause Button Added");
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BorderLayout());
@@ -211,6 +216,38 @@ public class BottomMenu extends JPanel implements Runnable{
         pauseButton.setT1(t1);
 
     }
+    public void playNext()
+    {
+        SongButton willPLaying = null;
+//        if(shuffle)
+//        {
+//
+//        }
+//        else
+        {
+            SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
+            int j = 0;
+            for(j = 0; j < appObjects.getLastPlayed().playlistPanel.songs.size();j++)
+            {
+                if((temp[j].link.equals(appObjects.getLastPlayed().link)))
+                {
+                    break;
+                }
+            }
+            for(int i = j; i < appObjects.getLastPlayed().playlistPanel.songs.size();i++)
+            {
+                        if(!(temp[i].link.equals(appObjects.getLastPlayed().link)))
+                        {
+
+                            willPLaying = temp[i];System.out.println(willPLaying.name);
+                            break;
+                        }
+            }
+            willPLaying.play();
+
+
+        }
+    }
 
 
     @Override
@@ -222,17 +259,18 @@ public class BottomMenu extends JPanel implements Runnable{
             double positionPercent;
             System.out.println(start);
             player.play(1);
+
             for(int i = 0;i<p;i++) {
                 player.skipFrame();
             }
             while(player.play(1))
             {
-                System.out.println(player.getSecond()+start/100);
+//                System.out.println(player.getSecond()+start/100);
                 positionPercent = (((((double)player.getPosition())/1000)/song.getLengthInSeconds())*100);
                 appObjects.getProgressBar().setValue((int)positionPercent);
                 while(!pauseButton.isPlaying)
                 {
-                    System.out.println("Test");
+                    int i = 0;
                 }
             }
 
