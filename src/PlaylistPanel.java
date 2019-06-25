@@ -122,11 +122,16 @@ public class PlaylistPanel extends JPanel {
     public void addSong(ImportMusicButton importMusicButton)
     {
         settingsFrame =  new SettingsFrame(appObjects);
+        SettingsFrame s = settingsFrame;
         this.add(settingsFrame);
         settingsFrame.add(importMusicButton);
         RenamePlayListButton renamePlayListButton = new RenamePlayListButton(appObjects,importMusicButton);
         settingsFrame.add(renamePlayListButton);
         DeletePlayListButton deletePlayListButton = new DeletePlayListButton(appObjects,importMusicButton);
         settingsFrame.add(deletePlayListButton);
+        SearchButton searchButton = new SearchButton(appObjects,importMusicButton);
+        settingsFrame.add(searchButton);
+
+
     }
 }

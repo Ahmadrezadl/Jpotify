@@ -58,7 +58,6 @@ public class AlbumButton extends JButton implements ActionListener {
         }
         for(SongButton songButton : playlistPanel.songs)
         {
-            System.out.println(songButton.link +" = "+songButton.getAlbum());
             if (songButton.getAlbum().equals(this.name))
             {
                 songButton.setVisible(true);
