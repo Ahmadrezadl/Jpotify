@@ -3,9 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class ExitButton extends JButton implements ActionListener {
     AppObjects appObjects;
@@ -42,6 +40,15 @@ public class ExitButton extends JButton implements ActionListener {
         } catch (IOException x) {
             // exception handling
         }
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(new File("musics.txt"));
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+        writer.print("");
+        writer.close();
+
         try(BufferedWriter out = new BufferedWriter(new FileWriter("musics.txt"))) {
             for(PlaylistPanel playList : appObjects.getPlaylists())
             {

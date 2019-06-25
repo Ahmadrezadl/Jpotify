@@ -59,6 +59,8 @@ public class AddPlayListButton extends JButton  implements ActionListener {
                 PlaylistPanel newPanel = new PlaylistPanel(appObjects , name);
                 playlistTabs.add(name , newPanel);
                 newPanel.addSong(new ImportMusicButton(appObjects , newPanel));
+                DualListBox d = new DualListBox(appObjects,newPanel);
+
             }
         }
 

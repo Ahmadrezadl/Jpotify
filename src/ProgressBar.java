@@ -11,5 +11,6 @@ public class ProgressBar extends JProgressBar {
         this.setFocusable(false);
         this.setPreferredSize(new Dimension(500,50));
         appObjects.setProgressBar(this);
+
     }
 }

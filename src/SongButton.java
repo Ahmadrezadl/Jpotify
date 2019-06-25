@@ -91,7 +91,6 @@ public class SongButton extends JButton implements ActionListener {
             }
             this.setIcon(new ImageIcon(coverImage));
         }
-        SongButton songButton = this;
         this.addMouseListener(new MouseListener() {
             public void mousePressed(MouseEvent me) { }
             public void mouseReleased(MouseEvent me) { }
@@ -99,19 +98,22 @@ public class SongButton extends JButton implements ActionListener {
             public void mouseExited(MouseEvent me) { }
             public void mouseClicked(MouseEvent me) {
                 if(me.getButton() == MouseEvent.BUTTON3) {
-                    int dialogButton = JOptionPane.YES_NO_OPTION;
-                    int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
-                    if(dialogResult == JOptionPane.YES_OPTION){
-                        songButton.setVisible(false);
-                        playlistPanel.songs.remove(songButton);
-                    }
 
+                    remove();
                 }
             }
         });
         System.out.println("Song Button Created!");
     }
 
+    public void remove(){
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
+        if(dialogResult == JOptionPane.YES_OPTION){
+            this.setVisible(false);
+            playlistPanel.songs.remove(this);
+        }
+    }
 
     public void play (){
         appObjects.setLastPlayed(this);

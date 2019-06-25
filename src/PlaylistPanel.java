@@ -30,28 +30,41 @@ public class PlaylistPanel extends JPanel {
         temp = songs.toArray(temp);
         return temp;
     }
+
+    public String[] getNames(){
+        ArrayList<String> songsName = new ArrayList<>();
+        for(SongButton song : songs)
+        {
+            songsName.add(song.name);
+        }
+        String[] temp = new String[songs.size()];
+        temp = songsName.toArray(temp);
+        return temp;
+    }
     public void addSong(SongButton songButton)
     {
         boolean duplicate = false;
-        SongButton duplicatedButton = null;
+        SongButton duplicatedButton= null;
             for (SongButton btn : songs) {
                 if (btn.getLink().equals(songButton.getLink())) {
                     duplicate = true;
-                    duplicatedButton = btn;
+                    songs.remove(songButton);
+                    songs.remove(btn);
                     break;
                 }
             }
         if (!duplicate) {
             songs.remove(songButton);
-
             songs.add(songButton);
             this.add(songButton);
+            songButton.setVisible(true);
         }
         else
         {
             songs.remove(songButton);
             songs.add(songButton);
-            duplicatedButton.setVisible(true);
+            this.add(songButton);
+            songButton.setVisible(true);
         }
     }
     public void addSong(ImportMusicButton importMusicButton)
