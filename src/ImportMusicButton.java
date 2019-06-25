@@ -54,7 +54,6 @@ public class ImportMusicButton extends JButton implements ActionListener {
         if(dialogResult == JOptionPane.YES_OPTION){
 
             int index = appObjects.getPlaylistTabs().getSelectedIndex();
-
             appObjects.getPlaylistTabs().removeTab(index,playlistPanel);
 
         }
@@ -64,6 +63,8 @@ public class ImportMusicButton extends JButton implements ActionListener {
     {
         int index = appObjects.getPlaylistTabs().getSelectedIndex();
         appObjects.getPlaylistTabs().renameTab(index,name);
+        playlistPanel.name = name;
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {

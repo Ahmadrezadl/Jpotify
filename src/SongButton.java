@@ -16,6 +16,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.event.*;
+import java.util.Objects;
 
 public class SongButton extends JButton implements ActionListener {
     String link;
@@ -154,5 +155,18 @@ public class SongButton extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         this.play();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SongButton that = (SongButton) o;
+        return Objects.equals(link , that.link);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(link);
     }
 }
