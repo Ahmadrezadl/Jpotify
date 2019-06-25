@@ -31,7 +31,7 @@ public class ExitButton extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
             System.out.println("Exiting Program...");
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("playLists.txt"))) {
+         try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("playLists.txt"))) {
             for(PlaylistPanel playList : appObjects.getPlaylists())
             {
                 bufferedWriter.write(playList.name+"\n");

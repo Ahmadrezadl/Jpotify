@@ -61,7 +61,7 @@ public class PlaylistTabs extends JTabbedPane {
         System.out.println("PlayList Tabs Added");
 
     }
-    public void removeTabWithTitle(int i,PlaylistPanel playlistPanel) {
+    public void removeTab(int i, PlaylistPanel playlistPanel) {
         String tabTitle = this.getTitleAt(i);
         if(!(tabTitle.equals("All Songs") || tabTitle.equals("Favorites"))) {
             this.remove(i);

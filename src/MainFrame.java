@@ -94,9 +94,5 @@ public class MainFrame extends JFrame{
 
         System.out.println("Main Frame Added!");
     }
-    public void paintComponent(Graphics g)
-    {
-        g.drawImage(img,0,0,this);
-    }
 
 }

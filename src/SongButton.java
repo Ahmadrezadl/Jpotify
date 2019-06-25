@@ -136,7 +136,7 @@ public class SongButton extends JButton implements ActionListener {
         int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
         if(dialogResult == JOptionPane.YES_OPTION){
             this.setVisible(false);
-            for(SongButton s : playlistPanel.songs)
+//            for(SongButton s : playlistPanel.songs)
 
             playlistPanel.songs.remove(this);
             playlistPanel.remove(this);

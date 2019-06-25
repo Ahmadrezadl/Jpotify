@@ -29,7 +29,7 @@ public class SearchButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String name= JOptionPane.showInputDialog("Enter Name of PlayList: ");
+        String name= JOptionPane.showInputDialog("Search for: ");
         for(SongButton s : importMusicButton.playlistPanel.songs)
         {
             if(s.name.toLowerCase().contains(name.toLowerCase()))
