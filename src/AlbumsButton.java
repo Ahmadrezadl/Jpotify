@@ -33,7 +33,15 @@ public class AlbumsButton extends JButton implements ActionListener {
             p.settingsFrame.setVisible(false);
             for(AlbumButton a : p.albums)
             {
-            a.setVisible(true);
+                int i = 0;
+                for(SongButton s : p.songs)
+                {
+                    if(a.name.equals(s.getAlbum()))
+                        i++;
+                }
+                System.out.println(i);
+                if(i > 2)
+                a.setVisible(true);
             }
             for(SongButton s : p.songs)
             {
