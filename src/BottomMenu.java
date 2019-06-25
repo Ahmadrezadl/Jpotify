@@ -1,4 +1,3 @@
-import javafx.scene.media.MediaPlayer;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 import mpatric.mp3agic.ID3v2;
@@ -69,6 +68,7 @@ public class BottomMenu extends JPanel implements Runnable{
         {
             System.out.println(e);
         }
+        playPanel.add(new PreviousButton(appObjects));
         pauseButton = new PauseButton(t1,appObjects);
         playPanel.add(pauseButton);
         NextButton nextButton = new NextButton(appObjects);
@@ -242,6 +242,37 @@ public class BottomMenu extends JPanel implements Runnable{
                             willPLaying = temp[i];System.out.println(willPLaying.name);
                             break;
                         }
+            }
+            willPLaying.play();
+
+
+        }
+    }
+    public void playPrevious(){
+        SongButton willPLaying = null;
+//        if(shuffle)
+//        {
+//
+//        }
+//        else
+        {
+            SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
+            int j;
+            for(j = appObjects.getLastPlayed().playlistPanel.songs.size()-1; j > -1 ;j--)
+            {
+                if((temp[j].link.equals(appObjects.getLastPlayed().link)))
+                {
+                    break;
+                }
+            }
+            for(int i = j; i > -1;i--)
+            {
+                if(!(temp[i].link.equals(appObjects.getLastPlayed().link)))
+                {
+
+                    willPLaying = temp[i];System.out.println(willPLaying.name);
+                    break;
+                }
             }
             willPLaying.play();
 
