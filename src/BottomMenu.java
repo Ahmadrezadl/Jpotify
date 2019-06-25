@@ -25,9 +25,11 @@ public class BottomMenu extends JPanel implements Runnable{
     String filePath;
     int p;
     boolean shuffle;
+    long lastFrame;
     Color purple = new Color(0x000000);
     public BottomMenu(AppObjects appObjects) {
         super();
+        lastFrame = 0;
         shuffle = false;
         this.appObjects = appObjects;
         appObjects.setBottomMenu(this);
@@ -284,13 +286,16 @@ public class BottomMenu extends JPanel implements Runnable{
     @Override
     public void run() {
         try {
+            if(p == 0)
+            {
+                appObjects.getProgressBar().progressBarVal = 0;
+            }
             double start = p;
             pauseButton.isPlaying = true;
             System.out.println("Playing Music...");
             double positionPercent;
             System.out.println(start);
             player.play(1);
-
             for(int i = 0;i<p;i++) {
                 player.skipFrame();
             }
@@ -298,8 +303,9 @@ public class BottomMenu extends JPanel implements Runnable{
             {
                 try{
                 if(appObjects.getProgressBar().isVisible()) {
+
                     positionPercent = (((((double) player.getPosition()) / 1000) / song.getLengthInSeconds()) * 100);
-                    appObjects.getProgressBar().setValue((int) positionPercent);
+                    appObjects.getProgressBar().setValue((int) positionPercent+appObjects.getProgressBar().progressBarVal);
                 }
                 while(!pauseButton.isPlaying)
                 {

@@ -37,6 +37,7 @@ import javazoom.jl.player.FactoryRegistry;
 public class AdvancedPlayer
 {
 	/** The MPEG audio bitstream.*/
+	/** The MPEG audio bitstream.*/
 	private Bitstream bitstream;
 	/** The MPEG audio decoder. */
 	private Decoder decoder;
@@ -122,6 +123,17 @@ public class AdvancedPlayer
 			}
 		}
 		return ret;
+	}
+
+	public long findNumbersOfFrame() throws JavaLayerException {
+		boolean ret = true;
+		long size = 0;
+		while(ret)
+		{
+			ret = skipFrame();
+			size++;
+		}
+		return size;
 	}
 	public double getSecond()
 	{
