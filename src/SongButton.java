@@ -25,6 +25,7 @@ public class SongButton extends JButton implements ActionListener {
     FileInputStream music;
     PlaylistPanel playlistPanel;
     AppObjects appObjects;
+    ImageIcon cov;
     public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
         this.appObjects = appObjects;
@@ -64,7 +65,7 @@ public class SongButton extends JButton implements ActionListener {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                ImageIcon cov = new ImageIcon(img);
+                 cov = new ImageIcon(img);
                 Image image = cov.getImage();
                 Image newimg = image.getScaledInstance(166 , 168 , java.awt.Image.SCALE_SMOOTH);
                 cov = new ImageIcon(newimg);
@@ -75,6 +76,7 @@ public class SongButton extends JButton implements ActionListener {
                 Image coverImage = null;
                 try {
                     coverImage = ImageIO.read(getClass().getResource("icons\\musicCover.png"));
+                    cov = new ImageIcon(coverImage);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -86,6 +88,7 @@ public class SongButton extends JButton implements ActionListener {
             Image coverImage = null;
             try {
                 coverImage = ImageIO.read(getClass().getResource("icons\\musicCover.png"));
+                cov = new ImageIcon(coverImage);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -106,12 +109,37 @@ public class SongButton extends JButton implements ActionListener {
         System.out.println("Song Button Created!");
     }
 
+    public String getAlbum(){
+        Mp3File song = null;
+        String temp;
+        try {
+            song = new Mp3File(link);
+        } catch (IOException | InvalidDataException | UnsupportedTagException e) {
+            e.printStackTrace();
+        }
+        ID3v2 songTag;
+        if(song.hasId3v1Tag()) {
+            songTag = song.getId3v2Tag();
+            temp = songTag.getAlbum();
+        }
+        else{
+            temp = "Single";
+        }
+        if (temp == null)
+        {
+            return "Single";
+        }
+        return temp;
+    }
     public void remove(){
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
         if(dialogResult == JOptionPane.YES_OPTION){
             this.setVisible(false);
+            for(SongButton s : playlistPanel.songs)
+
             playlistPanel.songs.remove(this);
+            playlistPanel.remove(this);
         }
     }
 

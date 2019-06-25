@@ -6,12 +6,15 @@ import javax.swing.JMenuItem;
 
 public class PlaylistPanel extends JPanel {
     ArrayList<SongButton> songs;
+    ArrayList<AlbumButton> albums;
     int i;
+    SettingsFrame settingsFrame;
     AppObjects appObjects;
     public String name;
     public PlaylistPanel(AppObjects appObjects,String name)
     {
         super();
+        albums = new ArrayList<>();
         this.name = name;
         this.appObjects = appObjects;
 
@@ -57,19 +60,68 @@ public class PlaylistPanel extends JPanel {
             songs.remove(songButton);
             songs.add(songButton);
             this.add(songButton);
+            boolean firstInAlbum = true;
+            for(AlbumButton albumButton : albums)
+            {
+                if(albumButton.name.equals(songButton.getAlbum()))
+                {
+                    firstInAlbum = false;
+                    albumButton.songs.add(songButton);
+                    break;
+                }
+            }
+            if(firstInAlbum)
+            {
+                AlbumButton b = new AlbumButton(songButton.getAlbum(),appObjects,this,songButton);
+                albums.add(b);
+                this.add(b);
+
+                b.setVisible(true);
+            }
+            songs.add(songButton);
             songButton.setVisible(true);
+            this.refresh();
         }
         else
         {
             songs.remove(songButton);
             songs.add(songButton);
-            this.add(songButton);
             songButton.setVisible(true);
+        }
+    }
+
+    public void refresh(){
+        if(appObjects.showMode == 1) {
+            for (PlaylistPanel p : appObjects.getPlayLists()) {
+                if (!p.name.equals("Radio"))
+                    p.settingsFrame.setVisible(false);
+                for (AlbumButton a : p.albums) {
+                    a.setVisible(true);
+                }
+                for (SongButton s : p.songs) {
+                    s.setVisible(false);
+                }
+            }
+        }
+        else
+        {
+            for(PlaylistPanel p :appObjects.getPlayLists())
+            {
+                if(!p.name.equals("Radio")) {
+                    p.settingsFrame.setVisible(true);
+                    for (AlbumButton a : p.albums) {
+                        a.setVisible(false);
+                    }
+                    for (SongButton s : p.songs) {
+                        s.setVisible(true);
+                    }
+                }
+            }
         }
     }
     public void addSong(ImportMusicButton importMusicButton)
     {
-        SettingsFrame settingsFrame =  new SettingsFrame(appObjects);
+        settingsFrame =  new SettingsFrame(appObjects);
         this.add(settingsFrame);
         settingsFrame.add(importMusicButton);
         RenamePlayListButton renamePlayListButton = new RenamePlayListButton(appObjects,importMusicButton);

@@ -27,11 +27,14 @@ public class AppObjects {
     private JButton userName;
     private ProgressBar progressBar;
     private String playingMusic;
+    int showMode;
 
     public SongButton getLastPlayed() {
         return lastPlayed;
     }
-
+    public AppObjects(){
+        showMode = 0;
+    }
     public void setLastPlayed(SongButton lastPlayed) {
         this.lastPlayed = lastPlayed;
     }

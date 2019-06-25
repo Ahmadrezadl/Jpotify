@@ -20,5 +20,16 @@ public class Main{
         }
         AppObjects appObjects = new AppObjects();
         MainFrame mainFrame = new MainFrame(appObjects);
+        for (PlaylistPanel p : appObjects.getPlayLists())
+        {
+            for(AlbumButton a : p.albums)
+            {
+                a.setVisible(false);
+            }
+            for(SongButton s : p.songs)
+            {
+                s.setVisible(true);
+            }
+        }
     }
 }

@@ -226,7 +226,7 @@ public class BottomMenu extends JPanel implements Runnable{
 //        else
         {
             SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
-            int j = 0;
+            int j;
             for(j = 0; j < appObjects.getLastPlayed().playlistPanel.songs.size();j++)
             {
                 if((temp[j].link.equals(appObjects.getLastPlayed().link)))
@@ -303,7 +303,7 @@ public class BottomMenu extends JPanel implements Runnable{
                 }
                 while(!pauseButton.isPlaying)
                 {
-                    int i = 0;
+                    System.out.println("Music Paused");
                 }}
                 catch (NullPointerException e)
                 {
