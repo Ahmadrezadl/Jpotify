@@ -16,6 +16,8 @@ public class LeftMenu extends JPanel {
     public JPanel panePanel;
     public LeftMenu(AppObjects appObjects) {
         super();
+        AlbumsButton albumsButton = new AlbumsButton(appObjects);
+        MusicsButton musicsButton = new MusicsButton(appObjects);
         System.out.println("Left Menu Start Adding...");
         appObjects.setLeftMenu(this);
         Border border = BorderFactory.createLineBorder(Color.BLACK , 5);
@@ -24,6 +26,10 @@ public class LeftMenu extends JPanel {
         this.setBackground(new Color(0x080825));
         this.setBorder(border);
         panePanel = new JPanel();
+        this.add(musicsButton);
+        this.add(Box.createRigidArea(new Dimension(0, 10)));
+        this.add(albumsButton);
+        this.add(Box.createRigidArea(new Dimension(0, 20)));
         System.out.println("Left Menu Added!");
     }
 }                                                     
