@@ -142,6 +142,36 @@ public class SongButton extends JButton implements ActionListener {
             playlistPanel.songs.remove(this);
             playlistPanel.remove(this);
             SongButton debug = null;
+            PlaylistPanel playlistPaneldebug = null;
+            if(playlistPanel.name.equals("All Songs"))
+            {
+                for(PlaylistPanel p : appObjects.getPlayLists())
+                {
+                    for(SongButton s : p.getSongs())
+                    {
+                        if(s.link.equals(this.link))
+                        {
+                            debug = s;
+                            playlistPaneldebug = p;
+                        }
+                    }
+                }
+                playlistPaneldebug.remove(debug);
+                playlistPaneldebug.songs.remove(debug);
+                for(PlaylistPanel p : appObjects.getPlayLists())
+                {
+                    for(SongButton s : p.getSongs())
+                    {
+                        if(s.link.equals(this.link))
+                        {
+                            debug = s;
+                            playlistPaneldebug = p;
+                        }
+                    }
+                }
+                playlistPaneldebug.remove(debug);
+                playlistPaneldebug.songs.remove(debug);
+            }
             for(SongButton s : playlistPanel.songs)
             {
                 if(s.link.equals(link))
