@@ -78,6 +78,7 @@ public class ImportMusicButton extends JButton implements ActionListener {
                 if (returnVal == 0) {
                     SongButton songButton = new SongButton(file.getAbsolutePath() , file.getName() , appObjects , allSongsPanel);
                     allSongsPanel.addSong(songButton);
+                    if(!playlistPanel.name.equals("All Songs"))
                     playlistPanel.addSong(new SongButton(file.getAbsolutePath() , file.getName() , appObjects , playlistPanel));
 
                     bottomMenu.pauseButton.setIcon(new ImageIcon(bottomMenu.pauseButton.pauseButtonIcon));
