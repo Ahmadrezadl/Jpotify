@@ -22,7 +22,7 @@ public class PlaylistPanel extends JPanel {
         songs = new ArrayList<>();
         System.out.println("Playlist Panel Start adding...");
         i = 0;
-        FlowLayout layout = new FlowLayout(FlowLayout.LEFT);
+        NewFlowLayout layout = new NewFlowLayout(FlowLayout.LEFT);
         this.setLayout(layout);
         appObjects.addPlayList(this);
         System.out.println("Playlist Panel Added!");
