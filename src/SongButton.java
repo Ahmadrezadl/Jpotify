@@ -138,9 +138,19 @@ public class SongButton extends JButton implements ActionListener {
         if(dialogResult == JOptionPane.YES_OPTION){
             this.setVisible(false);
 //            for(SongButton s : playlistPanel.songs)
-
+            String link = this.link;
             playlistPanel.songs.remove(this);
             playlistPanel.remove(this);
+            SongButton debug = null;
+            for(SongButton s : playlistPanel.songs)
+            {
+                if(s.link.equals(link))
+                {
+
+                    debug  = s;
+                }
+            }
+            playlistPanel.songs.remove(debug);
         }
     }
 

@@ -40,7 +40,8 @@ public class PlaylistTabs extends JTabbedPane {
         allSongs.addSong(new ImportMusicButton(appObjects,appObjects.getAllSongsPanel()));
          name = sc.nextLine();
         PlaylistPanel favorites = new PlaylistPanel(appObjects,name);
-        this.add(name , favorites);
+        JScrollPane favoritesPane = new JScrollPane(favorites);
+        this.add(name , favoritesPane);
         favorites.addSong(new ImportMusicButton(appObjects,favorites));
         name = sc.nextLine();
         PlaylistPanel radio = new PlaylistPanel(appObjects,name);
