@@ -27,6 +27,7 @@ public class SongButton extends JButton implements ActionListener {
     PlaylistPanel playlistPanel;
     AppObjects appObjects;
     ImageIcon cov;
+    Mp3File song;
     public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
         this.appObjects = appObjects;
@@ -50,7 +51,7 @@ public class SongButton extends JButton implements ActionListener {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Mp3File song = null;
+        song = null;
         try {
             song = new Mp3File(link);
         } catch (IOException | InvalidDataException | UnsupportedTagException e) {
@@ -191,6 +192,14 @@ public class SongButton extends JButton implements ActionListener {
     public String getLink()
     {
         return link;
+    }
+    public String getTitle(){
+        if(song.hasId3v2Tag())
+        {
+            String title = song.getId3v2Tag().getTitle();
+            return title;
+        }
+        else return "q";
     }
     @Override
     public void actionPerformed(ActionEvent e) {

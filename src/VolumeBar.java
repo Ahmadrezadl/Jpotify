@@ -11,8 +11,14 @@ import javax.sound.sampled.AudioSystem;
 
 public class VolumeBar extends JSlider {
     VolumeBar volumeBar;
+    AppObjects appObjects;
+    FloatControl volumeControl;
     public VolumeBar(AppObjects appObjects){
         super();
+        this.appObjects = appObjects;
+        setUp();
+    }
+    private void setUp(){
         this.volumeBar = this;
         this.setBackground(Color.BLACK);
         this.setPreferredSize(new Dimension(100,20));
@@ -23,7 +29,7 @@ public class VolumeBar extends JSlider {
             {
                 Port outline = (Port) AudioSystem.getLine(source);
                 outline.open();
-                FloatControl volumeControl = (FloatControl) outline.getControl(FloatControl.Type.VOLUME);
+                volumeControl = (FloatControl) outline.getControl(FloatControl.Type.VOLUME);
                 this.setValue((int)volumeControl.getValue()*100);
             }
             catch (LineUnavailableException ex)
@@ -42,7 +48,7 @@ public class VolumeBar extends JSlider {
                     {
                         Port outline = (Port) AudioSystem.getLine(source);
                         outline.open();
-                        FloatControl volumeControl = (FloatControl) outline.getControl(FloatControl.Type.VOLUME);
+                         volumeControl = (FloatControl) outline.getControl(FloatControl.Type.VOLUME);
                         volumeControl.setValue(volumeBar.getValue()/100f);
                     }
                     catch (LineUnavailableException ex)

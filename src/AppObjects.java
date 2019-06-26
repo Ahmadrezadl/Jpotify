@@ -28,6 +28,7 @@ public class AppObjects {
     private ProgressBar progressBar;
     private String playingMusic;
     int showMode;
+    private RightMenu rightMenu;
 
     public SongButton getLastPlayed() {
         return lastPlayed;
@@ -171,5 +172,13 @@ public class AppObjects {
 
     public void setMainFrame(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
+    }
+
+    public RightMenu getRightMenu() {
+        return rightMenu;
+    }
+
+    public void setRightMenu(RightMenu rightMenu) {
+        this.rightMenu = rightMenu;
     }
 }
