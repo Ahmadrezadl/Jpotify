@@ -64,6 +64,8 @@ public class MainFrame extends JFrame{
         add(leftMenu , BorderLayout.WEST);
         CenterMenu centerMenu = new CenterMenu(appObjects);
         add(centerMenu , BorderLayout.CENTER);
+        RightMenu rightMenu = new RightMenu(appObjects);
+        add(rightMenu , BorderLayout.EAST);
         this.getContentPane().setBackground(new Color(176 , 0 , 9));
         //Loading songs:_____________________________________________________________
         File file = new File("musics.txt");
