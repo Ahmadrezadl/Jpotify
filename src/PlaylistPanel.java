@@ -46,18 +46,11 @@ public class PlaylistPanel extends JPanel {
     }
     public void addSong(SongButton songButton)
     {
-        boolean duplicate = false;
-        SongButton duplicatedButton= null;
             for (SongButton btn : songs) {
                 if (btn.getLink().equals(songButton.getLink())) {
-                    duplicate = true;
-                    songs.remove(songButton);
-                    songs.remove(btn);
-                    break;
+                    return;
                 }
             }
-        if (!duplicate) {
-            songs.remove(songButton);
             songs.add(songButton);
             this.add(songButton);
             boolean firstInAlbum = true;
@@ -75,19 +68,12 @@ public class PlaylistPanel extends JPanel {
                 AlbumButton b = new AlbumButton(songButton.getAlbum(),appObjects,this,songButton);
                 albums.add(b);
                 this.add(b);
-
                 b.setVisible(true);
             }
             songs.add(songButton);
             songButton.setVisible(true);
             this.refresh();
-        }
-        else
-        {
-            songs.remove(songButton);
-            songs.add(songButton);
-            songButton.setVisible(true);
-        }
+
     }
 
     public void refresh(){

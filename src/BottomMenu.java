@@ -313,7 +313,7 @@ public class BottomMenu extends JPanel implements Runnable{
                 }}
                 catch (NullPointerException e)
                 {
-
+                    e.printStackTrace();
                 }
             }
 
