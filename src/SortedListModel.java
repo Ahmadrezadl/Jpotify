@@ -28,6 +28,10 @@ class SortedListModel extends AbstractListModel {
         model.addAll(c);
         fireContentsChanged(this, 0, getSize());
     }
+    public void addAll(Object element)throws NullPointerException {
+        model.add(element);
+        fireContentsChanged(this, 0, getSize());
+    }
 
     public boolean removeElement(Object element) {
         boolean removed = model.remove(element);
