@@ -33,6 +33,7 @@ public class ProgressBar extends JProgressBar {
                 } catch (FileNotFoundException | JavaLayerException e1) {
                     e1.printStackTrace();
                 }
+                appObjects.setSongMoved(true);
 
                 appObjects.getBottomMenu().lastFrame = appObjects.getPlayer().getPosition();
                 float frame =  el * ((float)progressBarVal/100);

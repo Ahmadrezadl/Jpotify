@@ -338,12 +338,26 @@ public class BottomMenu extends JPanel implements Runnable{
                 {
                     e.printStackTrace();
                 }
+
+
             }
+//            System.out.println(appObjects.isSongMoved());
+//            if(appObjects.isSongMoved())
+//            {
+//                appObjects.setSongMoved(false);
+//            }
+//            else
+//            {
+//                playNext();
+//            }
 
             System.out.println("Music ended!");
             appObjects.getProgressBar().setValue(100);
+            appObjects.getProgressBar().setString(convertTime((int)song.getLengthInSeconds()));
         } catch (JavaLayerException e) {
             e.printStackTrace();
         }
+
     }
+
 }

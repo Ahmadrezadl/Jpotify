@@ -30,6 +30,15 @@ public class AppObjects {
     int showMode;
     private RightMenu rightMenu;
     private ExitButton exitButton;
+    private boolean songMoved;
+
+    public boolean isSongMoved() {
+        return songMoved;
+    }
+
+    public void setSongMoved(boolean songMoved) {
+        this.songMoved = songMoved;
+    }
 
     public ExitButton getExitButton() {
         return exitButton;
@@ -44,6 +53,7 @@ public class AppObjects {
     }
     public AppObjects(){
         showMode = 0;
+        songMoved = false;
     }
     public void setLastPlayed(SongButton lastPlayed) {
         this.lastPlayed = lastPlayed;
