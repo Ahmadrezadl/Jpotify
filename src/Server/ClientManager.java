@@ -12,7 +12,8 @@ public class ClientManager implements Runnable {
     DataInputStream reader;
     PrintWriter writer;
     String name;
-    public ClientManager(Server server , Socket client){
+
+    public ClientManager(Server server, Socket client) {
         serverHolder = server;
         clientHolder = client;
     }
@@ -25,26 +26,63 @@ public class ClientManager implements Runnable {
             toClientStream = clientHolder.getOutputStream();
 
             reader = new DataInputStream(fromClientStream);
-            writer = new PrintWriter(toClientStream , true);
+            writer = new PrintWriter(toClientStream, true);
 
             writer.println("what is your name?");
             System.out.println("Server : What is your name?");
-            name = reader.readUTF();
 
-            serverHolder.addClientManager(name , this);
 
-            while (true){
-//                reading the command from
+            serverHolder.addClientManager(name, this);
+
+            while (true) {
+//                reading the command from client
                 String command = reader.readUTF();
 
+//                now decide by command
+                if (command.equals("BYE")) {
+                    System.out.println("good bye " + name);
+                    break;
+                } else if (command.equals("SFILE")) {
+                    String fileName = reader.readUTF();
+                    String to = reader.readUTF();
+
+                    int fileLength = Integer.parseInt(reader.readUTF());
+
+                    byte[] fileData = new byte[fileLength];
+
+                    reader.readFully(fileData);
+
+                    sendFileToAnotherClient(fileName, to, fileData);
+                }
             }
-
-
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
         }
 
     }
+    private void sendFileToAnotherClient(String fileName, String to, byte[] fileData) {
+
+        // first find another client ("to") ClientManager object
+        ClientManager anotherClient = serverHolder.findClientManager(to);
+        if (anotherClient == null)
+            return;
+        anotherClient.sendFile(name, fileName, fileData);
+
+    }
+
+    private void sendFile(String from, String fileName, byte[] fileData) {
+        try {
+            writer.println("FILE");
+            writer.println(from);
+            writer.println(fileName);
+            writer.println("" + fileData.length);
+
+            toClientStream.write(fileData, 0, fileData.length);
+            toClientStream.flush();// force to send data
+
+        } catch (IOException e) {
+        }
+    }
+
+
 }
+
