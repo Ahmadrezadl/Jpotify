@@ -36,17 +36,17 @@ public class ClientManager implements Runnable {
 
             while (true) {
 //                reading the command from client
-                String command = reader.readUTF();
+                String command = reader.readLine();
 
 //                now decide by command
                 if (command.equals("BYE")) {
                     System.out.println("good bye " + name);
                     break;
                 } else if (command.equals("SFILE")) {
-                    String fileName = reader.readUTF();
-                    String to = reader.readUTF();
+                    String fileName = reader.readLine();
+                    String to = reader.readLine();
 
-                    int fileLength = Integer.parseInt(reader.readUTF());
+                    int fileLength = Integer.parseInt(reader.readLine());
 
                     byte[] fileData = new byte[fileLength];
 

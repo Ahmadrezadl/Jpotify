@@ -29,7 +29,7 @@ public class Client {
         writer = new PrintWriter(toServerStream, true);
 
         //1: read message from server
-        String msg = reader.readUTF();
+        String msg = reader.readLine();
         System.out.println("Server : " + msg);
 
         Thread t = new Thread(new ServerMessagesManager(reader));
