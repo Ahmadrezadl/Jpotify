@@ -13,6 +13,8 @@ public class DeletePlayListButton extends JButton implements ActionListener {
         this.setContentAreaFilled(false);
         this.setFocusPainted(false);
         this.setOpaque(false);
+        this.setBorder(null);
+
         this.appObjects = appObjects;
         this.importMusicButton = importMusicButton;
 

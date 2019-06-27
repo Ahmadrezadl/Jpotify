@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.*;
+
 /**
  * make frame & change the LookAndFeel
  * @author G-squad menhaye Maryam
@@ -7,6 +9,10 @@ import javax.swing.*;
 public class Main{
     public static void main(String[]args)
     {
+        UIManager.put("ProgressBar.background", Color.BLACK);
+        UIManager.put("ProgressBar.foreground", Color.BLACK);
+        UIManager.put("ProgressBar.selectionBackground", Color.WHITE);
+        UIManager.put("ProgressBar.selectionForeground", Color.WHITE);
         System.out.println("Program Started!");
         try{
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
