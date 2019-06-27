@@ -74,6 +74,8 @@ public class TopMenu extends JPanel {
         right.setLayout(new FlowLayout(FlowLayout.RIGHT));
         right.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         right.add(exitButton);
+        RestoreDownButton restoreDownButton = new RestoreDownButton(appObjects);
+        right.add(restoreDownButton);
         MinimizeButton minimizeButton = new MinimizeButton(mainFrame);
         right.add(minimizeButton);
         this.setVisible(true);

@@ -89,7 +89,7 @@ public class BottomMenu extends JPanel implements Runnable{
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
         this.setBorder(border);
-        fileName = new JLabel("<html>Title: <br> Artist: <br>Album:  <br>Year: <br>Genre: <br>File Name:<br>Duration:</html>");
+        fileName = new JLabel("<html>Title: <br> Artist: <br>Album:  <br>Year: <br>Genre: <br>Duration:</html>");
         fileName.setFont(new Font("Serif", Font.PLAIN, 20));
         fileName.setForeground(Color.WHITE);
         panelLeft.add(cover);panelLeft.add(fileName);

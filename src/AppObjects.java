@@ -29,6 +29,15 @@ public class AppObjects {
     private String playingMusic;
     int showMode;
     private RightMenu rightMenu;
+    private ExitButton exitButton;
+
+    public ExitButton getExitButton() {
+        return exitButton;
+    }
+
+    public void setExitButton(ExitButton exitButton) {
+        this.exitButton = exitButton;
+    }
 
     public SongButton getLastPlayed() {
         return lastPlayed;
