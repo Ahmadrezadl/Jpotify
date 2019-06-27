@@ -89,7 +89,7 @@ public class BottomMenu extends JPanel implements Runnable{
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
         this.setBorder(border);
-        fileName = new JLabel("<html>Title: <br> Artist: <br>Album:  <br>Year: <br>Genre: <br>File Name:</html>");
+        fileName = new JLabel("<html>Title: <br> Artist: <br>Album:  <br>Year: <br>Genre: <br>File Name:<br>Duration:</html>");
         fileName.setFont(new Font("Serif", Font.PLAIN, 20));
         fileName.setForeground(Color.WHITE);
         panelLeft.add(cover);panelLeft.add(fileName);
@@ -196,7 +196,8 @@ public class BottomMenu extends JPanel implements Runnable{
                         "<br>Artist:  " + songTag.getAlbumArtist() +
                         "<br>Album: " + songTag.getAlbum() +
                         "<br>Year: " + songTag.getYear() +
-                        "<br>Genre: " + songTag.getGenreDescription() + "</html>");
+                        "<br>Genre: " + songTag.getGenreDescription() +
+                        "<br>Duration: " + convertTime((int)song.getLengthInSeconds()) + "</html>");
 
             }
             else{
@@ -206,13 +207,14 @@ public class BottomMenu extends JPanel implements Runnable{
                         "<br>Artist:  " + "Unknown Artist" +
                         "<br>Album: " + "Single" +
                         "<br>Year: " + "xxxx" +
-                        "<br>Genre: " + "Music" + "</html>");
+                        "<br>Genre: " + "Music" +
+                        "<br>Duration: " + convertTime((int)song.getLengthInSeconds()) + "</html>");
             }
             System.out.println("All Dv3v2 Setup");
         }
         catch (Exception e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
         System.out.println("Music Descriptions Loaded!");
         pauseButton.setT1(t1);
@@ -241,7 +243,7 @@ public class BottomMenu extends JPanel implements Runnable{
                         if(!(temp[i].link.equals(appObjects.getLastPlayed().link)))
                         {
 
-                            willPLaying = temp[i];System.out.println(willPLaying.name);
+                            willPLaying = temp[i];//System.out.println(willPLaying.name);
                             break;
                         }
             }
@@ -272,7 +274,7 @@ public class BottomMenu extends JPanel implements Runnable{
                 if(!(temp[i].link.equals(appObjects.getLastPlayed().link)))
                 {
 
-                    willPLaying = temp[i];System.out.println(willPLaying.name);
+                    willPLaying = temp[i];//System.out.println(willPLaying.name);
                     break;
                 }
             }
@@ -280,6 +282,24 @@ public class BottomMenu extends JPanel implements Runnable{
 
 
         }
+    }
+
+    public String convertTime(int t){
+        int m = 0;
+        int s = t;
+        while(s > 59)
+        {
+            m++;
+            s += -60;
+        }
+        if(s > 9 && m>9)
+        return "" + m + ":" + s;
+        if(s> 9 && m <10)
+            return ""+m+":"+s;
+        if(s < 10 && m < 10)
+            return "" + m + ":" + "0" + s;
+        return ""+ m + ":" + "0" + s;
+
     }
 
 
@@ -294,7 +314,7 @@ public class BottomMenu extends JPanel implements Runnable{
             pauseButton.isPlaying = true;
             System.out.println("Playing Music...");
             double positionPercent;
-            System.out.println(start);
+//            System.out.println(start);
             player.play(1);
             for(int i = 0;i<p;i++) {
                 player.skipFrame();
@@ -306,6 +326,9 @@ public class BottomMenu extends JPanel implements Runnable{
 
                     positionPercent = (((((double) player.getPosition()) / 1000) / song.getLengthInSeconds()) * 100);
                     appObjects.getProgressBar().setValue((int) positionPercent+appObjects.getProgressBar().progressBarVal);
+
+
+                   appObjects.getProgressBar().setString("" + convertTime((int)((((positionPercent+appObjects.getProgressBar().progressBarVal)*song.getLengthInSeconds())/100))));
                 }
                 while(!pauseButton.isPlaying)
                 {

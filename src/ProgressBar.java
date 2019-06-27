@@ -15,6 +15,7 @@ public class ProgressBar extends JProgressBar {
         this.setStringPainted(true);
         this.setBackground(Color.red);
         this.setValue(0);
+
         this.setFocusable(false);
         this.setPreferredSize(new Dimension(500,50));
         appObjects.setProgressBar(this);

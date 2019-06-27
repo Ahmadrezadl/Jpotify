@@ -11,8 +11,8 @@ public class Main{
     {
         UIManager.put("ProgressBar.background", Color.BLACK);
         UIManager.put("ProgressBar.foreground", Color.BLACK);
-        UIManager.put("ProgressBar.selectionBackground", Color.WHITE);
-        UIManager.put("ProgressBar.selectionForeground", Color.WHITE);
+        UIManager.put("ProgressBar.selectionBackground", Color.RED);
+        UIManager.put("ProgressBar.selectionForeground", Color.RED);
         System.out.println("Program Started!");
         try{
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
