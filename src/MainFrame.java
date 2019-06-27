@@ -44,7 +44,7 @@ public class MainFrame extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loadingFrame.setSize(520,210);
         loadingFrame.setBackground(Color.WHITE);
-        loadingFrame.setResizable(false);
+//        loadingFrame.setResizable(true);
         loadingFrame.setLocationRelativeTo(null);
         loadingFrame.setUndecorated(true);
         loadingFrame.setVisible(true);

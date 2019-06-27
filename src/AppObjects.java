@@ -29,12 +29,31 @@ public class AppObjects {
     private String playingMusic;
     int showMode;
     private RightMenu rightMenu;
+    private ExitButton exitButton;
+    private boolean songMoved;
+
+    public boolean isSongMoved() {
+        return songMoved;
+    }
+
+    public void setSongMoved(boolean songMoved) {
+        this.songMoved = songMoved;
+    }
+
+    public ExitButton getExitButton() {
+        return exitButton;
+    }
+
+    public void setExitButton(ExitButton exitButton) {
+        this.exitButton = exitButton;
+    }
 
     public SongButton getLastPlayed() {
         return lastPlayed;
     }
     public AppObjects(){
         showMode = 0;
+        songMoved = false;
     }
     public void setLastPlayed(SongButton lastPlayed) {
         this.lastPlayed = lastPlayed;

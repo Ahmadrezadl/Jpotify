@@ -10,6 +10,7 @@ public class ExitButton extends JButton implements ActionListener {
     public ExitButton(AppObjects appObjects) {
         System.out.println("Exit Button Start Adding!");
         setBorder(null);
+        appObjects.setExitButton(this);
         this.setBorderPainted(false);
         this.setContentAreaFilled(false);
         this.appObjects = appObjects;
@@ -28,10 +29,9 @@ public class ExitButton extends JButton implements ActionListener {
         this.setToolTipText("Exit Program");
         System.out.println("Exit Button Added!");
     }
-    @Override
-    public void actionPerformed(ActionEvent e) {
-            System.out.println("Exiting Program...");
-         try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("playLists.txt"))) {
+    public void exit(){
+        System.out.println("Exiting Program...");
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("playLists.txt"))) {
             for(PlaylistPanel playList : appObjects.getPlaylists())
             {
                 bufferedWriter.write(playList.name+"\n");
@@ -68,7 +68,11 @@ public class ExitButton extends JButton implements ActionListener {
         } catch (IOException x) {
             // exception handling
         }
-            System.exit(1);
+        System.exit(1);
 
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+            exit();
     }
 }
