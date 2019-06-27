@@ -17,10 +17,10 @@ public class PauseButton extends JButton implements ActionListener , Runnable{
     AppObjects appObjects;
     public PauseButton(Thread t1, AppObjects appObjects){
         super();
+        isPlaying = false;
         this.setBorder(null);
         this.setBackground(Color.BLACK);
         this.setFocusable(false);
-        isPlaying = true;
         this.t1 = t1;
         try {
             pauseButtonIcon = ImageIO.read(getClass().getResource("icons\\pauseButton.png"));
