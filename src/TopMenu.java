@@ -53,7 +53,7 @@ public class TopMenu extends JPanel {
         userName.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name= JOptionPane.showInputDialog("Enter New UserName: ");
+                String name= JOptionPane.showInputDialog("Enter New UserName: ", userName.getText());
                 userName.setText(name);
             }
         });
