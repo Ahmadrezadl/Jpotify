@@ -1,23 +1,16 @@
-
-
-
+import Server.Server;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class RightMenu extends JPanel implements ActionListener {
         DefaultListModel<String> list ;
         JButton btn;
         JLabel label;
-        Server server ;
-        public RightMenu(AppObjects appObjects) throws IOException {
+        public RightMenu(AppObjects appObjects){
                 label = new JLabel("friends");
-                list = new DefaultListModel<>();
-                list.addElement("5");
-                list.addElement("54654654");
                 JList l = new JList<>(list);
                 this.setLayout(new BorderLayout());
                 this.setBackground(Color.black);
@@ -30,14 +23,8 @@ public class RightMenu extends JPanel implements ActionListener {
                 Border border = BorderFactory.createLineBorder(Color.BLACK , 5);
                 this.setBorder(border);
                 l.setBackground(Color.blue);
-
-
-
-
-
-
+                for(int i = 0 ; i < )
         }
-
 
 
         /**
