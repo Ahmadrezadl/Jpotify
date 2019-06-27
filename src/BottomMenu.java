@@ -330,6 +330,10 @@ public class BottomMenu extends JPanel implements Runnable{
 
                    appObjects.getProgressBar().setString("" + convertTime((int)((((positionPercent+appObjects.getProgressBar().progressBarVal)*song.getLengthInSeconds())/100))));
                 }
+                else
+                {
+                    appObjects.getProgressBar().setString("Live Stream!");
+                }
                 while(!pauseButton.isPlaying)
                 {
                     System.out.println("Music Paused");

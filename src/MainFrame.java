@@ -71,8 +71,13 @@ public class MainFrame extends JFrame{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        add(rightMenu , BorderLayout.EAST);
+        try {
+            add(rightMenu , BorderLayout.EAST);
+        }
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
         this.getContentPane().setBackground(new Color(176 , 0 , 9));
         //Loading songs:_____________________________________________________________
         File file = new File("musics.txt");

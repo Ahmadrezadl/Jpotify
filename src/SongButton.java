@@ -194,15 +194,25 @@ public class SongButton extends JButton implements ActionListener {
         return link;
     }
     public String getTitle(){
+        if(!appObjects.getProgressBar().isVisible())
+        {
+            return "Radio";
+        }
         if(song.hasId3v2Tag())
         {
             String title = song.getId3v2Tag().getTitle();
-            return title;
+            return title.replace('-',' ');
         }
-        else return "q";
+        if(song.hasId3v1Tag())
+        {
+            String title = song.getId3v1Tag().getTitle();
+            return title.replace('-',' ');
+        }
+         return "q";
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        appObjects.getProgressBar().setVisible(true);
         this.play();
     }
 

@@ -89,7 +89,7 @@ class Client{
         this.clientNumber = clientNumber;
     }
     public String print(){
-        return "" + name + "<br>" + status;
+        return "<font size = 6>" + name + "</font><br>" + status;
     }
 
     public String getName() {
