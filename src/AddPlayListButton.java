@@ -37,7 +37,7 @@ public class AddPlayListButton extends JButton  implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String name= JOptionPane.showInputDialog("Enter Name of PlayList: ");
+        String name= JOptionPane.showInputDialog("Enter Name of PlayList: ","New PlayList");
         if(!(name.equals("") || name.equals(" "))) {
             boolean duplicate = false;
             for(PlaylistPanel p : appObjects.getPlaylists())
@@ -60,7 +60,7 @@ public class AddPlayListButton extends JButton  implements ActionListener {
                 JScrollPane newPane = new JScrollPane(newPanel);
                 playlistTabs.add(name , newPane);
                 newPanel.addSong(new ImportMusicButton(appObjects , newPanel));
-                DualListBox d = new DualListBox(appObjects,newPanel);
+                new DualListBox(appObjects,newPanel);
 
             }
         }

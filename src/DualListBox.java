@@ -42,17 +42,17 @@ public class DualListBox extends JPanel {
     private JButton removeButton;
 
     private PlaylistPanel playlistPanel;
-
+    JFrame f;
     public DualListBox(AppObjects appObjects,PlaylistPanel playlistPanel) {
         initScreen();
         this.playlistPanel = playlistPanel;
-        JFrame f = new JFrame("Add Songs To PlayList");
+        f = new JFrame("Add Songs To PlayList");
         f.setBackground(Color.BLACK);
         f.setResizable(false);
         f.setLocation(new Point(100,100));
         f.setVisible(true);
         f.pack();
-        this.addSourceElements(appObjects.getAllSongsPanel().getNames());
+        this.addSourceElements(playlistPanel.getNames(appObjects.getAllSongsPanel()));
         this.appObjects= appObjects;
 
         f.getContentPane().add(this, BorderLayout.CENTER);
@@ -72,7 +72,14 @@ public class DualListBox extends JPanel {
     }
 
     private void fillListModel(SortedListModel model, Object newValues[]) {
-        model.addAll(newValues);
+        try{
+            model.addAll(newValues);
+        }
+        catch (NullPointerException e)
+        {
+            f.setVisible(false);
+
+        }
     }
 
     private void clearSourceSelected() {
@@ -127,6 +134,7 @@ public class DualListBox extends JPanel {
         add(new JScrollPane(destList), new GridBagConstraints(2, 1, 1, 5, .5,
                 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
+
     }
 
 

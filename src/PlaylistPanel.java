@@ -34,10 +34,20 @@ public class PlaylistPanel extends JPanel {
         return temp;
     }
 
-    public String[] getNames(){
+    public String[] getNames(PlaylistPanel allSongs){
         ArrayList<String> songsName = new ArrayList<>();
-        for(SongButton song : songs)
+        for(SongButton song : allSongs.songs)
         {
+            boolean duplicate = false;
+            for(SongButton s : songs)
+            {
+                if(song.link.equals(s.link))
+                {
+                    duplicate = true;
+                    break;
+                }
+            }
+            if(!duplicate)
             songsName.add(song.name);
         }
         String[] temp = new String[songs.size()];

@@ -23,7 +23,7 @@ class SortedListModel extends AbstractListModel {
         }
     }
 
-    public void addAll(Object elements[]) {
+    public void addAll(Object elements[])throws NullPointerException {
         Collection c = Arrays.asList(elements);
         model.addAll(c);
         fireContentsChanged(this, 0, getSize());

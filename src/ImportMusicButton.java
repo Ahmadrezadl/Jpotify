@@ -70,7 +70,11 @@ public class ImportMusicButton extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         System.out.println("Opening file...");
-
+        if(!playlistPanel.name.equals("All Songs"))
+        {
+            DualListBox d = new DualListBox(appObjects,playlistPanel);
+            return;
+        }
         int returnVal = chooser.showOpenDialog(null);
         File[] files = chooser.getSelectedFiles();
         for(File file : files) {
