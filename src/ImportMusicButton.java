@@ -91,7 +91,7 @@ public class ImportMusicButton extends JButton implements ActionListener {
 
                     bottomMenu.pauseButton.setIcon(new ImageIcon(bottomMenu.pauseButton.pauseButtonIcon));
                     try {
-                        bottomMenu.setMusic(file.getAbsolutePath(),0);
+                        songButton.play();
                     } catch (Exception t) {
                         System.out.println(t);
                     }
