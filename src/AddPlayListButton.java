@@ -51,6 +51,7 @@ public class AddPlayListButton extends JButton  implements ActionListener {
             if(duplicate)
             {
                 JOptionPane.showMessageDialog(null,
+//                        good thinking!!
                         "Please Choose Another Name For Your PlayList",
                         "Name is Duplicate",
                         JOptionPane.WARNING_MESSAGE);

@@ -1,5 +1,8 @@
+
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * make frame & change the LookAndFeel
@@ -7,8 +10,7 @@ import java.awt.*;
  * @version 1.2
  */
 public class Main{
-    public static void main(String[]args)
-    {
+    public static void main(String[]args) throws IOException {
         UIManager.put("ProgressBar.background", Color.BLACK);
         UIManager.put("ProgressBar.foreground", Color.BLACK);
         UIManager.put("ProgressBar.selectionBackground", Color.RED);

@@ -20,10 +20,10 @@ public class RightMenu extends JPanel implements Runnable{
         JButton refresh;
         JLabel friends;
         String friendsText;
-        public RightMenu(AppObjects appObjects) throws IOException {
+        public RightMenu(AppObjects appObjects , String ip) throws IOException {
                 this.appObjects = appObjects;
                 this.setLayout(new BorderLayout());
-                socket = new Socket("127.0.0.1", 9898);
+                socket = new Socket(ip, 9898);
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 out = new PrintWriter(socket.getOutputStream(), true);
                 out.println(appObjects.getUserName().getText());

@@ -67,8 +67,10 @@ public class MainFrame extends JFrame{
         RightMenu rightMenu = null;
 
         try {
+            String ip = JOptionPane.showInputDialog("enter the ip address you wish to connect to" , "127.0.0.1");
 
-            rightMenu = new RightMenu(appObjects);
+
+            rightMenu = new RightMenu(appObjects , ip);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -127,7 +127,5 @@ public class PlaylistPanel extends JPanel {
         settingsFrame.add(deletePlayListButton);
         SearchButton searchButton = new SearchButton(appObjects,importMusicButton);
         settingsFrame.add(searchButton);
-
-
     }
 }

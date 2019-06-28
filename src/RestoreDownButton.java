@@ -1,4 +1,4 @@
-import sun.awt.WindowClosingListener;
+//import sun.awt.WindowClosingListener;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
