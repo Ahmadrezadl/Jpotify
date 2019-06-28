@@ -2,8 +2,10 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 
 import javax.swing.*;
 import java.util.ArrayList;
+
 /**
  * It holds all the components we've made so far such as buttons , playlist tabs and... .
+ *
  * @author G-squad menhaye Maryam
  * @version 1.0
  */
@@ -31,12 +33,13 @@ public class AppObjects {
     private boolean songMoved;
     private AddFriendButton addFriendButton;
     private ArrayList<String> friends;
+    private PlaylistPanel favorites;
 
-    public void addFriend(String friend)
-    {
+    public void addFriend(String friend) {
         friends.add(friend);
     }
-    public ArrayList<String> getFriends(){
+
+    public ArrayList<String> getFriends() {
         return friends;
     }
 
@@ -75,11 +78,13 @@ public class AppObjects {
     public SongButton getLastPlayed() {
         return lastPlayed;
     }
-    public AppObjects(){
+
+    public AppObjects() {
         showMode = 0;
         songMoved = false;
         friends = new ArrayList<>();
     }
+
     public void setLastPlayed(SongButton lastPlayed) {
         this.lastPlayed = lastPlayed;
     }
@@ -118,10 +123,10 @@ public class AppObjects {
         this.playLists = playLists;
     }
 
-    public void addPlayList(PlaylistPanel p)
-    {
+    public void addPlayList(PlaylistPanel p) {
         playLists.add(p);
     }
+
     public ArrayList<PlaylistPanel> getPlaylists() {
         return playLists;
     }
@@ -224,5 +229,13 @@ public class AppObjects {
 
     public void setRightMenu(RightMenu rightMenu) {
         this.rightMenu = rightMenu;
+    }
+
+    public PlaylistPanel getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(PlaylistPanel favorites) {
+        this.favorites = favorites;
     }
 }

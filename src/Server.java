@@ -52,8 +52,8 @@ class ServerHandler extends Thread {
             infos.clients.add(c);
             while(true) {
                 sleep(1000);
-               String status = in.readLine();
-               c.status = status;
+                String status = in.readLine();
+                c.status = status;
                 out.println(infos.clients.size());
                 for(Client client : infos.clients)
                 {

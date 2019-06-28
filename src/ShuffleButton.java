@@ -8,7 +8,7 @@ public class ShuffleButton extends JButton implements ActionListener {
     boolean pressed;
     public ShuffleButton(AppObjects appObjects) {
         super("shuffle");
-        this.setText("Fuck");
+//        this.setText("Fuck");
         this.appObjects = appObjects;
 //        this.setBorderPainted(false);
 //        this.setContentAreaFilled(false);
@@ -25,12 +25,12 @@ public class ShuffleButton extends JButton implements ActionListener {
         if(!pressed) {
             appObjects.getBottomMenu().shuffle = true;
             pressed = true;
-            this.setText("fucked");
+            this.setText("shuffled");
         }
         else{
             appObjects.getBottomMenu().shuffle = false;
             pressed = false;
-            this.setText("fuck");
+            this.setText("shuffle");
 
         }
 

@@ -29,17 +29,19 @@ public class SongButton extends JPanel implements ActionListener {
     ImageIcon cov;
     Mp3File song;
     JButton songButton;
-    JLabel songLable;
+    JLabel songLabel;
+    boolean heart;
     public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
+        heart = false;
         this.setBackground(new Color(37, 97, 176));
         this.setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         songButton = new JButton();
         this.add(songButton);
-        songLable = new JLabel();
-        songLable.setText("    "+name);
-        songLable.setForeground(Color.WHITE);
-        this.add(songLable);
+        songLabel = new JLabel();
+        songLabel.setText("    "+name);
+        songLabel.setForeground(Color.WHITE);
+        this.add(songLabel);
         this.appObjects = appObjects;
         System.out.println("Music Resumed");
         //this.setToolTipText(name);
@@ -79,7 +81,7 @@ public class SongButton extends JPanel implements ActionListener {
                 }
                 cov = new ImageIcon(img);
                 Image image = cov.getImage();
-                Image newimg = image.getScaledInstance(166 , 168 , java.awt.Image.SCALE_SMOOTH);
+                Image newimg = image.getScaledInstance(166 , 168 , Image.SCALE_SMOOTH);
                 cov = new ImageIcon(newimg);
                 songButton.setIcon(cov);
             }
