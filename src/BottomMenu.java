@@ -9,6 +9,9 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class BottomMenu extends JPanel implements Runnable{
     JLabel cover;
@@ -16,6 +19,7 @@ public class BottomMenu extends JPanel implements Runnable{
     boolean isPlaying;
     FileInputStream music;
     PauseButton pauseButton;
+    ShuffleButton shuffleButton;
     JLabel fileName;
     Thread t1;
     VolumeBar volumeBar;
@@ -75,7 +79,10 @@ public class BottomMenu extends JPanel implements Runnable{
         playPanel.add(pauseButton);
         NextButton nextButton = new NextButton(appObjects);
         playPanel.add(nextButton);
-
+        ///////////////////////////////////////////////////
+        shuffleButton = new ShuffleButton(appObjects);
+        playPanel.add(shuffleButton);
+        ///////////////////////////////////////////////////
         System.out.println("New Pause Button Added");
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BorderLayout());
@@ -223,15 +230,38 @@ public class BottomMenu extends JPanel implements Runnable{
     public void playNext()
     {
         SongButton willPLaying = null;
-//        if(shuffle)
-//        {
-//
-//        }
-//        else
+        if(shuffle)
+        {
+            SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
+            ArrayList<SongButton> tmp = new ArrayList<>(Arrays.asList(temp));
+            Collections.shuffle(tmp);
+
+            int j;
+            for(j = 0 ; j < appObjects.getLastPlayed().playlistPanel.songs.size() ; j++)
+            {
+                if((tmp.get(j).link.equals(appObjects.getLastPlayed().link)))
+                {
+                    break;
+                }
+            }
+            for(int i = j; i < appObjects.getLastPlayed().playlistPanel.songs.size();i++)
+            {
+                if(!(tmp.get(i).link.equals(appObjects.getLastPlayed().link)))
+                {
+
+                    willPLaying = tmp.get(i);//System.out.println(willPLaying.name);
+                    break;
+                }
+            }
+            willPLaying.play();
+
+
+        }
+        else
         {
             SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
             int j;
-            for(j = 0; j < appObjects.getLastPlayed().playlistPanel.songs.size();j++)
+            for(j = 0 ; j < appObjects.getLastPlayed().playlistPanel.songs.size() ; j++)
             {
                 if((temp[j].link.equals(appObjects.getLastPlayed().link)))
                 {
@@ -254,11 +284,35 @@ public class BottomMenu extends JPanel implements Runnable{
     }
     public void playPrevious(){
         SongButton willPLaying = null;
-//        if(shuffle)
-//        {
-//
-//        }
-//        else
+        if(shuffle)
+        {
+
+            SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
+            ArrayList<SongButton> tmp = new ArrayList<>(Arrays.asList(temp));
+            Collections.shuffle(tmp);
+
+            int j;
+            for(j = 0 ; j < appObjects.getLastPlayed().playlistPanel.songs.size() ; j++)
+            {
+                if((tmp.get(j).link.equals(appObjects.getLastPlayed().link)))
+                {
+                    break;
+                }
+            }
+            for(int i = j; i < appObjects.getLastPlayed().playlistPanel.songs.size();i++)
+            {
+                if(!(tmp.get(i).link.equals(appObjects.getLastPlayed().link)))
+                {
+
+                    willPLaying = tmp.get(i);//System.out.println(willPLaying.name);
+                    break;
+                }
+            }
+            willPLaying.play();
+
+
+        }
+        else
         {
             SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
             int j;
@@ -282,6 +336,34 @@ public class BottomMenu extends JPanel implements Runnable{
 
 
         }
+    }
+    public void shufflePlay(){
+
+        SongButton willPLaying = null;
+        SongButton[] temp = appObjects.getLastPlayed().playlistPanel.getSongs();
+        ArrayList<SongButton> tmp = new ArrayList<>(Arrays.asList(temp));
+        Collections.shuffle(tmp);
+
+        int j;
+        for(j = 0 ; j < appObjects.getLastPlayed().playlistPanel.songs.size() ; j++)
+        {
+            if((tmp.get(j).link.equals(appObjects.getLastPlayed().link)))
+            {
+                break;
+            }
+        }
+        for(int i = j; i < appObjects.getLastPlayed().playlistPanel.songs.size();i++)
+        {
+            if(!(tmp.get(i).link.equals(appObjects.getLastPlayed().link)))
+            {
+
+                willPLaying = tmp.get(i);//System.out.println(willPLaying.name);
+                break;
+            }
+        }
+        willPLaying.play();
+
+
     }
 
     public String convertTime(int t){
