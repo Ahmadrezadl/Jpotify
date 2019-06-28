@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.awt.event.*;
 import java.util.Objects;
 
-public class SongButton extends JButton implements ActionListener {
+public class SongButton extends JPanel implements ActionListener {
     String link;
     String name;
     LeftMenu leftMenu;
@@ -28,24 +28,34 @@ public class SongButton extends JButton implements ActionListener {
     AppObjects appObjects;
     ImageIcon cov;
     Mp3File song;
+    JButton songButton;
+    JLabel songLable;
     public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
+        this.setBackground(new Color(37, 97, 176));
+        this.setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
+        songButton = new JButton();
+        this.add(songButton);
+        songLable = new JLabel();
+        songLable.setText("    "+name);
+        songLable.setForeground(Color.WHITE);
+        this.add(songLable);
         this.appObjects = appObjects;
         System.out.println("Music Resumed");
-        this.setToolTipText(name);
+        //this.setToolTipText(name);
         this.setBorder(null);
-        System.out.println("Song Button Start Creating...");
+        System.out.println("Song Panel Start Creating...");
         this.link = link;
         this.playlistPanel = playlistPanel;
         this.name = name;
         this.leftMenu = appObjects.getLeftMenu();
         this.bottomMenu = appObjects.getBottomMenu();
-        this.setBorderPainted(false);
-        this.setContentAreaFilled(false);
-        this.setFocusPainted(false);
+        songButton.setBorderPainted(false);
+        songButton.setContentAreaFilled(false);
+        songButton.setFocusPainted(false);
         this.setOpaque(false);
 //        this.playlist = playlist;
-        this.addActionListener(this);
+        songButton.addActionListener(this);
         try {
             music = new FileInputStream(link);
         } catch (FileNotFoundException e) {
@@ -71,7 +81,7 @@ public class SongButton extends JButton implements ActionListener {
                 Image image = cov.getImage();
                 Image newimg = image.getScaledInstance(166 , 168 , java.awt.Image.SCALE_SMOOTH);
                 cov = new ImageIcon(newimg);
-                this.setIcon(cov);
+                songButton.setIcon(cov);
             }
             else
             {
@@ -82,7 +92,7 @@ public class SongButton extends JButton implements ActionListener {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                this.setIcon(new ImageIcon(coverImage));
+                songButton.setIcon(new ImageIcon(coverImage));
             }
         }
         else
@@ -94,7 +104,7 @@ public class SongButton extends JButton implements ActionListener {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            this.setIcon(new ImageIcon(coverImage));
+            songButton.setIcon(new ImageIcon(coverImage));
         }
         this.addMouseListener(new MouseListener() {
             public void mousePressed(MouseEvent me) { }
