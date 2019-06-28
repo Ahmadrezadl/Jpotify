@@ -29,6 +29,32 @@ public class AppObjects {
     private RightMenu rightMenu;
     private ExitButton exitButton;
     private boolean songMoved;
+    private AddFriendButton addFriendButton;
+    private ArrayList<String> friends;
+
+    public void addFriend(String friend)
+    {
+        friends.add(friend);
+    }
+    public ArrayList<String> getFriends(){
+        return friends;
+    }
+
+    public AddFriendButton getAddFriendButton() {
+        return addFriendButton;
+    }
+
+    public void setAddFriendButton(AddFriendButton addFriendButton) {
+        this.addFriendButton = addFriendButton;
+    }
+
+    public int getShowMode() {
+        return showMode;
+    }
+
+    public void setShowMode(int showMode) {
+        this.showMode = showMode;
+    }
 
     public boolean isSongMoved() {
         return songMoved;
@@ -52,6 +78,7 @@ public class AppObjects {
     public AppObjects(){
         showMode = 0;
         songMoved = false;
+        friends = new ArrayList<>();
     }
     public void setLastPlayed(SongButton lastPlayed) {
         this.lastPlayed = lastPlayed;

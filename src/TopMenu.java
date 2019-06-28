@@ -50,11 +50,13 @@ public class TopMenu extends JPanel {
             e.printStackTrace();
         }
         userName.setText(sc.nextLine());
+        appObjects.addFriend(userName.getText());
         userName.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String name= JOptionPane.showInputDialog("Enter New UserName: ", userName.getText());
                 userName.setText(name);
+                appObjects.addFriend(name);
             }
         });
         userName.setBorderPainted(false);
