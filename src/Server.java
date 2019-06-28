@@ -54,13 +54,10 @@ class ServerHandler extends Thread {
                 sleep(1000);
                String status = in.readLine();
                c.status = status;
-//               infos.setStatus(clientNumber,status);
                 out.println(infos.clients.size());
-                System.out.print(infos.clients.size());
                 for(Client client : infos.clients)
                 {
                     out.println(client.print());
-                    System.out.println(client.print());
                 }
             }
 
@@ -83,13 +80,6 @@ class Client{
     String name;
     String status;
 
-    public int getClientNumber() {
-        return clientNumber;
-    }
-
-    public void setClientNumber(int clientNumber) {
-        this.clientNumber = clientNumber;
-    }
     public String print(){
         return status;
     }
@@ -100,14 +90,6 @@ class Client{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Client(int clientNumber , String name , String status) {
@@ -124,32 +106,6 @@ class ServerInfo{
     public ServerInfo() {
         clients = new ArrayList<>();
     }
-    public void addClient(Client c)
-    {
-        clients.add(c);
-    }
-    public ArrayList<Client> getClients (){
-        return clients;
-    }
-    public void setStatus(int cn,String status)
-    {
-        for(Client c : clients)
-        {
-            if(c.clientNumber == cn)
-            {
-                c.status = status;
-                break;
-            }
-        }
-    }
-    public String getStrings()
-    {
-        StringBuilder s = new StringBuilder();
-        for(Client c : clients)
-        {
-            s.append(c.print());
-        }
-        return s.toString();
-    }
+
 
 }
