@@ -61,9 +61,13 @@ public class ImportMusicButton extends JButton implements ActionListener {
 
     public void renamePlayList(String name)
     {
-        int index = appObjects.getPlaylistTabs().getSelectedIndex();
-        appObjects.getPlaylistTabs().renameTab(index,name);
-        playlistPanel.name = name;
+        if(!((name.equals("")) || (name.equals(" "))))
+        {
+
+            int index = appObjects.getPlaylistTabs().getSelectedIndex();
+            appObjects.getPlaylistTabs().renameTab(index , name);
+            playlistPanel.name = name;
+        }
 
     }
     @Override
