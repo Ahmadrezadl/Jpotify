@@ -67,6 +67,7 @@ public class MainFrame extends JFrame{
         RightMenu rightMenu = null;
 
         try {
+
             rightMenu = new RightMenu(appObjects);
         } catch (IOException e) {
             e.printStackTrace();
