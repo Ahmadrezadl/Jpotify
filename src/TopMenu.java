@@ -1,11 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -43,13 +40,7 @@ public class TopMenu extends JPanel {
             System.out.println(e);
         }
         JButton userName = new JButton("Guest");
-        File file = new File("username.txt");
-        try {
-            sc = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        userName.setText(sc.nextLine());
+        userName.setText(appObjects.getLoginFrame().username.getText());
         appObjects.addFriend(userName.getText());
         userName.addActionListener(new ActionListener() {
             @Override

@@ -35,6 +35,15 @@ public class AppObjects {
     private ArrayList<String> friends;
     private PlaylistPanel favorites;
     private FavoriteButton favoriteButton;
+    private LoginFrame loginFrame;
+
+    public LoginFrame getLoginFrame() {
+        return loginFrame;
+    }
+
+    public void setLoginFrame(LoginFrame loginFrame) {
+        this.loginFrame = loginFrame;
+    }
 
     public FavoriteButton getFavoriteButton() {
         return favoriteButton;

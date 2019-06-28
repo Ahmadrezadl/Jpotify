@@ -1,11 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -40,7 +36,6 @@ public class MainFrame extends JFrame{
         }
         Logo.setIcon(new ImageIcon(jpotifyLogo));
         loadingFrame.add(Logo);
-        this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loadingFrame.setSize(520,210);
         loadingFrame.setBackground(Color.WHITE);
@@ -49,7 +44,6 @@ public class MainFrame extends JFrame{
         loadingFrame.setUndecorated(true);
         loadingFrame.setVisible(true);
         System.out.println ("Main Frame Start Adding...");
-        this.setLayout(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        this.setSize(100,100);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -67,9 +61,7 @@ public class MainFrame extends JFrame{
         RightMenu rightMenu = null;
 
         try {
-            String ip = JOptionPane.showInputDialog("enter the ip address you wish to connect to" , "127.0.0.1");
-
-
+            String ip = appObjects.getLoginFrame().ip.getText();
             rightMenu = new RightMenu(appObjects , ip);
         } catch (IOException e) {
             e.printStackTrace();

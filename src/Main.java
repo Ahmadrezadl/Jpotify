@@ -26,7 +26,11 @@ public class Main{
                     "Error 01",
                     JOptionPane.WARNING_MESSAGE);
         }
+
         AppObjects appObjects = new AppObjects();
+        LoginFrame loginFrame = new LoginFrame(appObjects);
+        while (loginFrame.isVisible())
+            System.out.println("Waiting for login");
         MainFrame mainFrame = new MainFrame(appObjects);
         for (PlaylistPanel p : appObjects.getPlayLists())
         {
