@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
@@ -31,28 +33,22 @@ public class DualListBox extends JPanel {
 
     private SortedListModel sourceListModel;
 
-    private JList destList;
-
     private SortedListModel destListModel;
 
-    private JLabel destLabel;
-
-    private JButton addButton;
-
-    private JButton removeButton;
 
     private PlaylistPanel playlistPanel;
-
+    JFrame f;
     public DualListBox(AppObjects appObjects,PlaylistPanel playlistPanel) {
         initScreen();
+        this.setBackground(new Color(0x290006));
         this.playlistPanel = playlistPanel;
-        JFrame f = new JFrame("Add Songs To PlayList");
+        f = new JFrame("Add Songs To PlayList");
         f.setBackground(Color.BLACK);
         f.setResizable(false);
         f.setLocation(new Point(100,100));
         f.setVisible(true);
         f.pack();
-        this.addSourceElements(appObjects.getAllSongsPanel().getNames());
+        this.addSourceElements(playlistPanel.getNames(appObjects.getAllSongsPanel()));
         this.appObjects= appObjects;
 
         f.getContentPane().add(this, BorderLayout.CENTER);
@@ -70,9 +66,29 @@ public class DualListBox extends JPanel {
     public void addDestinationElements(Object newValue[]) {
         fillListModel(destListModel, newValue);
     }
+    public void addDestinationElements(Object newValue) {
+        fillListModel(destListModel, newValue);
+    }
 
     private void fillListModel(SortedListModel model, Object newValues[]) {
-        model.addAll(newValues);
+        try{
+            model.addAll(newValues);
+        }
+        catch (NullPointerException e)
+        {
+            f.setVisible(false);
+
+        }
+    }
+    private void fillListModel(SortedListModel model, Object newValues) {
+        try{
+            model.addAll(newValues);
+        }
+        catch (NullPointerException e)
+        {
+            f.setVisible(false);
+
+        }
     }
 
     private void clearSourceSelected() {
@@ -91,13 +107,7 @@ public class DualListBox extends JPanel {
         sourceList.getSelectionModel().clearSelection();
     }
 
-    private void clearDestinationSelected() {
-        Object selected[] = destList.getSelectedValues();
-        for (int i = selected.length - 1; i >= 0; --i) {
-            destListModel.removeElement(selected[i]);
-        }
-        destList.getSelectionModel().clearSelection();
-    }
+
 
     private void initScreen() {
         setBorder(BorderFactory.createEtchedBorder());
@@ -105,6 +115,18 @@ public class DualListBox extends JPanel {
         sourceLabel = new JLabel("Available Musics");
         sourceListModel = new SortedListModel();
         sourceList = new JList(sourceListModel);
+        sourceList.setBackground(new Color(0x290006));
+        sourceList.setForeground(Color.WHITE);
+        sourceList.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                JList list = (JList)evt.getSource();
+                if (evt.getClickCount() == 2) {
+                    Object selected = sourceList.getSelectedValue();
+                    addDestinationElements(selected);
+                    clearSourceSelected();
+                }
+            }
+        });
         add(sourceLabel, new GridBagConstraints(0, 0, 1, 1, 0, 0,
                 GridBagConstraints.CENTER, GridBagConstraints.NONE,
                 EMPTY_INSETS, 0, 0));
@@ -112,21 +134,11 @@ public class DualListBox extends JPanel {
                 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                 EMPTY_INSETS, 0, 0));
 
-        addButton = new JButton("ADD >>");
-        add(addButton, new GridBagConstraints(1, 2, 1, 2, 0, .25,
-                GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                EMPTY_INSETS, 0, 0));
-        addButton.addActionListener(new AddListener());
 
-        destLabel = new JLabel("Added Musics");
+
         destListModel = new SortedListModel();
-        destList = new JList(destListModel);
-        add(destLabel, new GridBagConstraints(2, 0, 1, 1, 0, 0,
-                GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                EMPTY_INSETS, 0, 0));
-        add(new JScrollPane(destList), new GridBagConstraints(2, 1, 1, 5, .5,
-                1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                EMPTY_INSETS, 0, 0));
+
+
     }
 
 
@@ -134,18 +146,11 @@ public class DualListBox extends JPanel {
         public void actionPerformed(ActionEvent e) {
             Object selected[] = sourceList.getSelectedValues();
             addDestinationElements(selected);
-            System.out.println("wtf");
             clearSourceSelected();
 
         }
     }
 
-    private class RemoveListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            Object selected[] = destList.getSelectedValues();
-            addSourceElements(selected);
-            clearDestinationSelected();
-        }
-    }
+
 }
 

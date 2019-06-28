@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ public class Server{
         System.out.println("Server is running...");
         int clientNumber = 0;
         ServerInfo infos = new ServerInfo();
-
+        InetAddress inetAddress= InetAddress.getLocalHost();
+        System.out.println(inetAddress.getHostAddress());
 
         try (ServerSocket listener = new ServerSocket(9898)) {
 
@@ -89,7 +91,7 @@ class Client{
         this.clientNumber = clientNumber;
     }
     public String print(){
-        return "<font size = 6>" + name + "</font><br>" + status;
+        return status;
     }
 
     public String getName() {
