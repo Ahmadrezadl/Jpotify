@@ -22,7 +22,7 @@ public class ShuffleButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(pressed == false) {
+        if(!pressed) {
             appObjects.getBottomMenu().shuffle = true;
             pressed = true;
             this.setText("fucked");
