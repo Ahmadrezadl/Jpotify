@@ -20,10 +20,10 @@ public class RightMenu extends JPanel implements Runnable{
         JButton refresh;
         JLabel friends;
         String friendsText;
-        public RightMenu(AppObjects appObjects) throws IOException {
+        public RightMenu(AppObjects appObjects , String ip) throws IOException {
                 this.appObjects = appObjects;
                 this.setLayout(new BorderLayout());
-                socket = new Socket("127.0.0.1", 9898);
+                socket = new Socket(ip, 9898);
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 out = new PrintWriter(socket.getOutputStream(), true);
                 out.println(appObjects.getUserName().getText());
@@ -42,7 +42,7 @@ public class RightMenu extends JPanel implements Runnable{
                 friends.setBackground(Color.BLACK);
                 friends.setMaximumSize(new Dimension(320,500));
                 friends.setMinimumSize(new Dimension(320,0));
-//                friends.setPreferredSize(new Dimension(320,2));
+//                friends.setPreferredSize(new Dimension(320,500));
 
         }
 
@@ -55,16 +55,42 @@ public class RightMenu extends JPanel implements Runnable{
                                 e.printStackTrace();
                         }
                         friendsText = "<html><font size = 10>Friends Activity:</font> <br>__________________________________<br>";
-                        if(appObjects.getBottomMenu().pauseButton.isPlaying)
-                                out.println("Listening to: <br>" + appObjects.getLastPlayed().getTitle() + "<br>" +appObjects.getProgressBar().getString());
-                        else
-                        out.println("Online!");
+                        if(appObjects.getBottomMenu().pauseButton.isPlaying) {
+                                String name;
+                                String title;
+                                if(appObjects.getUserName().getText().length()>12)
+                                 name = appObjects.getUserName().getText().substring(0,12) + "...";
+                                else
+                                        name = appObjects.getUserName().getText();
+                                if(appObjects.getLastPlayed().getTitle().length() > 35)
+                                        title = appObjects.getLastPlayed().getTitle().substring(0,35) + "...";
+                                else
+                                        title = appObjects.getLastPlayed().getTitle();
+                                out.println("<font size = 7>" +
+                                        name +
+                                        "</font><br>Listening to: <br>" +
+                                        title +
+                                        "<br>" + appObjects.getProgressBar().getString());
+                        }
+                        else {
+                                String name;
+                                if(appObjects.getUserName().getText().length()>12)
+                                        name = appObjects.getUserName().getText().substring(0,12) + "...";
+                                else
+                                        name = appObjects.getUserName().getText();
+                                out.println("<font size = 7>" +
+                                        name +
+                                        "</font><br>Online!");
+                        }
                         try {
                                 String clientsNumber = in.readLine();
                                 int clients = Integer.parseInt(clientsNumber);
                                 for(int i = 0;i < clients;i++)
                                 {
-                                        friendsText = friendsText + in.readLine() + "<br>" + "__________________________________" + "<br>";
+                                        friendsText =
+                                                friendsText +
+                                                        in.readLine() +
+                                                        "<br>__________________________________<br>";
                                 }
                                 friendsText = friendsText + "</html>";
                                 friends.setText(friendsText);

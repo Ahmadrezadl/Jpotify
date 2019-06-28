@@ -67,7 +67,7 @@ public class SongButton extends JButton implements ActionListener {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                 cov = new ImageIcon(img);
+                cov = new ImageIcon(img);
                 Image image = cov.getImage();
                 Image newimg = image.getScaledInstance(166 , 168 , java.awt.Image.SCALE_SMOOTH);
                 cov = new ImageIcon(newimg);
