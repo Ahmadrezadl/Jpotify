@@ -31,7 +31,7 @@ public class RenamePlayListButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String name= JOptionPane.showInputDialog("Enter Name of PlayList: ");
+        String name= JOptionPane.showInputDialog("Enter Name of PlayList: ",importMusicButton.playlistPanel.name);
         if(!(importMusicButton.playlistPanel.name.equals("All Songs") || importMusicButton.playlistPanel.name.equals("Favorites")))
         importMusicButton.renamePlayList(name);
         else

@@ -34,7 +34,6 @@ public class ProgressBar extends JProgressBar {
                     e1.printStackTrace();
                 }
                 appObjects.setSongMoved(true);
-
                 appObjects.getBottomMenu().lastFrame = appObjects.getPlayer().getPosition();
                 float frame =  el * ((float)progressBarVal/100);
                 appObjects.getBottomMenu().setMusic(appObjects.getPlayingMusic(),(int)(frame));
