@@ -16,11 +16,11 @@ public class FavoriteButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(!appObjects.getLastPlayed().heart){
+        if(!appObjects.getLastPlayed().liked){
             appObjects.getFavorites().addSong(new SongButton(appObjects.getLastPlayed().link , appObjects.getLastPlayed().name , appObjects , appObjects.getFavorites()));
             appObjects.getAllSongsPanel().refresh();
             liked = true;
-            appObjects.getLastPlayed().heart = true;
+            appObjects.getLastPlayed().liked = true;
         }
     }
 }

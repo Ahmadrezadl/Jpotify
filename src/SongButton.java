@@ -30,16 +30,20 @@ public class SongButton extends JPanel implements ActionListener {
     Mp3File song;
     JButton songButton;
     JLabel songLabel;
-    boolean heart;
+    boolean liked;
     public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
-        heart = false;
+        liked = false;
         this.setBackground(new Color(37, 97, 176));
         this.setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         songButton = new JButton();
+        songButton.setToolTipText(name);
         this.add(songButton);
         songLabel = new JLabel();
-        songLabel.setText("    "+name);
+        if(name.length()>=20)
+            songLabel.setText("     "+name.substring(0 , 11)+"...");
+        else
+            songLabel.setText("     "+name);
         songLabel.setForeground(Color.WHITE);
         this.add(songLabel);
         this.appObjects = appObjects;
