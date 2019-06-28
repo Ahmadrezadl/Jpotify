@@ -34,6 +34,15 @@ public class AppObjects {
     private AddFriendButton addFriendButton;
     private ArrayList<String> friends;
     private PlaylistPanel favorites;
+    private FavoriteButton favoriteButton;
+
+    public FavoriteButton getFavoriteButton() {
+        return favoriteButton;
+    }
+
+    public void setFavoriteButton(FavoriteButton favoriteButton) {
+        this.favoriteButton = favoriteButton;
+    }
 
     public void addFriend(String friend) {
         friends.add(friend);

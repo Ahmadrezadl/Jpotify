@@ -40,8 +40,8 @@ public class SongButton extends JPanel implements ActionListener {
         songButton.setToolTipText(name);
         this.add(songButton);
         songLabel = new JLabel();
-        if(name.length()>=20)
-            songLabel.setText("     "+name.substring(0 , 11)+"...");
+        if(name.length()>=25)
+            songLabel.setText("     "+name.substring(0 , 25)+"...");
         else
             songLabel.setText("     "+name);
         songLabel.setForeground(Color.WHITE);
@@ -112,7 +112,7 @@ public class SongButton extends JPanel implements ActionListener {
             }
             songButton.setIcon(new ImageIcon(coverImage));
         }
-        this.addMouseListener(new MouseListener() {
+        songButton.addMouseListener(new MouseListener() {
             public void mousePressed(MouseEvent me) { }
             public void mouseReleased(MouseEvent me) { }
             public void mouseEntered(MouseEvent me) { }
@@ -151,7 +151,7 @@ public class SongButton extends JPanel implements ActionListener {
     }
     public void remove(){
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from current playlist?","Warning",dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from "+ playlistPanel.name +" playlist?","Warning",dialogButton);
         if(dialogResult == JOptionPane.YES_OPTION){
             this.setVisible(false);
 //            for(SongButton s : playlistPanel.songs)
@@ -202,6 +202,16 @@ public class SongButton extends JPanel implements ActionListener {
     }
 
     public void play (){
+        liked = false;
+        appObjects.getFavoriteButton().setIcon(appObjects.getFavoriteButton().off);
+        for(SongButton s : appObjects.getFavorites().songs)
+        {
+            if(s.equals(this))
+            {
+                liked = true;
+                appObjects.getFavoriteButton().setIcon(appObjects.getFavoriteButton().on);
+            }
+        }
         appObjects.setLastPlayed(this);
         bottomMenu.setMusic(link,0);
     }
