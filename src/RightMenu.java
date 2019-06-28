@@ -29,6 +29,7 @@ public class RightMenu extends JPanel implements Runnable{
                 out.println(appObjects.getUserName().getText());
                 AddFriendButton addFriendButton = new AddFriendButton(appObjects);
                 this.add(addFriendButton);
+                this.add(Box.createRigidArea(new Dimension(0, 15)));
                 this.setBackground(Color.BLACK);
                 Border border = BorderFactory.createLineBorder(Color.BLACK , 20);
                 this.setBorder(border);
