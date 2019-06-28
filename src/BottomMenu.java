@@ -50,7 +50,7 @@ public class BottomMenu extends JPanel implements Runnable{
         JPanel panelCenter = new JPanel();
         panelCenter.setLayout(new BorderLayout());
         panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
-        playPanel.setLayout(new GridBagLayout());
+        playPanel.setLayout(new GridLayout(1,5));
         playPanel.setBackground(Color.BLACK);
         JPanel sliderPanel = new JPanel();
         panelCenter.add(sliderPanel,BorderLayout.SOUTH);

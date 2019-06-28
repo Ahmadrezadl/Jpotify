@@ -17,7 +17,7 @@ public class ProgressBar extends JProgressBar {
         this.setValue(0);
         this.setString("0:00");
         this.setFocusable(false);
-        this.setPreferredSize(new Dimension(500,50));
+        this.setPreferredSize(new Dimension(600,40));
         appObjects.setProgressBar(this);
         ProgressBar progressBar = this;
         this.addMouseListener(new MouseAdapter() {
