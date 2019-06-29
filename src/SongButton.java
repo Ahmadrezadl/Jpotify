@@ -37,7 +37,7 @@ public class SongButton extends JPanel implements ActionListener {
         this.setBackground(new Color(37, 97, 176));
         this.setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         songButton = new JButton();
-        songButton.setToolTipText(name);
+
         this.add(songButton);
         songLabel = new JLabel();
         if(name.length()>=25)
@@ -70,6 +70,7 @@ public class SongButton extends JPanel implements ActionListener {
         song = null;
         try {
             song = new Mp3File(link);
+            songButton.setToolTipText(appObjects.getBottomMenu().convertTime((int)song.getLengthInSeconds()));
         } catch (IOException | InvalidDataException | UnsupportedTagException e) {
             e.printStackTrace();
         }
@@ -213,6 +214,14 @@ public class SongButton extends JPanel implements ActionListener {
             }
         }
         appObjects.setLastPlayed(this);
+        for(SongButton s : playlistPanel.songs)
+        {
+            if(!s.equals(this))
+            {
+                playlistPanel.remove(s);
+                playlistPanel.add(s);
+            }
+        }
         bottomMenu.setMusic(link,0);
     }
     public String getLink()

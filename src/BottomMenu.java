@@ -252,7 +252,7 @@ public class BottomMenu extends JPanel implements Runnable{
                 if(!(tmp.get(i).link.equals(appObjects.getLastPlayed().link)))
                 {
 
-                    willPLaying = tmp.get(i);//System.out.println(willPLaying.name);
+                    willPLaying = tmp.get(i);
                     break;
                 }
             }
@@ -275,9 +275,10 @@ public class BottomMenu extends JPanel implements Runnable{
             {
                         if(!(temp[i].link.equals(appObjects.getLastPlayed().link)))
                         {
-
-                            willPLaying = temp[i];//System.out.println(willPLaying.name);
-                            break;
+                            if(temp[i].isVisible()) {
+                                willPLaying = temp[i];//System.out.println(willPLaying.name);
+                                break;
+                            }
                         }
             }
             willPLaying.play();
