@@ -38,7 +38,10 @@ public class BottomMenu extends JPanel implements Runnable{
         this.appObjects = appObjects;
         appObjects.setBottomMenu(this);
         VolumeBar volumeBar = new VolumeBar(appObjects);
+        VolumeImage volumeImage;
+        volumeImage = new VolumeImage(appObjects);
         appObjects.setVolumeBar(volumeBar);
+        appObjects.setVolumeImage(volumeImage);
         percent = new JLabel(volumeBar.getValue() + "%");
         appObjects.setPercent(percent);
         percent.setForeground(Color.WHITE);
@@ -105,6 +108,7 @@ public class BottomMenu extends JPanel implements Runnable{
         volumePanel.setBackground(purple);
         volumePanel.setLayout(new FlowLayout());
         volumePanel.add(percent);volumePanel.add(volumeBar);
+        volumePanel.add(volumeImage);
         isPlaying = false;
         Border border = BorderFactory.createLineBorder(Color.BLACK , 10);
         this.setBorder(border);

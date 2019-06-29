@@ -37,6 +37,15 @@ public class AppObjects {
     private FavoriteButton favoriteButton;
     private LoginFrame loginFrame;
     private PopupMenu popupMenu;
+    private VolumeImage volumeImage;
+
+    public VolumeImage getVolumeImage() {
+        return volumeImage;
+    }
+
+    public void setVolumeImage(VolumeImage volumeImage) {
+        this.volumeImage = volumeImage;
+    }
 
     public LoginFrame getLoginFrame() {
         return loginFrame;

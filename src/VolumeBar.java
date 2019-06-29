@@ -42,6 +42,7 @@ public class VolumeBar extends JSlider {
             public void stateChanged(ChangeEvent arg0) {
 
                 appObjects.getPercent().setText( volumeBar.getValue() + "%");
+                appObjects.getVolumeImage().SetIcon(volumeBar.getValue());
                 if (AudioSystem.isLineSupported(source))
                 {
                     try
