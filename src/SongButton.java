@@ -40,22 +40,49 @@ public class SongButton extends JPanel implements ActionListener {
         liked = false;
         popupMenu = new JPopupMenu();
         popupMenu.setBackground(Color.black);
-        btn1 = new JButton("Remove           ");
+        btn1 = new JButton("Play                    ");
         btn1.setSize(5 , 30);
-        btn2 = new JButton("Play                 ");
+        btn2 = new JButton("Remove              ");
         btn2.setSize(5 , 30);
-        btn3 = new JButton("Add to favorites");
+        btn3 = new JButton("Add to favorites   ");
         btn3.setSize(5 , 30);
+        try {
+            Image icon1 = ImageIO.read(getClass().getResource("icons\\musicLogo.png"));
+
+            btn1.setIcon(new ImageIcon(icon1));
+        }
+        catch (Exception e)
+        {
+            System.out.println("File Missing...");
+        }
+        try {
+            Image icon1 = ImageIO.read(getClass().getResource("icons\\removeLogo.png"));
+
+            btn2.setIcon(new ImageIcon(icon1));
+        }
+        catch (Exception e)
+        {
+            System.out.println("File Missing...");
+        }
+        try {
+            Image icon1 = ImageIO.read(getClass().getResource("icons\\favoriteLogo.png"));
+
+            btn3.setIcon(new ImageIcon(icon1));
+        }
+        catch (Exception e)
+        {
+            System.out.println("File Missing...");
+        }
         /////////////////////////////////////////////////////
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource()==btn1){
-                    remove();
+                    play();
                     popupMenu.setVisible(false);
                 }
                 else if(e.getSource()==btn2){
-                    play();
+                    remove();
                     popupMenu.setVisible(false);
                 }
                 else if(e.getSource() == btn3){
