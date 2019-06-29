@@ -71,6 +71,7 @@ public class TopMenu extends JPanel {
         right.add(restoreDownButton);
         MinimizeButton minimizeButton = new MinimizeButton(mainFrame);
         right.add(minimizeButton);
+        right.add(new InfoButton());
         this.setVisible(true);
         System.out.println("Top Menu added!");
     }

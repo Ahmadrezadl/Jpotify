@@ -37,6 +37,7 @@ public class AddPlayListButton extends JButton  implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         String name= JOptionPane.showInputDialog("Enter Name of PlayList: ","New PlayList");
         if(!(name.equals("") || name.equals(" "))) {
             boolean duplicate = false;
