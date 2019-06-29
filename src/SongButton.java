@@ -30,17 +30,54 @@ public class SongButton extends JPanel implements ActionListener {
     Mp3File song;
     JButton songButton;
     JLabel songLabel;
+    JPopupMenu popupMenu;
+    JButton btn1;
+    JButton btn2;
+    JButton btn3;
     boolean liked;
     public SongButton(String link , String name ,AppObjects appObjects,PlaylistPanel playlistPanel) {
         super();
         liked = false;
+        popupMenu = new JPopupMenu();
+        popupMenu.setBackground(Color.black);
+        btn1 = new JButton("     Remove     ");
+        btn1.setBackground(Color.BLUE);
+        btn2 = new JButton("        Play        ");
+        btn3 = new JButton("Add to favorites");
+        /////////////////////////////////////////////////////
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource()==btn1){
+                    remove();
+                    popupMenu.setVisible(false);
+
+                }
+                else if(e.getSource()==btn2){
+                    play();
+                    popupMenu.setVisible(false);
+
+
+                }
+
+            }
+        };
+        popupMenu.add(btn1);
+        btn1.addActionListener(listener);
+        popupMenu.add(btn2);
+        btn2.addActionListener(listener);
+        popupMenu.add(btn3);
+        btn3.addActionListener(listener);
+
+//        popupMenu.add(new JMenuItem("item 1"));
+//        popupMenu.add(new JMenuItem("item 2"));
+//        popupMenu.add(new JMenuItem("item 3"));
         this.setBackground(new Color(37, 97, 176));
         this.setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         songButton = new JButton();
-
         this.add(songButton);
         songLabel = new JLabel();
-        if(name.length()>=25)
+        if(name.length() >= 25)
             songLabel.setText("     "+name.substring(0 , 25)+"...");
         else
             songLabel.setText("     "+name);
@@ -113,18 +150,47 @@ public class SongButton extends JPanel implements ActionListener {
             }
             songButton.setIcon(new ImageIcon(coverImage));
         }
-        songButton.addMouseListener(new MouseListener() {
-            public void mousePressed(MouseEvent me) { }
-            public void mouseReleased(MouseEvent me) { }
-            public void mouseEntered(MouseEvent me) { }
-            public void mouseExited(MouseEvent me) { }
-            public void mouseClicked(MouseEvent me) {
-                if(me.getButton() == MouseEvent.BUTTON3) {
+//        songButton.addMouseListener(new MouseListener() {
+//            public void mousePressed(MouseEvent me) { }
+//            public void mouseReleased(MouseEvent me) { }
+//            public void mouseEntered(MouseEvent me) { }
+//            public void mouseExited(MouseEvent me) { }
+//            public void mouseClicked(MouseEvent me) {
+//                if(me.getButton() == MouseEvent.BUTTON3) {
+//
+//                    remove();
+//                }
+//            }
+//        });
+         songButton.addMouseListener(new MouseListener() {
+             @Override
+             public void mouseClicked(MouseEvent e) {
+                 if(e.getButton()== MouseEvent.BUTTON3){
+                    popupMenu.show(e.getComponent(), e.getX(), e.getY());
+                 }
 
-                    remove();
-                }
-            }
-        });
+             }
+
+             @Override
+             public void mousePressed(MouseEvent e) {
+
+             }
+
+             @Override
+             public void mouseReleased(MouseEvent e) {
+
+             }
+
+             @Override
+             public void mouseEntered(MouseEvent e) {
+
+             }
+
+             @Override
+             public void mouseExited(MouseEvent e) {
+
+             }
+         });
         System.out.println("Song Button Created!");
     }
 
@@ -262,5 +328,12 @@ public class SongButton extends JPanel implements ActionListener {
     @Override
     public int hashCode() {
         return Objects.hash(link);
+    }
+
+    public JPopupMenu getPopupMenu() {
+        return popupMenu;
+    }
+    public void addToFavorite(){
+
     }
 }

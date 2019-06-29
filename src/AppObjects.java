@@ -36,6 +36,7 @@ public class AppObjects {
     private PlaylistPanel favorites;
     private FavoriteButton favoriteButton;
     private LoginFrame loginFrame;
+    private PopupMenu popupMenu;
 
     public LoginFrame getLoginFrame() {
         return loginFrame;
@@ -255,5 +256,13 @@ public class AppObjects {
 
     public void setFavorites(PlaylistPanel favorites) {
         this.favorites = favorites;
+    }
+
+    public PopupMenu getPopupMenu() {
+        return popupMenu;
+    }
+
+    public void setPopupMenu(PopupMenu popupMenu) {
+        this.popupMenu = popupMenu;
     }
 }
