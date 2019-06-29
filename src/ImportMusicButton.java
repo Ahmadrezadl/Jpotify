@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -44,7 +45,8 @@ public class ImportMusicButton extends JButton implements ActionListener {
         filter = new FileNameExtensionFilter("Mp3 File", "mp3");
         chooser.setFileFilter(filter);
         ImportMusicButton importMusicButton = this;
-
+        Border border = BorderFactory.createLineBorder(Color.BLACK , 7);
+        this.setBorder(border);
         System.out.println("Import Music Button Added!");
     }
 

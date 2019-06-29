@@ -50,7 +50,14 @@ public class BottomMenu extends JPanel implements Runnable{
         JPanel panelCenter = new JPanel();
         panelCenter.setLayout(new BorderLayout());
         panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
-        playPanel.setLayout(new GridLayout(1,5));
+        playPanel.setLayout(new GridLayout(1,7));
+        JButton emptyButton = new JButton();
+        emptyButton.setBorderPainted(false);
+        emptyButton.setContentAreaFilled(false);
+        emptyButton.setFocusPainted(false);
+        emptyButton.setOpaque(false);
+        playPanel.add(emptyButton);
+        setBorder(null);
         playPanel.setBackground(Color.BLACK);
         JPanel sliderPanel = new JPanel();
         panelCenter.add(sliderPanel,BorderLayout.SOUTH);
@@ -84,6 +91,8 @@ public class BottomMenu extends JPanel implements Runnable{
         ///////////////////////////////////////////////////
         shuffleButton = new ShuffleButton(appObjects);
         playPanel.add(shuffleButton);
+        GoogleButton googleButton = new GoogleButton(appObjects);
+        playPanel.add(googleButton);
 
         ///////////////////////////////////////////////////
         System.out.println("New Pause Button Added");

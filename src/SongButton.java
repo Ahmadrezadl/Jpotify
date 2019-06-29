@@ -246,6 +246,29 @@ public class SongButton extends JPanel implements ActionListener {
         }
         return temp;
     }
+
+    public String getArtist(){
+        Mp3File song = null;
+        String temp;
+        try {
+            song = new Mp3File(link);
+        } catch (IOException | InvalidDataException | UnsupportedTagException e) {
+            e.printStackTrace();
+        }
+        ID3v2 songTag;
+        if(song.hasId3v1Tag()) {
+            songTag = song.getId3v2Tag();
+            temp = songTag.getArtist();
+        }
+        else{
+            temp = "";
+        }
+        if (temp == null)
+        {
+            return "";
+        }
+        return temp;
+    }
     public void remove(){
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from "+ playlistPanel.name +" playlist?","Warning",dialogButton);
