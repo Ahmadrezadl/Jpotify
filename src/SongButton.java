@@ -40,10 +40,12 @@ public class SongButton extends JPanel implements ActionListener {
         liked = false;
         popupMenu = new JPopupMenu();
         popupMenu.setBackground(Color.black);
-        btn1 = new JButton("     Remove     ");
-        btn1.setBackground(Color.BLUE);
-        btn2 = new JButton("        Play        ");
+        btn1 = new JButton("Remove           ");
+        btn1.setSize(5 , 30);
+        btn2 = new JButton("Play                 ");
+        btn2.setSize(5 , 30);
         btn3 = new JButton("Add to favorites");
+        btn3.setSize(5 , 30);
         /////////////////////////////////////////////////////
         ActionListener listener = new ActionListener() {
             @Override
