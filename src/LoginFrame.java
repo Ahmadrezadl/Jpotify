@@ -24,7 +24,7 @@ public class LoginFrame extends JFrame {
         JLabel Logo = new JLabel();
         Image jpotifyLogo = null;
         try {
-            jpotifyLogo = ImageIO.read(getClass().getResource("icons\\logo.png"));
+            jpotifyLogo = ImageIO.read(getClass().getResource("icons\\logo2.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,10 +35,10 @@ public class LoginFrame extends JFrame {
         Logo.setForeground(Color.blue);
         Logo.setFont(new Font("Serif", Font.BOLD, 20));
 //        bottom.setLayout(new FlowLayout());
-        JLabel username = new JLabel("Username");
+        JLabel username = new JLabel("Username:");
         username.setForeground(Color.WHITE);
 
-        JLabel password = new JLabel("Password");
+        JLabel password = new JLabel("IP Address:");
          this.username = new JTextField();
         File file = new File("username.txt");
         try {
