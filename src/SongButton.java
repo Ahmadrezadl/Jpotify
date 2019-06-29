@@ -51,13 +51,14 @@ public class SongButton extends JPanel implements ActionListener {
                 if(e.getSource()==btn1){
                     remove();
                     popupMenu.setVisible(false);
-
                 }
                 else if(e.getSource()==btn2){
                     play();
                     popupMenu.setVisible(false);
-
-
+                }
+                else if(e.getSource() == btn3){
+                    addToFavorite();
+                    popupMenu.setVisible(false);
                 }
 
             }
@@ -334,6 +335,8 @@ public class SongButton extends JPanel implements ActionListener {
         return popupMenu;
     }
     public void addToFavorite(){
+//        SongButton temp = new SongButton(getLink() , getName() , appObjects , appObjects.getFavorites() );
+        appObjects.getFavorites().addSong( new SongButton(link , name , appObjects , appObjects.getFavorites() ));
 
     }
 }
