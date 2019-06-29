@@ -1,8 +1,15 @@
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * this is a jJButton for adding friends, aka clients connected to the server.
+ *
+ * @author G-squad menhaye maryam
+ * @version  1.0
+ */
 
 public class AddFriendButton extends JButton implements ActionListener {
     AppObjects appObjects;
@@ -27,6 +34,7 @@ public class AddFriendButton extends JButton implements ActionListener {
             System.out.println("File Missing...");
         }
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

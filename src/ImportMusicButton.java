@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 //import org.apache.commons.net.*;
 
-
 public class ImportMusicButton extends JButton implements ActionListener {
     BottomMenu bottomMenu;
     LeftMenu leftMenu;

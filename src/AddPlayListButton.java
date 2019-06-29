@@ -1,8 +1,15 @@
+
+
 import javax.imageio.ImageIO;
         import javax.swing.*;
         import java.awt.*;
         import java.awt.event.ActionEvent;
         import java.awt.event.ActionListener;
+/**
+ * it builds  a button that adds a playListPanel and sets a playListTab for it
+ * @author G-squad menhaye maryam
+ * @version 1.0
+ */
 
 public class AddPlayListButton extends JButton  implements ActionListener {
     PlaylistTabs playlistTabs;

@@ -5,6 +5,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
+/**
+ * creates a button in topMenu panel.. it closes the mainFrame
+ * and it terminates the program
+ * it also writes  in the username  , playLists  and musics file .
+ * actually it saves and loads the program.
+ * @author G-squad menhaye Maryam
+ * @version 1.1
+ * @since 1.0
+ */
+
 public class ExitButton extends JButton implements ActionListener {
     AppObjects appObjects;
     public ExitButton(AppObjects appObjects) {

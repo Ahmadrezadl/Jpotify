@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * It holds all the components we've made so far such as buttons , playlist tabs and... .
+ * It holds all the components we've made so far such as buttons ,
+ * playlist tabs and... .
  *
  * @author G-squad menhaye Maryam
  * @version 1.0

@@ -5,6 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+/**
+ * it builds a button and adds it to topMenu.
+ * it opens a frame that shows the information of authors and its version and ..
+ * @author G-squad menhaye Maryam
+ * @version 1.0
+ */
+
 public class InfoButton extends JButton implements ActionListener {
     JFrame jFrame;
     public InfoButton() {

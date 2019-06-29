@@ -18,6 +18,12 @@ import java.io.IOException;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/**
+ * it sets a SongButton cover for an album in center menu , since all the songs of one album have the same cover as the album:)
+ * @author G-squad menhaye maryam
+ * @version 1.0
+ */
+
 public class AlbumButton extends JButton implements ActionListener {
     String link;
     String name;

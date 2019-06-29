@@ -4,6 +4,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * it creates a button in the leftMenu and is used for showing albums panel in center menu
+ * @author G-squad menhaye Maryam
+ * @version  1.1
+ * @since 1.0
+ */
 public class AlbumsButton extends JButton implements ActionListener {
     AppObjects appObjects;
     public AlbumsButton(AppObjects appObjects) {

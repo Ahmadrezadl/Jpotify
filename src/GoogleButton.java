@@ -1,3 +1,4 @@
+
 import sun.security.krb5.internal.APOptions;
 
 import javax.imageio.ImageIO;
@@ -13,6 +14,12 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
+/**
+ * this button builds a button that open a web page to search for lyrics in google.com
+ * @author G-squad menhaye maryam
+ * @version 1.0
+ * @since 1.0
+ */
 
 public class GoogleButton extends JButton implements ActionListener {
     AppObjects appObjects;

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * this class is made for the top menu.
- * top menu contains MinimizeButton , ExitButton and ... .
+ * top menu contains MinimizeButton , ExitButton  , InfoButton  , username label and... .
  * @author G-Squad Menhaye Maryam
  * @version 1.1
  * @since 1.0

@@ -1,5 +1,3 @@
-
-
 import mpatric.mp3agic.ID3v2;
 import mpatric.mp3agic.InvalidDataException;
 import mpatric.mp3agic.Mp3File;
@@ -17,6 +15,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.event.*;
 import java.util.Objects;
+/**
+ *
+ * this class creates a panel which contains a label for songTitle and a button for playing the song.
+ * contains methods like:
+ * addSong ,
+ * addFavorites > which adds the songButton to playListPanel
+ * remove > which removes the song from playlist
+ * ...
+ * @author G-squad menhaye maryam
+ * @version 1.7
+ * @since 1.0
+ *
+ */
+
 
 public class SongButton extends JPanel implements ActionListener {
     String link;
@@ -102,7 +114,6 @@ public class SongButton extends JPanel implements ActionListener {
 //        popupMenu.add(new JMenuItem("item 1"));
 //        popupMenu.add(new JMenuItem("item 2"));
 //        popupMenu.add(new JMenuItem("item 3"));
-        this.setBackground(new Color(37, 97, 176));
         this.setLayout(new BoxLayout(this , BoxLayout.Y_AXIS));
         songButton = new JButton();
         this.add(songButton);
@@ -269,6 +280,12 @@ public class SongButton extends JPanel implements ActionListener {
         }
         return temp;
     }
+
+    /**
+     * removes songButton object from playListPanel
+     * @author G-squad menhaye maryam
+     *
+     */
     public void remove(){
         int dialogButton = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog (null, "Would You Like to Delete this song from "+ playlistPanel.name +" playlist?","Warning",dialogButton);
@@ -386,7 +403,7 @@ public class SongButton extends JPanel implements ActionListener {
     public JPopupMenu getPopupMenu() {
         return popupMenu;
     }
-    public void addToFavorite(){
+    private void addToFavorite(){
 //        SongButton temp = new SongButton(getLink() , getName() , appObjects , appObjects.getFavorites() );
         appObjects.getFavorites().addSong( new SongButton(link , name , appObjects , appObjects.getFavorites() ));
 

@@ -1,3 +1,4 @@
+
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 import mpatric.mp3agic.ID3v2;
@@ -12,6 +13,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+/**
+ * this class provides the panel for components placed on the bottom of the mainFrame
+ * @author G-squad menhaye maryam
+ * @version 1.6
+ * @since 1.0
+ *
+ */
 
 public class BottomMenu extends JPanel implements Runnable{
     JLabel cover;
