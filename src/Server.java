@@ -1,5 +1,8 @@
 
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,6 +19,7 @@ public class Server{
         ServerInfo infos = new ServerInfo();
         InetAddress inetAddress= InetAddress.getLocalHost();
         System.out.println(inetAddress.getHostAddress());
+        ServerGUI serverGUI = new ServerGUI(inetAddress.getHostAddress());
 
         try (ServerSocket listener = new ServerSocket(9898)) {
 
@@ -108,4 +112,40 @@ class ServerInfo{
     }
 
 
+}
+
+class ServerGUI extends JFrame{
+    public ServerGUI(String ip)
+    {
+        JPanel jPanel = new JPanel();
+        JLabel image = new JLabel();
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        try {
+            Image exitButtonIcon = ImageIO.read(getClass().getResource("icons\\server.png"));
+            image.setIcon(new ImageIcon(exitButtonIcon));
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        this.add(jPanel);
+        this.setSize(750,350);
+
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        jPanel.setLayout(new BoxLayout(jPanel , BoxLayout.Y_AXIS));
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.getAllFonts();
+        Font font = new Font("Jokerman", Font.PLAIN, 20);
+        JLabel ipLabel = new JLabel("                           IP Address: " + ip);
+        ipLabel.setFont(font);
+        ipLabel.setForeground(Color.WHITE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        jPanel.setBackground(Color.BLACK);
+        jPanel.add(image);
+        jPanel.add(ipLabel);
+        jPanel.setVisible(true);
+        ipLabel.setVisible(true);
+        this.setVisible(true);
+    }
 }

@@ -112,8 +112,9 @@ public class RightMenu extends JPanel implements Runnable{
                                 friends.setText(friendsText);
 
                         } catch (IOException e) {
-                                friends.setText("Offline Mode");
-                                e.printStackTrace();
+                                friends.setText("<html><font size = 8>Offline Mode</font></html>");
+
+                                e.printStackTrace();break;
                         }
                 }
 
