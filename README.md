@@ -6,6 +6,7 @@ Jpotify is a  Simple Music Player programmed by Java Swing and JLayer 1.0.1 Libr
 3. Listen to ILoveRadio.de (Live Stream)
 4. With Shuffle Button, Play Random Songs in your Library.
 5. Search songs in google, Easily.
+6. etc...
 # Main Frame:
 ![alt text](http://s8.picofile.com/file/8367871126/jpotify.PNG)
 # Server Frame:
